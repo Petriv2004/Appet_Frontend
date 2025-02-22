@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">APPET</string>
+    <string-array name="razas_perro">
+        <item>Criollo</item>
+        <item>Labrador</item>
+        <item>Bulldog</item>
+        <item>Golden Retriever</item>
+        <item>Pastor Alemán</item>
+        <item>Otro</item>
+    </string-array>
+
+    <string-array name="razas_gato">
+        <item>Criollo</item>
+        <item>Persa</item>
+        <item>Siamés</item>
+        <item>Angora</item>
+        <item>Otro</item>
+    </string-array>
+</resources>
