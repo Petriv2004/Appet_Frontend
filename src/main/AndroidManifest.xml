@@ -29,6 +29,7 @@
         <activity android:name=".RegistroUsuario" />
         <activity android:name=".HistorialMedico" />
         <activity android:name=".Perfil"/>
+        <activity android:name=".PerfilMascota"/>
     </application>
 
 </manifest>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -5,18 +6,25 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:padding="16dp"
-    tools:context=".Perfil">
-
+    tools:context=".PerfilMascota">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Perfil"
+        android:text="Perfil de tu Mascota"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:background="@mipmap/ic_launcher"
+        android:layout_marginEnd="16dp"/>
 
     <TextView
         android:id="@+id/textNombre"
@@ -29,65 +37,73 @@
         android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/textCorreo"
+        android:id="@+id/textNacimiento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Correo:"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
-    <TextView
-        android:id="@+id/textNumero"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Número de celular:"
+        android:text="Fecha de Nacimiento:"
         android:textAlignment="viewStart"
         android:textSize="20sp"
         android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/textDireccion"
+        android:id="@+id/textSexo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Dirección:"
+        android:text="Sexo:"
         android:textAlignment="viewStart"
         android:textSize="20sp"
         android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/textGenero"
+        android:id="@+id/textEspecie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Género:"
+        android:text="Especie:"
         android:textAlignment="viewStart"
         android:textSize="20sp"
         android:textStyle="bold"/>
 
     <TextView
+        android:id="@+id/textRaza"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Elige tu mascota"
-        android:textAlignment="center"
-        android:textSize="24sp"
+        android:text="Raza:"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
         android:textStyle="bold"/>
 
-    <Spinner
-        android:id="@+id/spinnerElegir"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textPeso"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:textSize="24sp"
+        android:text="Peso en kg:"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
         android:textStyle="bold"/>
 
-    <Button
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textSangre"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Ver Mascota"
-        android:onClick="onClick"/>
+        android:text="Tipo de Sangre:"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textVacunas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Vacunas:"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
 </LinearLayout>

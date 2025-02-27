@@ -39,4 +39,9 @@
         <item>B</item>
         <item>AB</item>
     </string-array>
+
+    <string-array name="perfil_mascota">
+        <item>Registre a su mascota</item>
+        <item>Mascota Existente</item>
+    </string-array>
 </resources>
