@@ -1,28 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textViewHistorial"
-        android:layout_width="match_parent"
+    <!-- Contenedor horizontal para imagen y perfil -->
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Propietario: "
-        android:textSize="18sp"
-        android:background="@drawable/bubble_red"/>
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp">
 
+        <!-- Imagen a la izquierda -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="296dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/appet" />
 
-    <EditText
-        android:id="@+id/editTextMensaje"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Escribe un mensaje"/>
+        <!-- Contenedor Vertical para Botón + Texto -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
+            <!-- Botón Perfil -->
+            <ImageButton
+                android:id="@+id/btnIrPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:onClick="onClickIrPerfil"/>
+
+            <!-- Texto debajo del botón -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tú Perfil"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Botón Registrarse -->
     <Button
-        android:id="@+id/btnEnviar"
-        android:layout_width="match_parent"
+        android:id="@+id/btnIrRegistro"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enviar (como propietario)"/>
-</LinearLayout>
+        android:onClick="onClickIrRegistrar"
+        android:text="Registrarse"
+        app:layout_constraintTop_toBottomOf="@id/container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Botón Iniciar Sesión -->
+    <Button
+        android:id="@+id/btnIrLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrLogIn"
+        android:text="Iniciar Sesión"
+        app:layout_constraintTop_toBottomOf="@id/btnIrRegistro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
