@@ -41,7 +41,7 @@
     </string-array>
 
     <string-array name="perfil_mascota">
-        <item>Registre a su mascota</item>
-        <item>Mascota Existente</item>
+        <item>Ir a Perfil de mis Mascotas</item>
+        <item>Ver Citas de mis mascota</item>
     </string-array>
 </resources>

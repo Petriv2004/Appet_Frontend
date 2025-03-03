@@ -1,3 +1,9 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -5,7 +11,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:padding="16dp"
-    tools:context=".Perfil">
+    tools:context=".PerfilUsuario">
 
 
     <TextView
@@ -71,7 +77,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Elige tu mascota"
+        android:text="Elige una opción"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"/>
@@ -88,6 +94,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Ver Mascota"
+        android:text="Aceptar"
         android:onClick="onClick"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Cerrar Sesión"
+        android:onClick="onClickCerrar"/>
 </LinearLayout>
+
+</ScrollView>

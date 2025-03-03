@@ -2,108 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="16dp"
-    tools:context=".PerfilMascota">
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Perfil de tu Mascota"
-        android:textAlignment="center"
+        android:text="Mis Mascotas"
         android:textSize="24sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:background="@mipmap/ic_launcher"
-        android:layout_marginEnd="16dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMascotas"
+        android:layout_width="match_parent"
+        android:layout_height="553dp"
+        android:layout_weight="1" />
 
-    <TextView
-        android:id="@+id/textNombre"
+    <Button
+        android:id="@+id/registrarMascotas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Nombre:"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:onClick="onClickAgregarMascota"
+        android:text="Registrar Mascota" />
 
-    <TextView
-        android:id="@+id/textNacimiento"
+    <Button
+        android:id="@+id/historial_mascota"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Fecha de Nacimiento:"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:layout_marginTop="16dp"
+        android:onClick="onClickIrHistorial"
+        android:text="Agregar Historial" />
 
-    <TextView
-        android:id="@+id/textSexo"
+    <Button
+        android:id="@+id/citas_mascota"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Sexo:"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/textEspecie"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Especie:"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/textRaza"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Raza:"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/textPeso"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Peso en kg:"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/textSangre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Tipo de Sangre:"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/textVacunas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Vacunas:"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:layout_marginTop="16dp"
+        android:onClick="onClickIrAgenda"
+        android:text="Gestionar Citas" />
 
 </LinearLayout>
