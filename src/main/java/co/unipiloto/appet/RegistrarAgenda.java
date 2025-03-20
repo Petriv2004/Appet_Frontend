@@ -5,11 +5,14 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -52,22 +55,21 @@ public class RegistrarAgenda extends AppCompatActivity {
 
         llenarSpinner();
     }
-
     private void mostrarDatePicker() {
         Calendar calendario = Calendar.getInstance();
-        int año = calendario.get(Calendar.YEAR);
+        int año = calendario.get(Calendar.YEAR);
         int mes = calendario.get(Calendar.MONTH);
         int dia = calendario.get(Calendar.DAY_OF_MONTH);
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, (view, year, month, dayOfMonth) -> {
             String fechaSeleccionada = String.format("%04d-%02d-%02d", year, month + 1, dayOfMonth);
             etFecha.setText(fechaSeleccionada);
-        }, año, mes, dia);
+        }, año, mes, dia);
+
+        datePickerDialog.getDatePicker().setMinDate(calendario.getTimeInMillis());
 
         datePickerDialog.show();
     }
-
-
     private void mostrarTimePicker() {
         Calendar calendario = Calendar.getInstance();
         int hora = calendario.get(Calendar.HOUR_OF_DAY);
@@ -80,7 +82,6 @@ public class RegistrarAgenda extends AppCompatActivity {
 
         timePickerDialog.show();
     }
-
     private void llenarSpinner() {
         SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);
         String correo = prefs.getString("correo", null);
@@ -171,7 +172,7 @@ public class RegistrarAgenda extends AppCompatActivity {
                     response -> {
                         Toast.makeText(RegistrarAgenda.this, "Agenda registrada correctamente", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(RegistrarAgenda.this, PerfilUsuario.class);
+                        Intent intent = new Intent(RegistrarAgenda.this, MainActivity.class);
                         startActivity(intent);
                         finish();
                     },
@@ -193,7 +194,6 @@ public class RegistrarAgenda extends AppCompatActivity {
             Toast.makeText(this, "Error al crear la solicitud", Toast.LENGTH_SHORT).show();
         }
     }
-
     public void onClickEliminarCita(View view) {
         SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);
         String correo = prefs.getString("correo", null);
@@ -207,20 +207,28 @@ public class RegistrarAgenda extends AppCompatActivity {
         String sel [] = opcAgenda.split("-");
 
         String idCita = sel[0];
-
         String url = "http://192.168.0.13:8080/agenda/eliminar/" + correo + "/" + idCita;
 
-        StringRequest request = new StringRequest(Request.Method.DELETE, url,
-                response -> {
-                    Toast.makeText(RegistrarAgenda.this, "Cita eliminada correctamente", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(RegistrarAgenda.this, PerfilUsuario.class);
-                    startActivity(intent);
-                    finish();
-                },
-                error -> Toast.makeText(RegistrarAgenda.this, "Error al eliminar la cita", Toast.LENGTH_SHORT).show()
-        );
+        new AlertDialog.Builder(this)
+                .setTitle("Confirmación")
+                .setMessage("¿Está seguro de que desea eliminar esta cita?")
+                .setPositiveButton("Sí", (dialog, which) -> {
+                    StringRequest request = new StringRequest(Request.Method.DELETE, url,
+                            response -> {
+                                Toast.makeText(RegistrarAgenda.this, "Cita eliminada correctamente", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(RegistrarAgenda.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            },
+                            error -> Toast.makeText(RegistrarAgenda.this, "Error al eliminar la cita", Toast.LENGTH_SHORT).show()
+                    );
 
-        requestQueue.add(request);
+                    requestQueue.add(request);
+                })
+                .setNegativeButton("Cancelar", null)
+                .show();
+
+
     }
 
 }

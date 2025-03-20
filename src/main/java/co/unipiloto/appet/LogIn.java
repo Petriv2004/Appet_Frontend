@@ -17,6 +17,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
@@ -27,6 +28,8 @@ public class LogIn extends AppCompatActivity {
     private EditText etCorreo, etContrasena;
     private static final String URL_LOGIN = "http://192.168.0.13:8080/propietarios/login";
 
+    private RequestQueue requestQueue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,7 @@ public class LogIn extends AppCompatActivity {
 
         etCorreo = findViewById(R.id.etCorreo);
         etContrasena = findViewById(R.id.etContrasena);
+        requestQueue = Volley.newRequestQueue(this);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             v.setPadding(insets.getInsets(Type.systemBars()).left,
@@ -61,73 +65,42 @@ public class LogIn extends AppCompatActivity {
         iniciarSesion(correo, contrasena);
     }
 
-    private void iniciarSesion(String correo, String contrasena) {
-
-        RequestQueue queue = Volley.newRequestQueue(this);
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        if (response.trim().isEmpty()) {
-                            Toast.makeText(LogIn.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
-
+    private void iniciarSesion(String correo, String contrasena){
+        try {
+            JSONObject jsonBody = new JSONObject();
+            jsonBody.put("correo", correo);
+            jsonBody.put("contrasena", contrasena);
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, URL_LOGIN, jsonBody,
+                    response -> {
+                        try{
                             SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);
                             SharedPreferences.Editor editor = prefs.edit();
-                            editor.putString("correo", correo);
-                            editor.apply();
-
-
-                            Intent intent = new Intent(LogIn.this, MainActivity.class);
-                            startActivity(intent);
-                            finish();
-                        } else {
-                            Toast.makeText(LogIn.this, "Respuesta inesperada del servidor", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        if (error.networkResponse != null) {
-                            int statusCode = error.networkResponse.statusCode;
-                            if (statusCode == 400) {
-                                Toast.makeText(LogIn.this, "Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show();
-                            } else {
-                                Toast.makeText(LogIn.this, "Error en el servidor: " + statusCode, Toast.LENGTH_SHORT).show();
+                            String rol = response.getString("rol");
+                            if (rol.equals("Propietario")){
+                                editor.putString("correo", correo);
+                            }else if (rol.equals("Veterinario")){
+                                editor.putString("correoVet", correo);
                             }
-                        } else {
-                            Toast.makeText(LogIn.this, "Error de conexión. Verifica tu internet", Toast.LENGTH_SHORT).show();
+                            editor.apply();
+                        }catch(JSONException e){
+                            Toast.makeText(this, "Error agregando el correo", Toast.LENGTH_SHORT).show();
                         }
-                    }
-                }) {
-            @Override
-            public String getBodyContentType() {
-                return "application/json; charset=utf-8";
-            }
-
-            @Override
-            public byte[] getBody() {
-                try {
-                    JSONObject jsonBody = new JSONObject();
-                    jsonBody.put("correo", correo);
-                    jsonBody.put("contrasena", contrasena);
-                    return jsonBody.toString().getBytes("utf-8");
-                } catch (JSONException | java.io.UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                    return null;
+                        Toast.makeText(this, "Ha iniciado sesión exitosamente", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(this, MainActivity.class));
+                        finish();
+                    },
+                    error -> Toast.makeText(this, "Error al iniciar sesión", Toast.LENGTH_SHORT).show()
+            ) {
+                @Override
+                public String getBodyContentType() {
+                    return "application/json; charset=utf-8";
                 }
-            }
-        };
+            };
 
-        queue.add(stringRequest);
-    }
-
-    public void guardarCorreo(String correo) {
-        SharedPreferences preferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("correo", correo);
-        editor.apply();
+            requestQueue.add(request);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 }

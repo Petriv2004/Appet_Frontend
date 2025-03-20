@@ -22,10 +22,9 @@ import org.json.JSONObject;
 
 public class PerfilUsuario extends AppCompatActivity {
 
-    private Spinner spinnerElegir;
     private TextView textCorreo, textNombre, textNumero, textDireccion, textGenero;
 
-    private static final String URL_OBTENER_PROPIETARIO = "http://192.168.0.17:8080/propietarios/obtener_propietario/";
+    private static final String URL_OBTENER_PROPIETARIO = "http://192.168.0.13:8080/propietarios/obtener_propietario/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,21 +36,19 @@ public class PerfilUsuario extends AppCompatActivity {
         textNumero = findViewById(R.id.textNumero);
         textDireccion = findViewById(R.id.textDireccion);
         textGenero = findViewById(R.id.textGenero);
-        spinnerElegir = findViewById(R.id.spinnerElegir);
 
         ArrayAdapter<CharSequence> spinnerelegir = ArrayAdapter.createFromResource(
                 this, R.array.perfil_mascota, android.R.layout.simple_spinner_item);
         spinnerelegir.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerElegir.setAdapter(spinnerelegir);
 
         obtenerDatosUsuario();
     }
-
     private void obtenerDatosUsuario() {
         SharedPreferences pref = getSharedPreferences("AppPreferences", MODE_PRIVATE);
-        String correo = pref.getString("correo", "");
+        String correo = pref.getString("correo", pref.getString("correoVet", ""));
+        String correoVet = pref.getString("correoVet", "");
 
-        if (correo.isEmpty()) {
+        if (correo.isEmpty() && correoVet.isEmpty()) {
             Toast.makeText(this, "No se encontró el correo guardado", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -82,19 +79,10 @@ public class PerfilUsuario extends AppCompatActivity {
 
         queue.add(jsonRequest);
     }
-
-    public void onClick(View view) {
-        if (spinnerElegir != null && spinnerElegir.getSelectedItem() != null) {
-            Intent intent;
-            if(spinnerElegir.getSelectedItem().toString().equals("Ir a Perfil de mis Mascotas")){
-                intent = new Intent(PerfilUsuario.this, PerfilMascota.class);
-            }else{
-                intent = new Intent(PerfilUsuario.this, PerfilAgenda.class);
-            }
-            startActivity(intent);
-        }
+    public void onClickIrPerfilMascota(View view) {
+        Intent intent = new Intent(PerfilUsuario.this, PerfilMascota.class);
+        startActivity(intent);
     }
-
     public void onClickCerrar(View view) {
         new AlertDialog.Builder(this)
                 .setTitle("Confirmación")
@@ -105,11 +93,11 @@ public class PerfilUsuario extends AppCompatActivity {
                 .setNegativeButton("Cancelar", null)
                 .show();
     }
-
     private void cerrarSesion() {
         SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("correo", null);
+        editor.putString("correoVet", null);
         editor.apply();
         Toast.makeText(this, "Sesión cerrada", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(PerfilUsuario.this, MainActivity.class);

@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Contenedor horizontal para imagen y perfil -->
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="wrap_content"
@@ -24,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp">
 
-        <!-- Imagen a la izquierda -->
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="296dp"
@@ -33,14 +32,13 @@
             android:scaleType="centerCrop"
             android:src="@drawable/appet" />
 
-        <!-- Contenedor Vertical para Botón + Texto -->
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal">
 
-            <!-- Botón PerfilUsuario -->
             <ImageButton
                 android:id="@+id/btnIrPerfil"
                 android:layout_width="wrap_content"
@@ -50,7 +48,7 @@
                 android:scaleType="centerCrop"
                 android:onClick="onClickIrPerfil"/>
 
-            <!-- Texto debajo del botón -->
+
             <TextView
                 android:id="@+id/txtVerPerfil"
                 android:layout_width="wrap_content"
@@ -84,6 +82,75 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/citas_mascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onClickIrAgenda"
+        android:text="Gestionar Citas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnIrLogin" />
+
+    <Button
+        android:id="@+id/ejercicios_mascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrEjercicios"
+        android:text="Gestionar Ejercicios"
+        app:layout_constraintTop_toBottomOf="@id/citas_mascota"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/perfil_mascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrPerfilMascota"
+        android:text="Perfil de Mascotas"
+        app:layout_constraintTop_toBottomOf="@id/ejercicios_mascota"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/ritmo_cardiaco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrRitmo"
+        android:text="Medir Ritmo Cardiaco"
+        app:layout_constraintTop_toBottomOf="@id/perfil_mascota"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/historial_mascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrHistorial"
+        android:text="Agregar Historial"
+        app:layout_constraintTop_toBottomOf="@id/ritmo_cardiaco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+
+    <Button
+        android:id="@+id/vincular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrVincular"
+        android:text="Vincular un Cuidador o Veterinario"
+        app:layout_constraintTop_toBottomOf="@id/historial_mascota"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

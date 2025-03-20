@@ -60,13 +60,22 @@ public class RegistroUsuario extends AppCompatActivity {
         EditText etNumeroCelular = findViewById(R.id.etNumeroCelular);
         EditText etDireccion = findViewById(R.id.etDireccion);
         RadioGroup rgGenero = findViewById(R.id.rgGenero);
+        RadioGroup rgRol = findViewById(R.id.rgRol);
 
-        String correo = etCorreo.getText().toString().trim();
+        String correo = etCorreo.getText().toString().trim().toLowerCase();
         String contrasena = etContrasena.getText().toString();
         String confirmarContrasena = etConfirmarContrasena.getText().toString();
         String nombre = etNombreCompleto.getText().toString().trim();
         String celular = etNumeroCelular.getText().toString().trim();
         String direccion = etDireccion.getText().toString().trim();
+
+        int rol = rgRol.getCheckedRadioButtonId();
+        if (rol == -1) {
+            Toast.makeText(this, "Selecciona un rol", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        RadioButton rbRol = findViewById(rol);
+        String Strol = rbRol.getText().toString();
 
         int generoSeleccionado = rgGenero.getCheckedRadioButtonId();
         if (generoSeleccionado == -1) {
@@ -80,7 +89,7 @@ public class RegistroUsuario extends AppCompatActivity {
             return;
         }
 
-        registrarUsuario(correo, contrasena, nombre, celular, direccion, genero);
+        registrarUsuario(correo, contrasena, nombre, celular, direccion, genero, Strol);
     }
 
     private boolean validarCampos(String correo, String contrasena, String confirmarContrasena, String nombre, String celular, String direccion) {
@@ -106,7 +115,7 @@ public class RegistroUsuario extends AppCompatActivity {
         return true;
     }
 
-    private void registrarUsuario(String correo, String contrasena, String nombre, String celular, String direccion, String genero) {
+    private void registrarUsuario(String correo, String contrasena, String nombre, String celular, String direccion, String genero, String rol) {
         JSONObject jsonBody = new JSONObject();
         try {
             jsonBody.put("nombre", nombre);
@@ -115,6 +124,7 @@ public class RegistroUsuario extends AppCompatActivity {
             jsonBody.put("contrasena", contrasena);
             jsonBody.put("direccion", direccion);
             jsonBody.put("genero", genero);
+            jsonBody.put("rol", rol);
         } catch (JSONException e) {
             e.printStackTrace();
         }

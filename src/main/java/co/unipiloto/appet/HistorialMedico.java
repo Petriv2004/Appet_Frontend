@@ -53,7 +53,7 @@ public class HistorialMedico extends AppCompatActivity {
     private LinearLayout layoutVacunas;
     private CheckBox[] checkBoxes;
     private Spinner spinnerSangre, spinnerMascotas;
-    private EditText editTextPeso, editTextEnfermedades, editTextMedicinas;
+    private EditText editTextPeso, editTextEnfermedades, editTextMedicinas, editTextCirugias;
     private RequestQueue requestQueue;
     private Bitmap imagenSeleccionada;
 
@@ -71,6 +71,7 @@ public class HistorialMedico extends AppCompatActivity {
         editTextPeso = findViewById(R.id.editTextPeso);
         editTextEnfermedades = findViewById(R.id.editTextEnfermedades);
         editTextMedicinas = findViewById(R.id.editTextMedicinas);
+        editTextCirugias = findViewById(R.id.editTextCirugias);
         requestQueue = Volley.newRequestQueue(this);
 
         btnCamera.setOnClickListener(v -> abrirCamara());
@@ -128,21 +129,34 @@ public class HistorialMedico extends AppCompatActivity {
     private void llenarSpinner() {
         SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);
         String correo = prefs.getString("correo", null);
+        String correoVet = prefs.getString("correoVet", null);
 
-        if (correo == null) {
-            Toast.makeText(this, "No se encontró el correo del propietario", Toast.LENGTH_SHORT).show();
+        if (correo == null && correoVet == null) {
+            Toast.makeText(this, "No se encontrÃ³ el correo del usuario", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        String url = "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;
+        String url;
+        boolean esVeterinario = correoVet != null;
+
+        if (esVeterinario) {
+            url = "http://192.168.0.13:8080/propietarios/mascotas-veterinario/" + correoVet;
+        } else {
+            url = "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;
+        }
 
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 response -> {
                     try {
-                        JSONObject propietario = new JSONObject(response);
-                        JSONArray mascotasList = propietario.getJSONArray("macotasList");
-
                         List<String> mascotas = new ArrayList<>();
+                        JSONArray mascotasList;
+
+                        if (esVeterinario) {
+                            mascotasList = new JSONArray(response);
+                        } else {
+                            JSONObject propietario = new JSONObject(response);
+                            mascotasList = propietario.getJSONArray("macotasList");
+                        }
 
                         for (int i = 0; i < mascotasList.length(); i++) {
                             JSONObject mascota = mascotasList.getJSONObject(i);
@@ -187,7 +201,7 @@ public class HistorialMedico extends AppCompatActivity {
                         int peso = historial.optInt("peso", 0);
                         String vacunas = historial.optString("vacunas", "");
                         String fotobase64 = historial.optString("foto", "");
-
+                        String cirugias = historial.optString("cirugias", "");
                         if  (!fotobase64.isEmpty()){
                             Bitmap decodedByte = decodificarBase64(fotobase64);
                             imageView.setImageBitmap(decodedByte);
@@ -198,6 +212,7 @@ public class HistorialMedico extends AppCompatActivity {
                         editTextEnfermedades.setText(enfermedades);
                         editTextMedicinas.setText(medicinas);
                         editTextPeso.setText(String.valueOf(peso));
+                        editTextCirugias.setText(cirugias);
                         for (int i = 0; i < checkBoxes.length; i++) {
                             checkBoxes[i].setChecked(vacunas.contains(checkBoxes[i].getText().toString()));
                         }
@@ -213,6 +228,7 @@ public class HistorialMedico extends AppCompatActivity {
                         editTextEnfermedades.setText("");
                         editTextMedicinas.setText("");
                         editTextPeso.setText(String.valueOf(""));
+                        editTextCirugias.setText("");
                         spinnerSangre.setSelection(0);
                         for (CheckBox checkBox : checkBoxes) {
                             checkBox.setChecked(false);
@@ -336,6 +352,7 @@ public class HistorialMedico extends AppCompatActivity {
         String medicinas = editTextMedicinas.getText().toString().trim();
         String sangre = spinnerSangre.getSelectedItem().toString();
         String pesoStr = editTextPeso.getText().toString().trim();
+        String cirugias = editTextCirugias.getText().toString().trim();
         if (pesoStr.isEmpty()) {
             Toast.makeText(this, "Ingrese el peso de la mascota", Toast.LENGTH_SHORT).show();
             return null;
@@ -372,6 +389,7 @@ public class HistorialMedico extends AppCompatActivity {
             jsonBody.put("sangre", sangre);
             jsonBody.put("peso", peso);
             jsonBody.put("foto", fotoBase64);
+            jsonBody.put("cirugias", cirugias);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -379,7 +397,7 @@ public class HistorialMedico extends AppCompatActivity {
     }
 
     private void redirigirPerfilUsuario() {
-        Intent intent = new Intent(this, PerfilUsuario.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }

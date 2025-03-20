@@ -45,6 +45,12 @@
         <activity android:name=".HistorialMedico" />
         <activity android:name=".PerfilUsuario" />
         <activity android:name=".PerfilMascota" />
+        <activity android:name=".Ejercicios" />
+        <activity android:name=".EliminarEjercicio" />
+        <activity android:name=".AgregarEjercicio" />
+        <activity android:name=".ActualizarEjercicio" />
+        <activity android:name=".RitmoCardiaco" />
+        <activity android:name=".Vincular" />
     </application>
 
 </manifest>

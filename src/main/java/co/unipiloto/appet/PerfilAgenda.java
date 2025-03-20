@@ -1,7 +1,9 @@
 package co.unipiloto.appet;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,7 +53,6 @@ public class PerfilAgenda extends AppCompatActivity {
             Toast.makeText(this, "Error: No se encontró el correo del usuario", Toast.LENGTH_SHORT).show();
         }
     }
-
     private void obtenerCitasPropietario(String correo) {
         String url = "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;
 
@@ -89,5 +90,9 @@ public class PerfilAgenda extends AppCompatActivity {
         );
 
         requestQueue.add(request);
+    }
+    public void onClickIrGestionAgenda(View view) {
+        Intent intent = new Intent(PerfilAgenda.this, RegistrarAgenda.class);
+        startActivity(intent);
     }
 }

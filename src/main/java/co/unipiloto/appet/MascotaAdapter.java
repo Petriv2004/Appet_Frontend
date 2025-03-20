@@ -39,6 +39,9 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         holder.textRazaMascota.setText("Raza: " + mascota.get("raza"));
         holder.textFechaNacimientoMascota.setText("Fecha Nacimiento: " + mascota.get("fecha_nacimiento"));
 
+
+        holder.textCirugiasMascota.setText("Cirugías: " + (mascota.containsKey("cirugias") ? mascota.get("cirugias") : "N/A"));
+        holder.textSexoMascota.setText("Sexo: " + (mascota.containsKey("sexo") ? mascota.get("sexo") : "N/A"));
         holder.textEnfermedadesMascota.setText("Enfermedades: " + (mascota.containsKey("enfermedades") ? mascota.get("enfermedades") : "N/A"));
         holder.textMedicinasMascota.setText("Medicinas: " + (mascota.containsKey("medicinas") ? mascota.get("medicinas") : "N/A"));
         holder.textSangreMascota.setText("Tipo de Sangre: " + (mascota.containsKey("sangre") ? mascota.get("sangre") : "N/A"));
@@ -62,7 +65,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
 
     static class MascotaViewHolder extends RecyclerView.ViewHolder {
         TextView textIdMascota, textNombreMascota, textTipoMascota, textRazaMascota, textFechaNacimientoMascota;
-        TextView textEnfermedadesMascota, textMedicinasMascota, textSangreMascota, textPesoMascota, textVacunasMascota;
+        TextView textEnfermedadesMascota, textMedicinasMascota, textSangreMascota, textPesoMascota, textVacunasMascota, textCirugiasMascota, textSexoMascota;
         ImageView imageViewMascota;
 
         public MascotaViewHolder(@NonNull View itemView) {
@@ -73,6 +76,8 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
             textRazaMascota = itemView.findViewById(R.id.textRazaMascota);
             textFechaNacimientoMascota = itemView.findViewById(R.id.textFechaNacimientoMascota);
 
+            textCirugiasMascota = itemView.findViewById(R.id.textCirugiasMascota);
+            textSexoMascota = itemView.findViewById(R.id.textSexoMascota);
             textEnfermedadesMascota = itemView.findViewById(R.id.textEnfermedadesMascota);
             textMedicinasMascota = itemView.findViewById(R.id.textMedicinasMascota);
             textSangreMascota = itemView.findViewById(R.id.textSangreMascota);

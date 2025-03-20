@@ -32,6 +32,13 @@
         android:textStyle="bold"/>
 
     <TextView
+        android:id="@+id/textSexoMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sexo: "
+        android:textSize="16sp"/>
+
+    <TextView
         android:id="@+id/textTipoMascota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -85,6 +92,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Vacunas: "
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textCirugiasMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cirugías: "
         android:textSize="16sp"/>
 
 </LinearLayout>
