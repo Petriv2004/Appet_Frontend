@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mis Ejercicios"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"/>
+
+    <RadioGroup
+        android:id="@+id/rgEspecie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/rbFelinoYCanino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Felino Y Canino"/>
+
+        <RadioButton
+            android:id="@+id/rbFelino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Felino"/>
+
+        <RadioButton
+            android:id="@+id/rbCanino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Canino"/>
+    </RadioGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewEjercicios"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/agregarEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickAgregarEjercicio"
+        android:text="Agregar Ejercicio"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:id="@+id/actualizarEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onClickActualizarEjercicio"
+        android:text="Actualizar Ejercicio"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:id="@+id/eliminarEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onClickEliminarEjercicio"
+        android:text="Eliminar Ejercicio"
+        style="@style/BorderButton"/>
+
+
+</LinearLayout>

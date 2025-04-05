@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+
+        android:layout_marginTop="20dp">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="296dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/appet" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <ImageButton
+                android:id="@+id/btnIrPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:background="@mipmap/ic_launcher"
+                android:scaleType="centerCrop"
+                android:onClick="onClickIrPerfil"/>
+
+
+            <TextView
+                android:id="@+id/txtVerPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tú Perfil"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrRegistrar"
+        android:text="Registrarse"
+
+        android:layout_marginTop="20dp"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:id="@+id/btnIrLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrLogIn"
+        android:text="Iniciar Sesión"
+
+        android:layout_marginTop="20dp"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:id="@+id/citas_mascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onClickIrAgenda"
+        android:text="Gestionar Citas"
+
+        app:layout_constraintTop_toBottomOf="@id/btnIrLogin"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:id="@+id/ejercicios_mascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrEjercicios"
+        android:text="Gestionar Ejercicios"
+
+        android:layout_marginTop="20dp"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:id="@+id/perfil_mascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrPerfilMascota"
+        android:text="Perfil de Mascotas"
+
+        android:layout_marginTop="20dp"
+        style="@style/BorderButton"/>
+
+        <Button
+            android:id="@+id/ritmo_cardiaco_grafica"
+            style="@style/BorderButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="onClickIrRitmoGrafica"
+            android:text="Ritmo Cardiaco por Fecha" />
+
+        <Button
+        android:id="@+id/ritmo_cardiaco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrRitmo"
+        android:text="Medir Ritmo Cardiaco"
+
+        android:layout_marginTop="20dp"
+        style="@style/BorderButton"/>
+
+        <Button
+        android:id="@+id/historial_mascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrHistorial"
+        android:text="Agregar Historial"
+
+        android:layout_marginTop="20dp"
+        style="@style/BorderButton"/>
+
+
+    <Button
+        android:id="@+id/vincular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrVincular"
+        android:text="Vincular un Cuidador o Veterinario"
+
+        android:layout_marginTop="20dp"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:id="@+id/btnIrRecorridoFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickIrRecorridoFecha"
+        android:text="Ver Recorrido por Fecha"
+
+        android:layout_marginTop="20dp"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:id="@+id/btnHacerRecorrido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickHacerRecorrido"
+        android:text="Hacer Recorrido"
+
+        android:layout_marginTop="20dp"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:id="@+id/btnUbicacionActual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickUbicacionActual"
+        android:text="Ver Ubicacion Actual"
+
+        android:layout_marginTop="20dp"
+        style="@style/BorderButton"
+        />
+
+    </LinearLayout>
+
+</ScrollView>

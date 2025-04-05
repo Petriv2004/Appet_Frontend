@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_margin="8dp"
+    android:background="@android:color/darker_gray">
+
+    <ImageView
+        android:id="@+id/imageViewMascota"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/textIdMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID: "
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textNombreMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre: "
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textSexoMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sexo: "
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textTipoMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo: "
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textRazaMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Raza: "
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textFechaNacimientoMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha Nacimiento: "
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textEnfermedadesMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enfermedades: "
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textMedicinasMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medicinas: "
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textSangreMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de Sangre: "
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textPesoMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Peso: "
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textVacunasMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vacunas: "
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textCirugiasMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cirugías: "
+        android:textSize="16sp"/>
+
+</LinearLayout>

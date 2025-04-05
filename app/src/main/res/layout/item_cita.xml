@@ -1,0 +1,61 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:background="@android:color/darker_gray"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/textIdCita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID Cita: "
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textNombreMascota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mascota: "
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha: "
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/textHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hora: "
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/textRazon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Razón: "
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/textDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descripción: "
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+</LinearLayout>
