@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,16 @@ public class PerfilUsuario extends AppCompatActivity {
         spinnerelegir.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         obtenerDatosUsuario();
+
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Perfil");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(PerfilUsuario.this, MainActivity.class);
+            startActivity(intent);
+        });
     }
     private void obtenerDatosUsuario() {
         SharedPreferences pref = getSharedPreferences("AppPreferences", MODE_PRIVATE);

@@ -1,29 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
-    <LinearLayout
-        android:id="@+id/main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Registro de recorrido"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+    <include layout="@layout/toolbar"/>
 
         <Spinner
             android:id="@+id/spinnerMascotas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:textAlignment="center" />
 
         <LinearLayout
@@ -74,6 +66,5 @@
             android:text="Enviar Reporte"
             android:onClick="onClickReporte" />
 
-    </LinearLayout>
-
+</LinearLayout>
 </ScrollView>

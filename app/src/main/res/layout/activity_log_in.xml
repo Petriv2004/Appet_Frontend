@@ -14,18 +14,7 @@
         android:orientation="vertical"
         tools:context=".LogIn">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Esta en la ventana del Log In"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <include layout="@layout/toolbar" />
 
         <ImageButton
             android:id="@+id/btnIrPerfil"

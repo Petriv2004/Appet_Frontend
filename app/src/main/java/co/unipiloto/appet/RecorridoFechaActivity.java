@@ -3,6 +3,7 @@ package co.unipiloto.appet;
 import androidx.fragment.app.FragmentActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,7 +12,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -68,6 +71,16 @@ public class RecorridoFechaActivity extends FragmentActivity implements OnMapRea
         button = findViewById(R.id.btn);
         button.setOnClickListener(v -> onClickRecorrido());
         requestQueue = Volley.newRequestQueue(this);
+
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Recorrido por Fecha");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(RecorridoFechaActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
 
         llenarSpinner();
 

@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -49,6 +51,17 @@ public class PerfilMascota extends AppCompatActivity {
         registrarMascotas = findViewById(R.id.registrarMascotas);
         historial_mascota = findViewById(R.id.historial_mascota);
         citas_mascota = findViewById(R.id.citas_mascota);
+
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Perfil de Mascotas");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(PerfilMascota.this, MainActivity.class);
+            startActivity(intent);
+        });
+
         requestQueue = Volley.newRequestQueue(this);
 
         mostrarBotones();

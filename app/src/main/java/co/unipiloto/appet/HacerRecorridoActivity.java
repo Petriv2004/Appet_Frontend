@@ -95,6 +95,16 @@ public class HacerRecorridoActivity extends AppCompatActivity {
                 .load("https://cdn.pixabay.com/animation/2023/04/06/16/10/16-10-43-442_512.gif")
                 .into(gifImageView);
 
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Registro de recorrido");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(HacerRecorridoActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
         llenarSpinner();
 
         spinnerMascotas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

@@ -25,14 +25,13 @@
         android:layout_height="wrap_content"
         android:text="Agregar o Eliminar Cita"
         android:onClick="onClickIrGestionAgenda"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        style="@style/BorderButton"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCitas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
-
 
 
 </LinearLayout>

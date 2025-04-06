@@ -7,8 +7,10 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -49,6 +51,16 @@ public class RegistroUsuario extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Registrate");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(RegistroUsuario.this, MainActivity.class);
+            startActivity(intent);
         });
     }
 
