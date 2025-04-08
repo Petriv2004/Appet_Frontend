@@ -22,17 +22,18 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-
         android:layout_marginTop="20dp">
 
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="296dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="16dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/appet" />
+        <TextView
+            android:id="@+id/txtAppet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="APPET"
+            android:textSize="80dp"
+            android:textStyle="bold"
+            android:paddingRight="20dp"
+            android:fontFamily="sans-serif-condensed"/>
 
 
         <LinearLayout
@@ -55,7 +56,7 @@
                 android:id="@+id/txtVerPerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tú Perfil"
+                android:text="Tu Perfil"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="4dp"/>
@@ -65,27 +66,28 @@
 
     <Button
         android:id="@+id/btnRegistrar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:onClick="onClickIrRegistrar"
         android:text="Registrarse"
-
         android:layout_marginTop="20dp"
         style="@style/BorderButton"/>
 
     <Button
         android:id="@+id/btnIrLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:onClick="onClickIrLogIn"
         android:text="Iniciar Sesión"
-
         android:layout_marginTop="20dp"
         style="@style/BorderButton"/>
 
     <Button
         android:id="@+id/citas_mascota"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:onClick="onClickIrAgenda"
@@ -96,7 +98,8 @@
 
     <Button
         android:id="@+id/ejercicios_mascota"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:onClick="onClickIrEjercicios"
         android:text="Gestionar Ejercicios"
@@ -106,7 +109,8 @@
 
     <Button
         android:id="@+id/perfil_mascota"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:onClick="onClickIrPerfilMascota"
         android:text="Perfil de Mascotas"
@@ -117,7 +121,8 @@
         <Button
             android:id="@+id/ritmo_cardiaco_grafica"
             style="@style/BorderButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="70dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:onClick="onClickIrRitmoGrafica"
@@ -125,7 +130,8 @@
 
         <Button
         android:id="@+id/ritmo_cardiaco"
-        android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:onClick="onClickIrRitmo"
         android:text="Medir Ritmo Cardiaco"
@@ -135,7 +141,8 @@
 
         <Button
         android:id="@+id/historial_mascota"
-        android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:onClick="onClickIrHistorial"
         android:text="Agregar Historial"
@@ -146,7 +153,8 @@
 
     <Button
         android:id="@+id/vincular"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:onClick="onClickIrVincular"
         android:text="Vincular un Cuidador o Veterinario"
@@ -156,7 +164,8 @@
 
     <Button
         android:id="@+id/btnIrRecorridoFecha"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:onClick="onClickIrRecorridoFecha"
         android:text="Ver Recorrido por Fecha"
@@ -166,7 +175,8 @@
 
     <Button
         android:id="@+id/btnHacerRecorrido"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:onClick="onClickHacerRecorrido"
         android:text="Hacer Recorrido"
@@ -176,7 +186,8 @@
 
     <Button
         android:id="@+id/btnUbicacionActual"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:onClick="onClickUbicacionActual"
         android:text="Ver Ubicacion Actual"

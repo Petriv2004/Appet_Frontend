@@ -18,6 +18,7 @@
     <TextView
         android:id="@+id/textNombre"
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Nombre:"
@@ -29,6 +30,7 @@
     <TextView
         android:id="@+id/textCorreo"
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Correo:"
@@ -39,6 +41,7 @@
     <TextView
         android:id="@+id/textNumero"
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Número de celular:"
@@ -50,6 +53,7 @@
     <TextView
         android:id="@+id/textDireccion"
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Dirección:"
@@ -61,6 +65,7 @@
     <TextView
         android:id="@+id/textGenero"
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Género:"
@@ -71,6 +76,7 @@
 
     <TextView
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Elige una opción"
@@ -79,7 +85,8 @@
         android:textStyle="bold"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Perfil de Mascotas"
@@ -87,7 +94,8 @@
         style="@style/BorderButton"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Cerrar Sesión"

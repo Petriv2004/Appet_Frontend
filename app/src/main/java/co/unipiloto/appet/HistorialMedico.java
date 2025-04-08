@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -94,6 +95,16 @@ public class HistorialMedico extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSangre.setAdapter(adapter);
 
+
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Agrega el Historial Médico");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(HistorialMedico.this, MainActivity.class);
+            startActivity(intent);
+        });
 
         llenarSpinner();
 

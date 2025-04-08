@@ -2,6 +2,7 @@ package co.unipiloto.appet;
 
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,7 +11,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -70,6 +73,16 @@ public class RitmoCardiacoFecha extends AppCompatActivity {
         ritmos = new ArrayList<>();
         etFecha.setOnClickListener(v -> showDatePicker());
         llenarSpinner();
+
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Ritmo Cardiaco por Fecha");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(RitmoCardiacoFecha.this, MainActivity.class);
+            startActivity(intent);
+        });
 
     }
 

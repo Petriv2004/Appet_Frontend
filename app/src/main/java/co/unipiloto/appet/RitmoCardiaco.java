@@ -68,6 +68,16 @@ public class RitmoCardiaco extends AppCompatActivity {
         handler = new Handler();
         mediciones = new ArrayList<>();
 
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Ritmo Cardiaco");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(RitmoCardiaco.this, MainActivity.class);
+            startActivity(intent);
+        });
+
         llenarSpinner();
 
         spinnerMascotas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

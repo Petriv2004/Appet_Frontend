@@ -15,18 +15,12 @@
         android:gravity="center_horizontal"
         tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Ritmo Cardiaco"
-            android:textSize="24sp"
-            android:textStyle="bold"/>
+        <include layout="@layout/toolbar" />
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
             android:layout_height="wrap_content"
             android:hint="Mascota"
             android:textSize="16sp"
@@ -34,6 +28,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
             android:layout_height="wrap_content"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -52,6 +47,7 @@
 
         <Button
             android:id="@+id/btn"
+            android:layout_marginHorizontal="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ver ritmo"

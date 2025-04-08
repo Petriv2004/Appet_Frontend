@@ -15,6 +15,7 @@
     <Button
         android:id="@+id/registrarMascotas"
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:onClick="onClickAgregarMascota"
         android:text="Registrar Mascota"
@@ -23,6 +24,7 @@
     <Button
         android:id="@+id/historial_mascota"
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:onClick="onClickIrHistorial"
@@ -32,10 +34,12 @@
     <Button
         android:id="@+id/citas_mascota"
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:onClick="onClickIrAgenda"
         android:text="Gestionar Citas"
-        style="@style/BorderButton"/>/>
+        style="@style/BorderButton"
+        android:layout_marginBottom="20dp"/>
 
 </LinearLayout>

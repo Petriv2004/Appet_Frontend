@@ -4,11 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
+
+
     <LinearLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+
 
         <TextView
             android:layout_width="match_parent"
@@ -64,6 +78,7 @@
         <Button
             android:id="@+id/buttonEmpezarMedicion"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="40dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Empezar medición"
@@ -72,6 +87,7 @@
 
         <Button
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="40dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Parar medición"
@@ -80,11 +96,13 @@
 
         <Button
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="40dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Enviar Reporte"
             android:onClick="onClickReporte"
             style="@style/BorderButton"/>
+    </LinearLayout>
 
     </LinearLayout>
 
