@@ -123,4 +123,21 @@ public class PerfilUsuario extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onClickActualizar(View view) {
+        Intent intent = new Intent(PerfilUsuario.this, ActualizarPerfil.class);
+        startActivity(intent);
+    }
+    public void onClickEliminar(View view) {
+        new AlertDialog.Builder(this)
+                .setTitle("Confirmación")
+                .setMessage("¿Está seguro de que desea eliminar su cuenta? \nEsta " +
+                        "acción no se puede deshacer y se perderan todos sus datos.")
+                .setPositiveButton("Sí", (dialog, which) -> {
+                    Intent intent = new Intent(PerfilUsuario.this, MainActivity.class);
+                    startActivity(intent);
+                })
+                .setNegativeButton("Cancelar", null)
+                .show();
+    }
+
 }

@@ -195,4 +195,9 @@ public class PerfilMascota extends AppCompatActivity {
         Intent intent = new Intent(PerfilMascota.this, RegistroMascota.class);
         startActivity(intent);
     }
+
+    public void onClickIrEliminarMascota(View view){
+        Intent intent = new Intent(PerfilMascota.this, EliminarMascota.class);
+        startActivity(intent);
+    }
 }
