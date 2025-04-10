@@ -163,7 +163,8 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:onClick="onClickRegistrarMascota"
-            android:text="Registrar" />
+            android:text="Registrar"
+            style="@style/BorderButton"/>
 
     </LinearLayout>
 

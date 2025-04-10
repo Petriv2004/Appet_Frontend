@@ -20,6 +20,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical">
@@ -46,25 +47,31 @@
         <Button
             android:id="@+id/buttonEmpezarMedicion"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="80dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Empezar recorrido"
-            android:onClick="onClickEmpezarMedicion" />
+            android:onClick="onClickEmpezarMedicion"
+            style = "@style/BorderButton"/>
 
         <Button
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="80dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Parar recorrido"
-            android:onClick="onClickPararMedicion" />
+            android:onClick="onClickPararMedicion"
+            style = "@style/BorderButton"/>
 
         <Button
             android:id="@+id/buttonReporte"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="80dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Enviar Reporte"
-            android:onClick="onClickReporte" />
+            android:onClick="onClickReporte"
+            style = "@style/BorderButton"/>
 
 </LinearLayout>
 </ScrollView>

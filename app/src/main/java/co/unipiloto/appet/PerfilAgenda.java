@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,6 +54,16 @@ public class PerfilAgenda extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Error: No se encontró el correo del usuario", Toast.LENGTH_SHORT).show();
         }
+
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Tus citas");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(PerfilAgenda.this, MainActivity.class);
+            startActivity(intent);
+        });
     }
     private void obtenerCitasPropietario(String correo) {
         String url = "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;

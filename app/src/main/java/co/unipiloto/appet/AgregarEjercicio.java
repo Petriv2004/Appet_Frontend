@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -67,6 +68,16 @@ public class AgregarEjercicio extends AppCompatActivity {
         btnGallery.setOnClickListener(v -> abrirGaleria());
 
         requestQueue = Volley.newRequestQueue(this);
+
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Agrega un Ejercicio");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(AgregarEjercicio.this, MainActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void abrirCamara() {

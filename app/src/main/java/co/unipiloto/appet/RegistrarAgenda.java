@@ -9,7 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -35,6 +37,8 @@ public class RegistrarAgenda extends AppCompatActivity {
     private Spinner etIdMascota, etAgenda;
     private RequestQueue requestQueue;
 
+    private boolean isRequestInProgress = false;
+
     private static final String URL_REGISTRAR_AGENDA = "http://192.168.0.13:8080/agenda/registrar/";
 
     @Override
@@ -54,6 +58,16 @@ public class RegistrarAgenda extends AppCompatActivity {
         etHora.setOnClickListener(v -> mostrarTimePicker());
 
         llenarSpinner();
+
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Agenda tus citas");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(RegistrarAgenda.this, MainActivity.class);
+            startActivity(intent);
+        });
     }
     private void mostrarDatePicker() {
         Calendar calendario = Calendar.getInstance();
@@ -137,6 +151,10 @@ public class RegistrarAgenda extends AppCompatActivity {
         requestQueue.add(request);
     }
     public void onClickGuardarAgenda(View view) {
+        if (isRequestInProgress) {
+            return;
+        }
+        isRequestInProgress = true;
         SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);
         String correo = prefs.getString("correo", null);
 
@@ -159,13 +177,17 @@ public class RegistrarAgenda extends AppCompatActivity {
             return;
         }
 
+        JSONObject jsonBody = new JSONObject();
         try {
-            JSONObject jsonBody = new JSONObject();
             jsonBody.put("fecha", fecha);
             jsonBody.put("hora", hora);
             jsonBody.put("razon", razon);
             jsonBody.put("descripcion", descripcion);
             jsonBody.put("estado", false);
+
+        } catch (JSONException e) {
+            Toast.makeText(this, "Error al crear la solicitud", Toast.LENGTH_SHORT).show();
+        }
 
             String url = URL_REGISTRAR_AGENDA + correo + "/" + idMascota;
 
@@ -191,9 +213,6 @@ public class RegistrarAgenda extends AppCompatActivity {
 
             requestQueue.add(stringRequest);
 
-        } catch (JSONException e) {
-            Toast.makeText(this, "Error al crear la solicitud", Toast.LENGTH_SHORT).show();
-        }
     }
     public void onClickEliminarCita(View view) {
         SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);

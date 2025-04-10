@@ -139,6 +139,9 @@ public class HacerRecorridoActivity extends AppCompatActivity {
     }
 
     private void obtenerUbicacionYMostrarFecha() {
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
         fusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
             @Override
             public void onSuccess(Location location) {
@@ -153,7 +156,7 @@ public class HacerRecorridoActivity extends AppCompatActivity {
                         jsonObject.put("longitud", longitud);
                         jsonObject.put("rango", "Permitido");
                         jsonObject.put("fecha", fechaActual);
-                        Toast.makeText(HacerRecorridoActivity.this, "Medición terminada" + fechaActual, Toast.LENGTH_SHORT).show();
+                        textViewPosicion.setText("Midiendo ... \nLatitud:" + latitud + "\nLongitud:" + longitud );
                     } catch (Exception e) {
                         Toast.makeText(HacerRecorridoActivity.this, "Error al procesar JSON", Toast.LENGTH_SHORT).show();
                     }
@@ -175,57 +178,6 @@ public class HacerRecorridoActivity extends AppCompatActivity {
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
-
-    private ArrayList<Recorrido> recorridosPredeterminados(int num){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        String fechaActual = sdf.format(new java.util.Date());
-        switch (num){
-            case 1:
-                recorrido.add(new Recorrido("4.509754608609679", "-74.11271135560108", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.51143381884588", "-74.1124538635408", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.511391036467671", "-74.11414901960435", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.510770691700534", "-74.11413829076852", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.5106690912113345", "-74.11462233699919", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.509754608609679", "-74.11271135560108", "Permitido", fechaActual));
-                break;
-            case 2:
-                recorrido.add(new Recorrido("4.677500", "-74.048280", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.677500", "-74.048280", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.674500", "-74.042600", "No Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.675800", "-74.046500", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.677500", "-74.048280", "Permitido", fechaActual));
-                break;
-            case 3:
-                recorrido.add(new Recorrido("4.664800", "-74.093300", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.664800", "-74.093300", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.669000", "-74.101000", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.671500", "-74.105500", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.670300", "-74.111500", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.665200", "-74.108600", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.664800", "-74.093300", "Permitido", fechaActual));
-                break;
-            case 4:
-                recorrido.add(new Recorrido("4.633200", "-74.065600", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.633200", "-74.065600", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.636700", "-74.065600", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.636100", "-74.060800", "No Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.632000", "-74.061700", "No Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.629600", "-74.065300", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.633200", "-74.065600", "Permitido", fechaActual));
-                break;
-            case 5:
-                recorrido.add(new Recorrido("4.659600", "-74.125500", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.659600", "-74.125500", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.655700", "-74.121800", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.650900", "-74.126300", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.648000", "-74.134300", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.656400", "-74.138300", "Permitido", fechaActual));
-                recorrido.add(new Recorrido("4.659600", "-74.125500", "Permitido", fechaActual));
-                break;
-        }
-        return recorrido;
-    }
-
     public void onClickEmpezarMedicion(View view) {
         recorrido.clear();
         recorriendo = true;
@@ -234,6 +186,17 @@ public class HacerRecorridoActivity extends AppCompatActivity {
     }
 
     private void hacerFetch(){
+        try{
+            if (jsonObject.equals(null)){
+                obtenerUbicacionYMostrarFecha();
+                return;
+            }
+        }catch(Exception e){
+            Toast.makeText(this, "Iniciando el JSON", Toast.LENGTH_SHORT).show();
+            obtenerUbicacionYMostrarFecha();
+
+        }
+
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     this,
@@ -242,7 +205,6 @@ public class HacerRecorridoActivity extends AppCompatActivity {
             );
         } else {
             obtenerUbicacionYMostrarFecha();
-
             textViewPosicion.setText("Terminando medición...");
             String[] mascotaData = spinnerMascotas.getSelectedItem().toString().split("-");
             int idMascota = Integer.parseInt(mascotaData[0]);
@@ -263,7 +225,8 @@ public class HacerRecorridoActivity extends AppCompatActivity {
                             }
                         }
                         Log.e("Volley", "Error al enviar el recorrido: " + error.getMessage());
-                        Toast.makeText(this, "Error al enviar el recorrido", Toast.LENGTH_SHORT).show();
+
+                        //Toast.makeText(this, "Error al enviar el recorrido", Toast.LENGTH_SHORT).show();
                     }
             ) {
                 @Override

@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -39,6 +41,16 @@ public class EliminarEjercicio extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
 
         llenarSpinner();
+
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Elimina un Ejercicio");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(EliminarEjercicio.this, MainActivity.class);
+            startActivity(intent);
+        });
     }
 
     public void onClickEliminarEjercicio(View view) {

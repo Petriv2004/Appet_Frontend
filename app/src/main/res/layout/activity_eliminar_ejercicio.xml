@@ -3,26 +3,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Elimina un ejercicio"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+    <include layout="@layout/toolbar"/>
+
     <Spinner
         android:id="@+id/spinnerEjercicio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Intensidad"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:layout_marginBottom="10dp"/>
 
     <Button
         android:id="@+id/eliminarEjercicio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClickEliminarEjercicio"
-        android:text="Eliminar Ejercicio"/>
+        android:text="Eliminar Ejercicio"
+        style="@style/BorderButton"/>
 </LinearLayout>

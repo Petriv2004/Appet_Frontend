@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -90,6 +91,15 @@ public class ActualizarEjercicio extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
                 Toast.makeText(ActualizarEjercicio.this, "Seleccione una mascota", Toast.LENGTH_SHORT).show();
             }
+        });
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Actualiza un Ejercicio");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(ActualizarEjercicio.this, MainActivity.class);
+            startActivity(intent);
         });
     }
 

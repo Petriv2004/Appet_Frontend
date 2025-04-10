@@ -11,15 +11,7 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Agrega un ejercicio"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+        <include layout="@layout/toolbar"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,10 +35,11 @@
 
                 <Button
                     android:id="@+id/btnCamera"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="onClickTomarFoto"
-                    android:text="Tomar Foto"/>
+                    android:text="Tomar Foto"
+                    style="@style/BorderButton"/>
 
                 <Button
                     android:id="@+id/btnGallery"
@@ -54,7 +47,8 @@
                     android:layout_height="wrap_content"
                     android:onClick="onclickAbrirGaleria"
                     android:text="Elegir de Galería"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="8dp"
+                    style="@style/BorderButton"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -128,7 +122,8 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:onClick="onClickRegistrarEjercicio"
-            android:text="Registrar" />
+            android:text="Registrar"
+            style="@style/BorderButton"/>
 
     </LinearLayout>
 

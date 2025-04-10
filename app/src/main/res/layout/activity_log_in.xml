@@ -27,6 +27,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
             android:layout_height="wrap_content"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -45,8 +46,9 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             app:endIconMode="password_toggle"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/purple"
@@ -65,10 +67,11 @@
         <Button
             android:id="@+id/btnLogIn"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="80dp"
             android:layout_height="wrap_content"
             android:text="Iniciar Sesión"
             android:onClick="onClickLogIn"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             style="@style/BorderButton" />
     </LinearLayout>
 </ScrollView>

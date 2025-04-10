@@ -12,19 +12,8 @@
     android:layout_height="match_parent"
     tools:context=".RegistrarAgenda">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="Guarde las citas de tus mascotas"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
 
     <TextView
         android:id="@+id/idmascota"
@@ -34,7 +23,7 @@
         android:layout_marginTop="29dp"
         android:text="Id Mascota:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/fecha"
@@ -149,7 +138,8 @@
         android:text="Guardar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descripcionHint" />
+        app:layout_constraintTop_toBottomOf="@+id/descripcionHint"
+        android:background="@drawable/border_white"/>
 
     <TextView
         android:id="@+id/titleEliminar"
@@ -163,19 +153,21 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guardarAgenda" />
+        app:layout_constraintTop_toBottomOf="@+id/guardarAgenda"/>
 
     <Button
         android:id="@+id/eliminarCita"
-        android:layout_width="121dp"
-        android:layout_height="62dp"
+        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:onClick="onClickEliminarCita"
         android:text="Eliminar Cita"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Eliminarspinner" />
+        app:layout_constraintTop_toBottomOf="@+id/Eliminarspinner"
+        android:background="@drawable/border_white"/>
 
     <Spinner
         android:id="@+id/Idspinner"
@@ -187,7 +179,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/idmascota"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <Spinner
         android:id="@+id/Eliminarspinner"

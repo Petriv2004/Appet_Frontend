@@ -41,6 +41,7 @@
         <Button
             android:id="@+id/agregarEjercicio"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="100dp"
             android:layout_height="wrap_content"
             android:onClick="onClickAgregarEjercicio"
             android:text="Agregar Ejercicio"
@@ -49,6 +50,7 @@
         <Button
             android:id="@+id/actualizarEjercicio"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="100dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:onClick="onClickActualizarEjercicio"
@@ -58,10 +60,12 @@
         <Button
             android:id="@+id/eliminarEjercicio"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="100dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:onClick="onClickEliminarEjercicio"
             android:text="Eliminar Ejercicio"
-            style="@style/BorderButton"/>
+            style="@style/BorderButton"
+            android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
