@@ -107,6 +107,15 @@
         android:layout_marginHorizontal="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:text="Actualizar Contrasena"
+        android:onClick="onClickActualizarContrasena"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Cerrar Sesión"
         android:onClick="onClickCerrar"
         style="@style/BorderButton"/>
@@ -119,6 +128,8 @@
         android:text="Eliminar Cuenta"
         android:onClick="onClickEliminar"
         style="@style/BorderButton"/>
+
+
 </LinearLayout>
 
 </ScrollView>

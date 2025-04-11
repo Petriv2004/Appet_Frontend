@@ -123,5 +123,9 @@ public class LogIn extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    public void onClickIrCambiarContrasena(View view){
+        Intent intent = new Intent(LogIn.this, CambiarContrasenaActivity.class);
+        startActivity(intent);
+    }
 
 }

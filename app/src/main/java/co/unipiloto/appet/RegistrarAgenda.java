@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -33,9 +34,13 @@ import java.util.List;
 
 public class RegistrarAgenda extends AppCompatActivity {
 
-    private EditText etFecha, etHora, etRazon, etDescripcion;
+    private EditText etFecha, etHora,  etDescripcion;
     private Spinner etIdMascota, etAgenda;
+
+    private Spinner spinnerRazon;
     private RequestQueue requestQueue;
+
+    private Button guardarAgenda, eliminarCita;
 
     private boolean isRequestInProgress = false;
 
@@ -46,10 +51,17 @@ public class RegistrarAgenda extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_agenda);
 
+        spinnerRazon = findViewById(R.id.razonHint);
+
+        String[] opciones = {"Veterinario", "Peluqueria", "Vacunacion", "Otro"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, opciones);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        guardarAgenda = findViewById(R.id.guardarAgenda);
+        eliminarCita = findViewById(R.id.eliminarCita);
+        spinnerRazon.setAdapter(adapter);
         etIdMascota = findViewById(R.id.Idspinner);
         etFecha = findViewById(R.id.fechaHint);
         etHora = findViewById(R.id.horaHint);
-        etRazon = findViewById(R.id.razonHint);
         etDescripcion = findViewById(R.id.descripcionHint);
         etAgenda = findViewById(R.id.Eliminarspinner);
         requestQueue = Volley.newRequestQueue(this);
@@ -90,7 +102,7 @@ public class RegistrarAgenda extends AppCompatActivity {
         int minuto = calendario.get(Calendar.MINUTE);
 
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, (view, hourOfDay, minute) -> {
-            String horaSeleccionada = String.format("%02d:%02d:%02d", hourOfDay, minute, 0); // Siempre segundos en 00
+            String horaSeleccionada = String.format("%02d:%02d:%02d", hourOfDay, minute, 0);
             etHora.setText(horaSeleccionada);
         }, hora, minuto, true);
 
@@ -151,29 +163,33 @@ public class RegistrarAgenda extends AppCompatActivity {
         requestQueue.add(request);
     }
     public void onClickGuardarAgenda(View view) {
-        if (isRequestInProgress) {
-            return;
-        }
+        if (isRequestInProgress) return;
+
         isRequestInProgress = true;
+        guardarAgenda.setClickable(false);
+
         SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);
         String correo = prefs.getString("correo", null);
 
         if (correo == null) {
-            Toast.makeText(this, "No se encontró el correo del propietario", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No se encontró el correo del propietario", Toast.LENGTH_SHORT).show();
+            guardarAgenda.setClickable(true);
+            isRequestInProgress = false;
             return;
         }
 
         String opcidMascota = String.valueOf(etIdMascota.getSelectedItem());
-        String sel [] = opcidMascota.split("-");
-
+        String[] sel = opcidMascota.split("-");
         String idMascota = sel[0];
         String fecha = etFecha.getText().toString().trim();
         String hora = etHora.getText().toString().trim();
-        String razon = etRazon.getText().toString().trim();
+        String razon = spinnerRazon.getSelectedItem().toString().trim();
         String descripcion = etDescripcion.getText().toString().trim();
 
         if (idMascota.isEmpty() || fecha.isEmpty() || hora.isEmpty() || razon.isEmpty() || descripcion.isEmpty()) {
             Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+            guardarAgenda.setClickable(true);
+            isRequestInProgress = false;
             return;
         }
 
@@ -184,37 +200,44 @@ public class RegistrarAgenda extends AppCompatActivity {
             jsonBody.put("razon", razon);
             jsonBody.put("descripcion", descripcion);
             jsonBody.put("estado", false);
-
         } catch (JSONException e) {
             Toast.makeText(this, "Error al crear la solicitud", Toast.LENGTH_SHORT).show();
+            guardarAgenda.setClickable(true);
+            isRequestInProgress = false;
+            return;
         }
 
-            String url = URL_REGISTRAR_AGENDA + correo + "/" + idMascota;
+        String url = URL_REGISTRAR_AGENDA + correo + "/" + idMascota;
 
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                    response -> {
-                        Toast.makeText(RegistrarAgenda.this, "Agenda registrada correctamente", Toast.LENGTH_SHORT).show();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                response -> {
+                    isRequestInProgress = false;
+                    Toast.makeText(RegistrarAgenda.this, "Agenda registrada correctamente", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(RegistrarAgenda.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                },
+                error -> {
+                    Toast.makeText(RegistrarAgenda.this, "Error al registrar agenda", Toast.LENGTH_SHORT).show();
+                    guardarAgenda.setClickable(true);
+                    isRequestInProgress = false;
+                }) {
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
 
-                        Intent intent = new Intent(RegistrarAgenda.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    },
-                    error -> Toast.makeText(RegistrarAgenda.this, "Error al registrar agenda", Toast.LENGTH_SHORT).show()) {
-                @Override
-                public String getBodyContentType() {
-                    return "application/json; charset=utf-8";
-                }
+            @Override
+            public byte[] getBody() {
+                return jsonBody.toString().getBytes();
+            }
+        };
 
-                @Override
-                public byte[] getBody() {
-                    return jsonBody.toString().getBytes();
-                }
-            };
-
-            requestQueue.add(stringRequest);
-
+        requestQueue.add(stringRequest);
     }
+
     public void onClickEliminarCita(View view) {
+        eliminarCita.setClickable(false);
         SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);
         String correo = prefs.getString("correo", null);
 
@@ -240,13 +263,19 @@ public class RegistrarAgenda extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             },
-                            error -> Toast.makeText(RegistrarAgenda.this, "Error al eliminar la cita", Toast.LENGTH_SHORT).show()
+                            error -> {
+                                Toast.makeText(RegistrarAgenda.this, "Error al eliminar la cita", Toast.LENGTH_SHORT).show();
+                                eliminarCita.setClickable(true);
+                            }
                     );
-
                     requestQueue.add(request);
                 })
-                .setNegativeButton("Cancelar", null)
+                .setNegativeButton("Cancelar", (dialog, which) -> {
+                    eliminarCita.setClickable(true);
+                    dialog.dismiss();
+                })
                 .show();
+
 
 
     }

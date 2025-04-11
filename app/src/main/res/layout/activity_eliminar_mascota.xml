@@ -19,9 +19,7 @@
         android:id="@+id/Eliminarspinner"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="10dp"
-        android:layout_height="wrap_content"
-        style="@style/BorderButton"
-        />
+        android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/eliminarMascota"
@@ -29,7 +27,7 @@
             android:layout_marginHorizontal="10dp"
             android:layout_height="wrap_content"
             android:onClick="onClickEliminarMascota"
-            android:text="Eliminar Cita"
+            android:text="Eliminar Mascota"
             style="@style/BorderButton"/>
 
 

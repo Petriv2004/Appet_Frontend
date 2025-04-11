@@ -22,11 +22,12 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 public class ActualizarPerfil extends AppCompatActivity {
 
     EditText etcorreo;
-
+    String correoViejo;
     EditText etnombre;
     EditText etcelular;
     EditText etdireccion;
@@ -34,12 +35,15 @@ public class ActualizarPerfil extends AppCompatActivity {
     RadioGroup rgGenero;
     String URL_OBTENER_PROPIETARIO ="http://192.168.0.13:8080/propietarios/obtener_propietario/";
 
+    RequestQueue queue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actualizar_perfil);
 
+        queue = Volley.newRequestQueue(this);
         etcorreo = findViewById(R.id.etCorreo);
         etnombre = findViewById(R.id.etNombreCompleto);
         etcelular = findViewById(R.id.etNumeroCelular);
@@ -60,10 +64,74 @@ public class ActualizarPerfil extends AppCompatActivity {
     }
 
     public void onClickActualizar(View view) {
-        Toast.makeText(this, "Perfil actualizado", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(ActualizarPerfil.this, MainActivity.class);
-        startActivity(intent);
+        String correo = etcorreo.getText().toString();
+        String nombre = etnombre.getText().toString();
+        String numero = etcelular.getText().toString();
+        String direccion = etdireccion.getText().toString();
+        int genero = rgGenero.getCheckedRadioButtonId();
+
+        if (correo.isEmpty() || nombre.isEmpty() || numero.isEmpty() || direccion.isEmpty() || genero == -1) {
+            Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String Strgenero;
+        if (genero == R.id.rbMasculino) {
+            Strgenero = "Masculino";
+        } else if (genero == R.id.rbFemenino) {
+            Strgenero = "Femenino";
+        } else if (genero == R.id.rbNoBinario) {
+            Strgenero = "No Binario";
+        } else {
+            Strgenero = "Otro";
+        }
+
+        JSONObject jsonBody = new JSONObject();
+        try {
+            jsonBody.put("correo", correo);
+            jsonBody.put("nombre", nombre);
+            jsonBody.put("celular", numero);
+            jsonBody.put("direccion", direccion);
+            jsonBody.put("genero", Strgenero);
+        } catch (JSONException e) {
+            Toast.makeText(this, "Error al crear el JSON", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String urlPut = "http://192.168.0.13:8080/propietarios/actualizar-propietario/" + correoViejo;
+
+        JsonObjectRequest requestPut = new JsonObjectRequest(Request.Method.PUT, urlPut, jsonBody,
+                response -> {
+                    Toast.makeText(this, "Usuario actualizado exitosamente", Toast.LENGTH_SHORT).show();
+
+                    SharedPreferences pref = getSharedPreferences("AppPreferences", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = pref.edit();
+
+                    String correoAnterior = pref.getString("correo", null);
+                    String correoVet = pref.getString("correoVet", null);
+                    String correoCui = pref.getString("correoCui", null);
+
+                    if (correoAnterior != null) {
+                        editor.putString("correo", correo);
+                    } else if (correoVet != null) {
+                        editor.putString("correoVet", correo);
+                    } else if (correoCui != null) {
+                        editor.putString("correoCui", correo);
+                    } else {
+                        editor.putString("correo", correo);
+                    }
+
+                    editor.apply();
+
+                    Intent intent = new Intent(ActualizarPerfil.this, MainActivity.class);
+                    startActivity(intent);
+                },
+                error -> Toast.makeText(this, "Error al actualizar el usuario", Toast.LENGTH_SHORT).show()
+        );
+
+        queue.add(requestPut);
     }
+
 
     private void obtenerDatosUsuario() {
         SharedPreferences pref = getSharedPreferences("AppPreferences", MODE_PRIVATE);
@@ -83,10 +151,8 @@ public class ActualizarPerfil extends AppCompatActivity {
             etcorreo.setText(correoCui);
             correo = correoCui;
         }
-
+        correoViejo = correo;
         String url = URL_OBTENER_PROPIETARIO + correo;
-
-        RequestQueue queue = Volley.newRequestQueue(this);
 
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {

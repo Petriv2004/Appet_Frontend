@@ -22,21 +22,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,31 +44,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Random;
 
 public class HacerRecorridoActivity extends AppCompatActivity {
 
     private Spinner spinnerMascotas;
     private RequestQueue requestQueue;
-
     private TextView textViewPosicion;
-
     private ArrayList<Recorrido> recorrido;
-
-
     private boolean recorriendo;
-
-    private static final int UPDATE_INTERVAL = 3000;
-
+    private static final int UPDATE_INTERVAL = 5000;
     private Handler handler = new Handler(Looper.getMainLooper());
-
     private Runnable updateRunnable;
-
     private FusedLocationProviderClient fusedLocationClient;
     private final int REQUEST_CODE_LOCATION = 100;
-
     JSONObject jsonObject = new JSONObject();
-
+    private boolean hayDatos = false;
     private Button buttonReporte;
 
     @Override
@@ -81,6 +66,7 @@ public class HacerRecorridoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_hacer_recorrido);
+
         spinnerMascotas = findViewById(R.id.spinnerMascotas);
         textViewPosicion = findViewById(R.id.textView);
         buttonReporte = findViewById(R.id.buttonReporte);
@@ -89,7 +75,6 @@ public class HacerRecorridoActivity extends AppCompatActivity {
         recorriendo = false;
 
         ImageView gifImageView = findViewById(R.id.gifImageView);
-
         Glide.with(this)
                 .asGif()
                 .load("https://cdn.pixabay.com/animation/2023/04/06/16/10/16-10-43-442_512.gif")
@@ -127,57 +112,16 @@ public class HacerRecorridoActivity extends AppCompatActivity {
         String correo = prefs.getString("correo", null);
         String correoCui = prefs.getString("correoCui", null);
         if (correo == null && correoCui == null) {
-            Toast.makeText(this, "No se encontro el correo del usuario", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No se encontró el correo del usuario", Toast.LENGTH_SHORT).show();
             return;
         }
         if (correoCui != null) {
             buttonReporte.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             buttonReporte.setVisibility(View.GONE);
         }
-
     }
 
-    private void obtenerUbicacionYMostrarFecha() {
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return;
-        }
-        fusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
-            @Override
-            public void onSuccess(Location location) {
-                if (location != null) {
-                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-                    String fechaActual = sdf.format(new Date());
-                    recorrido.add(new Recorrido(String.valueOf(location.getLatitude()), String.valueOf(location.getLongitude()), "Permitido", fechaActual));
-                    String latitud = String.format(Locale.getDefault(), "%.8f", location.getLatitude());
-                    String longitud = String.format(Locale.getDefault(), "%.8f", location.getLongitude());
-                    try {
-                        jsonObject.put("latitud", latitud);
-                        jsonObject.put("longitud", longitud);
-                        jsonObject.put("rango", "Permitido");
-                        jsonObject.put("fecha", fechaActual);
-                        textViewPosicion.setText("Midiendo ... \nLatitud:" + latitud + "\nLongitud:" + longitud );
-                    } catch (Exception e) {
-                        Toast.makeText(HacerRecorridoActivity.this, "Error al procesar JSON", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(HacerRecorridoActivity.this, "Active su ubicacion o encuentre mejor señal", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode == REQUEST_CODE_LOCATION) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                obtenerUbicacionYMostrarFecha();
-            } else {
-                Toast.makeText(this, "Permiso de ubicación denegado", Toast.LENGTH_LONG).show();
-            }
-        }
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
     public void onClickEmpezarMedicion(View view) {
         recorrido.clear();
         recorriendo = true;
@@ -185,18 +129,7 @@ public class HacerRecorridoActivity extends AppCompatActivity {
         hacerFetch();
     }
 
-    private void hacerFetch(){
-        try{
-            if (jsonObject.equals(null)){
-                obtenerUbicacionYMostrarFecha();
-                return;
-            }
-        }catch(Exception e){
-            Toast.makeText(this, "Iniciando el JSON", Toast.LENGTH_SHORT).show();
-            obtenerUbicacionYMostrarFecha();
-
-        }
-
+    private void hacerFetch() {
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     this,
@@ -204,44 +137,67 @@ public class HacerRecorridoActivity extends AppCompatActivity {
                     REQUEST_CODE_LOCATION
             );
         } else {
-            obtenerUbicacionYMostrarFecha();
-            textViewPosicion.setText("Terminando medición...");
-            String[] mascotaData = spinnerMascotas.getSelectedItem().toString().split("-");
-            int idMascota = Integer.parseInt(mascotaData[0]);
-            String URL = "http://192.168.0.13:8080/mascotas/registrarRecorrido/" + idMascota;
-            JsonObjectRequest request = new JsonObjectRequest(
-                    Request.Method.POST,
-                    URL,
-                    jsonObject,
-                    response -> Toast.makeText(this, "Recorrido enviado correctamente", Toast.LENGTH_SHORT).show(),
-                    error -> {
-                        if (error.networkResponse != null) {
-                            Log.e("Volley", "Código de respuesta: " + error.networkResponse.statusCode);
-                            try {
-                                String responseBody = new String(error.networkResponse.data, "utf-8");
-                                Log.e("Volley", "Respuesta del servidor: " + responseBody);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        Log.e("Volley", "Error al enviar el recorrido: " + error.getMessage());
-
-                        //Toast.makeText(this, "Error al enviar el recorrido", Toast.LENGTH_SHORT).show();
-                    }
-            ) {
-                @Override
-                public Map<String, String> getHeaders() throws AuthFailureError {
-                    Map<String, String> headers = new HashMap<>();
-                    headers.put("Content-Type", "application/json");
-                    return headers;
-                }
-            };
-            requestQueue.add(request);
-            textViewPosicion.setText("Medición terminada");
-            updateRunnable = this::hacerFetch;
-            handler.postDelayed(updateRunnable, UPDATE_INTERVAL);
-            jsonObject = new JSONObject();
+            obtenerUbicacionYEnviar();
         }
+    }
+
+    private void obtenerUbicacionYEnviar() {
+        fusedLocationClient.getLastLocation().addOnSuccessListener(this, location -> {
+            if (location != null) {
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                String fechaActual = sdf.format(new Date());
+
+                String latitud = String.format(Locale.getDefault(), "%.8f", location.getLatitude());
+                String longitud = String.format(Locale.getDefault(), "%.8f", location.getLongitude());
+
+                recorrido.add(new Recorrido(latitud, longitud, "Permitido", fechaActual));
+
+                try {
+                    jsonObject = new JSONObject();
+                    jsonObject.put("latitud", latitud);
+                    jsonObject.put("longitud", longitud);
+                    jsonObject.put("rango", "Permitido");
+                    jsonObject.put("fecha", fechaActual);
+                    hayDatos = true;
+
+                    textViewPosicion.setText("Midiendo ... Latitud:" + latitud + "\nLongitud:" + longitud);
+
+                    enviarRecorrido();
+                } catch (JSONException e) {
+                    Toast.makeText(HacerRecorridoActivity.this, "Error al crear JSON", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(HacerRecorridoActivity.this, "Ubicación no disponible", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void enviarRecorrido() {
+        String[] mascotaData = spinnerMascotas.getSelectedItem().toString().split("-");
+        int idMascota = Integer.parseInt(mascotaData[0]);
+        String URL = "http://192.168.0.13:8080/mascotas/registrarRecorrido/" + idMascota;
+
+        JsonObjectRequest request = new JsonObjectRequest(
+                Request.Method.POST,
+                URL,
+                jsonObject,
+                response -> Toast.makeText(this, "Recorrido enviado correctamente", Toast.LENGTH_SHORT).show(),
+                error -> {
+                    Log.e("Volley", "Error al enviar el recorrido", error);
+                    Toast.makeText(this, "Error al enviar el recorrido", Toast.LENGTH_SHORT).show();
+                }
+        ) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> headers = new HashMap<>();
+                headers.put("Content-Type", "application/json");
+                return headers;
+            }
+        };
+
+        requestQueue.add(request);
+        updateRunnable = this::hacerFetch;
+        handler.postDelayed(updateRunnable, UPDATE_INTERVAL);
     }
 
     public void onClickPararMedicion(View view) {
@@ -251,16 +207,14 @@ public class HacerRecorridoActivity extends AppCompatActivity {
     }
 
     public void onClickReporte(View view) {
-        if (recorriendo){
+        if (recorriendo) {
             new AlertDialog.Builder(this)
                     .setTitle("Confirmación")
                     .setMessage("¿Está seguro de enviarle el reporte al dueño de la mascota?")
-                    .setPositiveButton("Sí", (dialog, which) -> {
-                        enviarCorreo();
-                    })
+                    .setPositiveButton("Sí", (dialog, which) -> enviarCorreo())
                     .setNegativeButton("Cancelar", null)
                     .show();
-        }else{
+        } else {
             Toast.makeText(this, "No se ha iniciado el recorrido", Toast.LENGTH_SHORT).show();
         }
     }
@@ -269,13 +223,11 @@ public class HacerRecorridoActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);
         String correoCui = prefs.getString("correoCui", "");
 
-
-        String cuerpo = "Este es el recorrido que se hizo: \n" + generarMapa();
-
+        String cuerpo = "Este es el recorrido que se hizo: " + generarMapa();
         String[] mascotaData = spinnerMascotas.getSelectedItem().toString().split("-");
         int idMascota = Integer.parseInt(mascotaData[0]);
 
-        String url = "http://192.168.0.13:8080/email/mensaje-recorrido/" + idMascota + "/" +correoCui;
+        String url = "http://192.168.0.13:8080/email/mensaje-recorrido/" + idMascota + "/" + correoCui;
 
         try {
             JSONObject jsonBody = new JSONObject();
@@ -300,17 +252,14 @@ public class HacerRecorridoActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
     }
 
-    public String generarMapa(){
-        String salida = "http://www.google.com/maps/dir/";
-        if (!recorrido.isEmpty()){
-            for(Recorrido recorrido : recorrido){
-             salida += recorrido.getLatitud() + "," + recorrido.getLongitud()+ "/";
-            }
+    public String generarMapa() {
+        StringBuilder salida = new StringBuilder("http://www.google.com/maps/dir/");
+        for (Recorrido rec : recorrido) {
+            salida.append(rec.getLatitud()).append(",").append(rec.getLongitud()).append("/");
         }
-        return salida;
+        return salida.toString();
     }
 
     private void llenarSpinner() {
@@ -319,18 +268,13 @@ public class HacerRecorridoActivity extends AppCompatActivity {
         String correoCui = prefs.getString("correoCui", null);
 
         if (correo == null && correoCui == null) {
-            Toast.makeText(this, "No se encontro el correo del usuario", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No se encontró el correo del usuario", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        String url;
-        boolean esCuidador = correoCui != null;
-
-        if (esCuidador) {
-            url = "http://192.168.0.13:8080/propietarios/mascotas-veterinario/" + correoCui;
-        } else {
-            url = "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;
-        }
+        String url = correoCui != null
+                ? "http://192.168.0.13:8080/propietarios/mascotas-veterinario/" + correoCui
+                : "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;
 
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 response -> {
@@ -338,7 +282,7 @@ public class HacerRecorridoActivity extends AppCompatActivity {
                         List<String> mascotas = new ArrayList<>();
                         JSONArray mascotasList;
 
-                        if (esCuidador) {
+                        if (correoCui != null) {
                             mascotasList = new JSONArray(response);
                         } else {
                             JSONObject propietario = new JSONObject(response);

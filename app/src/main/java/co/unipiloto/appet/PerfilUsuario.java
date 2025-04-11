@@ -122,7 +122,10 @@ public class PerfilUsuario extends AppCompatActivity {
         Intent intent = new Intent(PerfilUsuario.this, MainActivity.class);
         startActivity(intent);
     }
-
+    public void onClickActualizarContrasena(View view) {
+        Intent intent = new Intent(PerfilUsuario.this, CambiarContrasenaActivity.class);
+        startActivity(intent);
+    }
     public void onClickActualizar(View view) {
         Intent intent = new Intent(PerfilUsuario.this, ActualizarPerfil.class);
         startActivity(intent);
