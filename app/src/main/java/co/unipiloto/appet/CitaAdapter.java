@@ -1,8 +1,11 @@
 package co.unipiloto.appet;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,9 +17,11 @@ import java.util.Map;
 public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder> {
 
     private List<Map<String, String>> listaCitas;
+    private OnCitaUpdateListener updateListener;
 
-    public CitaAdapter(List<Map<String, String>> listaCitas) {
+    public CitaAdapter(List<Map<String, String>> listaCitas, OnCitaUpdateListener updateListener) {
         this.listaCitas = listaCitas;
+        this.updateListener = updateListener;
     }
 
     @NonNull
@@ -35,6 +40,35 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
         holder.textHora.setText("Hora: " + cita.get("hora"));
         holder.textRazon.setText("Razón: " + cita.get("razon"));
         holder.textDescripcion.setText("Descripción: " + cita.get("descripcion"));
+
+        SharedPreferences prefs = holder.itemView.getContext().getSharedPreferences("AppPreferences", Context.MODE_PRIVATE);
+        String correoUsuario = prefs.getString("correo", null);
+        String correoVet = prefs.getString("correoVet", null);
+        if (correoUsuario != null) {
+            holder.btnAsistida.setVisibility(View.GONE);
+        } else if (correoVet != null) {
+            holder.btnAsistida.setVisibility(View.VISIBLE);
+        }
+
+        if ("true".equals(cita.get("asistencia"))) {
+            holder.textAsistencia.setText("Estado: Asistido");
+            holder.btnAsistida.setVisibility(View.GONE);
+        } else if(correoVet != null) {
+            holder.textAsistencia.setText("Estado: No asistido");
+            holder.btnAsistida.setVisibility(View.VISIBLE);
+        }else{
+            holder.textAsistencia.setText("Estado: No asistido");
+            holder.btnAsistida.setVisibility(View.GONE);
+        }
+
+
+
+        holder.btnAsistida.setOnClickListener(v -> {
+            String idParaActualizar = cita.get("id_agenda");
+            if (updateListener != null) {
+                updateListener.onMarcarAsistida(idParaActualizar, position);
+            }
+        });
     }
 
     @Override
@@ -43,7 +77,8 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
     }
 
     static class CitaViewHolder extends RecyclerView.ViewHolder {
-        TextView textIdCita, textNombreMascota, textFecha, textHora, textRazon, textDescripcion;
+        TextView textIdCita, textNombreMascota, textFecha, textHora, textRazon, textDescripcion, textAsistencia;
+        Button btnAsistida;
 
         public CitaViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -53,6 +88,8 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
             textHora = itemView.findViewById(R.id.textHora);
             textRazon = itemView.findViewById(R.id.textRazon);
             textDescripcion = itemView.findViewById(R.id.textDescripcion);
+            textAsistencia = itemView.findViewById(R.id.textAsistencia);
+            btnAsistida = itemView.findViewById(R.id.btnAsistida);
         }
     }
 }

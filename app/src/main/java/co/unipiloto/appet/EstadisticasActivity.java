@@ -1,6 +1,10 @@
 package co.unipiloto.appet;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,12 +17,21 @@ public class EstadisticasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_estadisticas);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        ImageView leftIcon = findViewById(R.id.left_icon);
+        leftIcon.setVisibility(View.VISIBLE);
+        TextView title = findViewById(R.id.title);
+        title.setText("Estadísticas");
+
+        leftIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(EstadisticasActivity.this, MainActivity.class);
+            startActivity(intent);
         });
+
     }
+    public void onClickIrRitmoGrafica(View view){
+        Intent intent = new Intent(EstadisticasActivity.this, RitmoCardiacoFecha.class);
+        startActivity(intent);
+    }
+
 }

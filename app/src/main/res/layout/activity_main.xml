@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:onClick="onClickIrRitmoGrafica"
-            android:text="Ritmo Cardiaco por Fecha" />
+            android:text="Estadísticas" />
 
         <Button
         android:id="@+id/ritmo_cardiaco"

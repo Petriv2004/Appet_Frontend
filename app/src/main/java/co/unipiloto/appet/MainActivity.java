@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             btnIrPerfil.setVisibility(View.VISIBLE);
             txtVerPerfil.setVisibility(View.VISIBLE);
             historial_mascota.setVisibility(View.VISIBLE);
-            citas_mascota.setVisibility(View.GONE);
+            citas_mascota.setVisibility(View.VISIBLE);
             btnRegistrar.setVisibility(View.GONE);
             btnIrLogin.setVisibility(View.GONE);
             ejercicios_mascota.setVisibility(View.GONE);
@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickIrRitmoGrafica(View view){
-        Intent intent = new Intent(MainActivity.this, RitmoCardiacoFecha.class);
+        Intent intent = new Intent(MainActivity.this, EstadisticasActivity.class);
         startActivity(intent);
     }
 
