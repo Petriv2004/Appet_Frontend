@@ -33,7 +33,7 @@ public class ActualizarPerfil extends AppCompatActivity {
     EditText etdireccion;
 
     RadioGroup rgGenero;
-    String URL_OBTENER_PROPIETARIO ="http://192.168.0.13:8080/propietarios/obtener_propietario/";
+    String URL_OBTENER_PROPIETARIO =Url.URL+"/propietarios/obtener_propietario/";
 
     RequestQueue queue;
 
@@ -98,7 +98,7 @@ public class ActualizarPerfil extends AppCompatActivity {
             return;
         }
 
-        String urlPut = "http://192.168.0.13:8080/propietarios/actualizar-propietario/" + correoViejo;
+        String urlPut = Url.URL+"/propietarios/actualizar-propietario/" + correoViejo;
 
         JsonObjectRequest requestPut = new JsonObjectRequest(Request.Method.PUT, urlPut, jsonBody,
                 response -> {

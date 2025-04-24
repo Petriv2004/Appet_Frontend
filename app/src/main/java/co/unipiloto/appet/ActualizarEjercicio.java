@@ -131,7 +131,7 @@ public class ActualizarEjercicio extends AppCompatActivity {
         String[] ejercicioData = spinnerEjercicio.getSelectedItem().toString().split(" - ");
         int idEjercicio = Integer.parseInt(ejercicioData[0]);
 
-        String urlGet = "http://192.168.0.13:8080/propietarios/obtenerEjercicio/" + idEjercicio;
+        String urlGet = Url.URL+"/propietarios/obtenerEjercicio/" + idEjercicio;
         JsonObjectRequest requestGet = new JsonObjectRequest(Request.Method.GET, urlGet, null,
                 response -> {
                     Log.d("JSON Response", response.toString());
@@ -221,7 +221,7 @@ public class ActualizarEjercicio extends AppCompatActivity {
             imagenBase64 = convertirImagenABase64(imagenSeleccionada);
         }
 
-        String url = "http://192.168.0.13:8080/propietarios/actualizar_ejercicio/" + idEjercicio;
+        String url = Url.URL+"/propietarios/actualizar_ejercicio/" + idEjercicio;
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         try {
@@ -305,7 +305,7 @@ public class ActualizarEjercicio extends AppCompatActivity {
             return;
         }
 
-        String url = "http://192.168.0.13:8080/propietarios/obtenerEjercicios/" + correo;
+        String url = Url.URL+"/propietarios/obtenerEjercicios/" + correo;
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
                 response -> {

@@ -49,14 +49,14 @@ public class Vincular extends AppCompatActivity {
     }
 
     public void onClickVincular(View view) {
-        String url = "http://192.168.0.13:8080/propietarios/asociar-veterinario-por-correo";
+        String url = Url.URL+"/propietarios/asociar-veterinario-por-correo";
         if (rgRol.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "Tiene que seleccionar un rol", Toast.LENGTH_SHORT).show();
             return;
         }else if (rgRol.getCheckedRadioButtonId() == R.id.rbVeterinario) {
-             url = "http://192.168.0.13:8080/propietarios/asociar-veterinario-por-correo";
+             url = Url.URL+"/propietarios/asociar-veterinario-por-correo";
         }else{
-             url = "http://192.168.0.13:8080/propietarios/asociar-cuidador-por-correo";
+             url = Url.URL+"/propietarios/asociar-cuidador-por-correo";
         }
 
 

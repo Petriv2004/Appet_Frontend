@@ -59,7 +59,7 @@ public class RitmoCardiacoFecha extends AppCompatActivity {
 
     private EditText etFecha;
 
-    private String URL= "http://192.168.0.13:8080/mascotas/ritmos/";
+    private String URL= Url.URL+"/mascotas/ritmos/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -217,9 +217,9 @@ public class RitmoCardiacoFecha extends AppCompatActivity {
         boolean esVeterinario = correoVet != null;
 
         if (esVeterinario) {
-            url = "http://192.168.0.13:8080/propietarios/mascotas-veterinario/" + correoVet;
+            url = Url.URL+"/propietarios/mascotas-veterinario/" + correoVet;
         } else {
-            url = "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;
+            url = Url.URL+"/propietarios/obtener_propietario/" + correo;
         }
 
         StringRequest request = new StringRequest(Request.Method.GET, url,

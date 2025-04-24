@@ -44,7 +44,7 @@ public class RegistrarAgenda extends AppCompatActivity {
 
     private boolean isRequestInProgress = false;
 
-    private static final String URL_REGISTRAR_AGENDA = "http://192.168.0.13:8080/agenda/registrar/";
+    private static final String URL_REGISTRAR_AGENDA = Url.URL+"/agenda/registrar/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +117,7 @@ public class RegistrarAgenda extends AppCompatActivity {
             return;
         }
 
-        String url = "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;
+        String url = Url.URL+"/propietarios/obtener_propietario/" + correo;
 
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 response -> {
@@ -250,7 +250,7 @@ public class RegistrarAgenda extends AppCompatActivity {
         String sel [] = opcAgenda.split("-");
 
         String idCita = sel[0];
-        String url = "http://192.168.0.13:8080/agenda/eliminar/" + correo + "/" + idCita;
+        String url = Url.URL+"/agenda/eliminar/" + correo + "/" + idCita;
 
         new AlertDialog.Builder(this)
                 .setTitle("Confirmación")

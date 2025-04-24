@@ -116,7 +116,7 @@ public class Ejercicios extends AppCompatActivity {
     }
 
     private void obtenerEjerciciosCuidador(String correo, String tipo) {
-        String baseUrl = "http://192.168.0.13:8080/propietarios/obtenerEjercicios";
+        String baseUrl = Url.URL + "/propietarios/obtenerEjercicios";
 
         switch (tipo) {
             case "felino":
@@ -165,7 +165,7 @@ public class Ejercicios extends AppCompatActivity {
         requestQueue.add(request);
     }
     private void obtenerEjerciciosUsuario(String correo, String tipo) {
-        String baseUrl = "http://192.168.0.13:8080/propietarios/obtenerEjercicios";
+        String baseUrl = Url.URL+"/propietarios/obtenerEjercicios";
 
         switch (tipo) {
             case "felino":

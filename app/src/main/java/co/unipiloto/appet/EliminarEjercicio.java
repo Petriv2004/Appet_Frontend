@@ -80,7 +80,7 @@ public class EliminarEjercicio extends AppCompatActivity {
                 .setTitle("Confirmación")
                 .setMessage("¿Está seguro de que desea eliminar este ejercicio?")
                 .setPositiveButton("Sí", (dialog, which) -> {
-                    String url = "http://192.168.0.13:8080/propietarios/eliminarEjercicio/" + correo + "/" + idEjercicio;
+                    String url = Url.URL+"/propietarios/eliminarEjercicio/" + correo + "/" + idEjercicio;
                     StringRequest request = new StringRequest(Request.Method.DELETE, url,
                             response -> {
                                 Toast.makeText(EliminarEjercicio.this, "Ejercicio eliminado correctamente", Toast.LENGTH_SHORT).show();
@@ -109,7 +109,7 @@ public class EliminarEjercicio extends AppCompatActivity {
             return;
         }
 
-        String url = "http://192.168.0.13:8080/propietarios/obtenerEjercicios/" + correo;
+        String url = Url.URL+"/propietarios/obtenerEjercicios/" + correo;
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
                 response -> {

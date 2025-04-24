@@ -57,7 +57,7 @@ public class UbicacionActualActivity extends FragmentActivity implements OnMapRe
     private ArrayList<LatLng> lista = new ArrayList<>();
     private RequestQueue requestQueue;
     private Button button;
-    private String URL = "http://192.168.0.13:8080/mascotas/obtenerUbicacion/";
+    private String URL = Url.URL+"/mascotas/obtenerUbicacion/";
     private Runnable updateRunnable;
 
     @Override
@@ -114,9 +114,9 @@ public class UbicacionActualActivity extends FragmentActivity implements OnMapRe
         boolean esCuidador = correoCui != null;
 
         if (esCuidador) {
-            url = "http://192.168.0.13:8080/propietarios/mascotas-veterinario/" + correoCui;
+            url = Url.URL+"/propietarios/mascotas-veterinario/" + correoCui;
         } else {
-            url = "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;
+            url = Url.URL+"/propietarios/obtener_propietario/" + correo;
         }
 
         StringRequest request = new StringRequest(Request.Method.GET, url,

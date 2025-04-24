@@ -52,7 +52,7 @@ public class RecorridoFechaActivity extends FragmentActivity implements OnMapRea
     private Button button;
     private EditText etFecha;
 
-    private String URL = "http://192.168.0.13:8080/mascotas/recorridoPorFecha/";
+    private String URL = Url.URL+"/mascotas/recorridoPorFecha/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,9 +114,9 @@ public class RecorridoFechaActivity extends FragmentActivity implements OnMapRea
         boolean esCuidador = correoCui != null;
 
         if (esCuidador) {
-            url = "http://192.168.0.13:8080/propietarios/mascotas-veterinario/" + correoCui;
+            url = Url.URL+"/propietarios/mascotas-veterinario/" + correoCui;
         } else {
-            url = "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;
+            url = Url.URL+"/propietarios/obtener_propietario/" + correo;
         }
 
         StringRequest request = new StringRequest(Request.Method.GET, url,

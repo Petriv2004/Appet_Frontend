@@ -89,7 +89,7 @@ public class RegistroMascota extends AppCompatActivity {
     }
 
     private void obtenerIdPropietario(String correo) {
-        String url = "http://192.168.0.13:8080/propietarios/obtenerId/" + correo;
+        String url = Url.URL+"/propietarios/obtenerId/" + correo;
 
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 response -> {
@@ -107,7 +107,7 @@ public class RegistroMascota extends AppCompatActivity {
     }
 
     private void registrarMascota(int idPropietario) {
-        String url = "http://192.168.0.13:8080/mascotas/registrar";
+        String url = Url.URL+"/mascotas/registrar";
 
         String nombre = etNombre.getText().toString().trim();
         String fechaNacimiento = etNacimiento.getText().toString().trim();

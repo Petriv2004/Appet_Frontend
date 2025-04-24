@@ -175,7 +175,7 @@ public class HacerRecorridoActivity extends AppCompatActivity {
     private void enviarRecorrido() {
         String[] mascotaData = spinnerMascotas.getSelectedItem().toString().split("-");
         int idMascota = Integer.parseInt(mascotaData[0]);
-        String URL = "http://192.168.0.13:8080/mascotas/registrarRecorrido/" + idMascota;
+        String URL = Url.URL+"/mascotas/registrarRecorrido/" + idMascota;
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
@@ -227,7 +227,7 @@ public class HacerRecorridoActivity extends AppCompatActivity {
         String[] mascotaData = spinnerMascotas.getSelectedItem().toString().split("-");
         int idMascota = Integer.parseInt(mascotaData[0]);
 
-        String url = "http://192.168.0.13:8080/email/mensaje-recorrido/" + idMascota + "/" + correoCui;
+        String url = Url.URL+"/email/mensaje-recorrido/" + idMascota + "/" + correoCui;
 
         try {
             JSONObject jsonBody = new JSONObject();
@@ -273,8 +273,8 @@ public class HacerRecorridoActivity extends AppCompatActivity {
         }
 
         String url = correoCui != null
-                ? "http://192.168.0.13:8080/propietarios/mascotas-veterinario/" + correoCui
-                : "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;
+                ? Url.URL+"/propietarios/mascotas-veterinario/" + correoCui
+                : Url.URL+"/propietarios/obtener_propietario/" + correo;
 
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 response -> {

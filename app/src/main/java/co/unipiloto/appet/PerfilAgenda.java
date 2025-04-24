@@ -69,11 +69,11 @@ public class PerfilAgenda extends AppCompatActivity implements OnCitaUpdateListe
 
         if (correoUsuario != null) {
             btnAgregarCita.setVisibility(View.VISIBLE);
-            url = "http://192.168.0.13:8080/propietarios/obtener_propietario/";
+            url = Url.URL+"/propietarios/obtener_propietario/";
             obtenerCitasPropietario(correoUsuario);
         } else if (correoVet != null) {
             btnAgregarCita.setVisibility(View.GONE);
-            url = "http://192.168.0.13:8080/agenda/citas-veterinario/";
+            url = Url.URL+"/agenda/citas-veterinario/";
             esVeterinario = true;
             obtenerCitasPropietario(correoVet);
         } else {
@@ -137,7 +137,7 @@ public class PerfilAgenda extends AppCompatActivity implements OnCitaUpdateListe
 
     @Override
     public void onMarcarAsistida(String idCita, int position) {
-        String urlActualizar = "http://192.168.0.13:8080/agenda/cambiar-asistido/" + idCita;
+        String urlActualizar = Url.URL+"/agenda/cambiar-asistido/" + idCita;
         StringRequest putRequest = new StringRequest(Request.Method.PUT, urlActualizar,
                 response -> {
                     Toast.makeText(PerfilAgenda.this, "Cita marcada como asistida", Toast.LENGTH_SHORT).show();

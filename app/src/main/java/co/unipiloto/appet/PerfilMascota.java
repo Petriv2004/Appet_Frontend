@@ -109,9 +109,9 @@ public class PerfilMascota extends AppCompatActivity {
         boolean esVeterinario = correoVet != null;
 
         if (esVeterinario) {
-            url = "http://192.168.0.13:8080/propietarios/mascotas-veterinario/" + correoVet;
+            url = Url.URL+"/propietarios/mascotas-veterinario/" + correoVet;
         } else if (Prefcorreo != null) {
-            url = "http://192.168.0.13:8080/propietarios/obtener_propietario/" + Prefcorreo;
+            url = Url.URL+"/propietarios/obtener_propietario/" + Prefcorreo;
         } else {
             Toast.makeText(this, "No se encontró el correo del usuario", Toast.LENGTH_SHORT).show();
             return;

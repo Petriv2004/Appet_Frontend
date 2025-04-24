@@ -29,7 +29,7 @@ import org.json.JSONObject;
 public class LogIn extends AppCompatActivity {
 
     private EditText etCorreo, etContrasena;
-    private static final String URL_LOGIN = "http://192.168.0.13:8080/propietarios/login";
+    private static final String URL_LOGIN = Url.URL+"/propietarios/login";
 
     private RequestQueue requestQueue;
 

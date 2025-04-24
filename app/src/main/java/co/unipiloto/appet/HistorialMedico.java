@@ -151,9 +151,9 @@ public class HistorialMedico extends AppCompatActivity {
         boolean esVeterinario = correoVet != null;
 
         if (esVeterinario) {
-            url = "http://192.168.0.13:8080/propietarios/mascotas-veterinario/" + correoVet;
+            url = Url.URL+"/propietarios/mascotas-veterinario/" + correoVet;
         } else {
-            url = "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;
+            url = Url.URL+"/propietarios/obtener_propietario/" + correo;
         }
 
         StringRequest request = new StringRequest(Request.Method.GET, url,
@@ -200,7 +200,7 @@ public class HistorialMedico extends AppCompatActivity {
         String[] mascotaData = spinnerMascotas.getSelectedItem().toString().split("-");
         int idMascota = Integer.parseInt(mascotaData[0]);
 
-        String urlGet = "http://192.168.0.13:8080/mascotas/obtener/" + idMascota;
+        String urlGet = Url.URL+"/mascotas/obtener/" + idMascota;
 
         JsonObjectRequest requestGet = new JsonObjectRequest(Request.Method.GET, urlGet, null,
                 response -> {
@@ -313,7 +313,7 @@ public class HistorialMedico extends AppCompatActivity {
         String[] mascotaData = spinnerMascotas.getSelectedItem().toString().split("-");
         int idMascota = Integer.parseInt(mascotaData[0]);
 
-        String urlGet = "http://192.168.0.13:8080/mascotas/obtener/" + idMascota;
+        String urlGet = Url.URL+"/mascotas/obtener/" + idMascota;
 
         JsonObjectRequest requestGet = new JsonObjectRequest(Request.Method.GET, urlGet, null,
                 response -> {
@@ -332,7 +332,7 @@ public class HistorialMedico extends AppCompatActivity {
 
     private void registrarHistorial(int idMascota) {
         JSONObject jsonBody = construirJsonHistorial();
-        String urlPost = "http://192.168.0.13:8080/historiales/registrar/" + idMascota;
+        String urlPost = Url.URL+"/historiales/registrar/" + idMascota;
 
         JsonObjectRequest requestPost = new JsonObjectRequest(Request.Method.POST, urlPost, jsonBody,
                 response -> {
@@ -346,7 +346,7 @@ public class HistorialMedico extends AppCompatActivity {
 
     private void actualizarHistorial(int idMascota) {
         JSONObject jsonBody = construirJsonHistorial();
-        String urlPut = "http://192.168.0.13:8080/historiales/actualizar/" + idMascota;
+        String urlPut = Url.URL+"/historiales/actualizar/" + idMascota;
 
         JsonObjectRequest requestPut = new JsonObjectRequest(Request.Method.PUT, urlPut, jsonBody,
                 response -> {

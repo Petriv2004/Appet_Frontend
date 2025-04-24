@@ -36,7 +36,7 @@ public class EliminarMascota extends AppCompatActivity {
     RequestQueue queue;
     private Spinner etIdMascota;
 
-    private static final String urlEliminarMascota = "http://192.168.0.13:8080/mascotas/eliminar-mascota/";
+    private static final String urlEliminarMascota = Url.URL+"/mascotas/eliminar-mascota/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class EliminarMascota extends AppCompatActivity {
             return;
         }
 
-        String url = "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;
+        String url = Url.URL+"/propietarios/obtener_propietario/" + correo;
 
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 response -> {

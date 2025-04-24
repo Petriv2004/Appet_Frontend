@@ -148,7 +148,7 @@ public class AgregarEjercicio extends AppCompatActivity {
         RadioButton selectedRadioButton = findViewById(selectedId);
         String especieSeleccionada = selectedRadioButton.getText().toString();
 
-        String url = "http://192.168.0.13:8080/propietarios/obtenerId/" + correo;
+        String url = Url.URL+ "/propietarios/obtenerId/" + correo;
 
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 response -> {
@@ -183,7 +183,7 @@ public class AgregarEjercicio extends AppCompatActivity {
     }
 
     private void enviarDatosAlServidor(JSONObject jsonObject) {
-        String url = "http://192.168.0.13:8080/propietarios/registrar_ejercicio";
+        String url = Url.URL+ "/propietarios/registrar_ejercicio";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject,

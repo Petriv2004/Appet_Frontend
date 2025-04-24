@@ -25,7 +25,7 @@ public class PerfilUsuario extends AppCompatActivity {
 
     private TextView textCorreo, textNombre, textNumero, textDireccion, textGenero;
 
-    private static final String URL_OBTENER_PROPIETARIO = "http://192.168.0.13:8080/propietarios/obtener_propietario/";
+    private static final String URL_OBTENER_PROPIETARIO = Url.URL+"/propietarios/obtener_propietario/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

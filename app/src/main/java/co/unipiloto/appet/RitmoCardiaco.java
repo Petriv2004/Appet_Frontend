@@ -123,7 +123,7 @@ public class RitmoCardiaco extends AppCompatActivity {
         handler.post(runnable);
     }
     private void hacerPeticion(int idMascota, int estado) {
-        String url = "http://192.168.0.13:8080/mascotas/obtenerRitmo/" + idMascota + "/" + estado;
+        String url = Url.URL+"/mascotas/obtenerRitmo/" + idMascota + "/" + estado;
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {
                     try{
@@ -237,9 +237,9 @@ public class RitmoCardiaco extends AppCompatActivity {
         boolean esVeterinario = correoVet != null;
 
         if (esVeterinario) {
-            url = "http://192.168.0.13:8080/propietarios/mascotas-veterinario/" + correoVet;
+            url = Url.URL+"/propietarios/mascotas-veterinario/" + correoVet;
         } else {
-            url = "http://192.168.0.13:8080/propietarios/obtener_propietario/" + correo;
+            url = Url.URL+"/propietarios/obtener_propietario/" + correo;
         }
 
         StringRequest request = new StringRequest(Request.Method.GET, url,
@@ -309,7 +309,7 @@ public class RitmoCardiaco extends AppCompatActivity {
         String[] mascotaData = spinnerMascotas.getSelectedItem().toString().split("-");
         int idMascota = Integer.parseInt(mascotaData[0]);
 
-        String url = "http://192.168.0.13:8080/email/mensaje-cardiaco/" + idMascota + "/" +correoVet;
+        String url = Url.URL+"/email/mensaje-cardiaco/" + idMascota + "/" +correoVet;
 
         try {
             JSONObject jsonBody = new JSONObject();

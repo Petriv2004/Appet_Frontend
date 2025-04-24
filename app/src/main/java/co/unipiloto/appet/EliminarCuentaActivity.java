@@ -28,9 +28,9 @@ public class EliminarCuentaActivity extends AppCompatActivity  {
     private TextInputLayout tilCodigo;
 
     // URLs de las peticiones
-    private static final String urlEnviarCorreo = "http://192.168.0.13:8080/token/obtener-token/";
-    private static final String urlEnviarToken = "http://192.168.0.13:8080/token/verify-token/";
-    private static final String urlEliminarCuenta = "http://192.168.0.13:8080/propietarios/eliminar-cuenta/";
+    private static final String urlEnviarCorreo = Url.URL+"/token/obtener-token/";
+    private static final String urlEnviarToken = Url.URL+"/token/verify-token/";
+    private static final String urlEliminarCuenta = Url.URL+"/propietarios/eliminar-cuenta/";
 
     private RequestQueue queue;
 

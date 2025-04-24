@@ -20,6 +20,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -35,7 +36,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegistroUsuario extends AppCompatActivity {
-    private static final String URL_REGISTRO = "http://192.168.0.13:8080/propietarios/registrar";
+    private static final String URL_REGISTRO = Url.URL+"/propietarios/registrar";
     private RequestQueue requestQueue;
 
     @Override
@@ -153,6 +154,9 @@ public class RegistroUsuario extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        Log.e("VolleyError", "Mensaje: " + error.getMessage());
+                        Log.e("VolleyError", "Causa: " + (error.getCause() != null ? error.getCause().toString() : "null"));
+                        Log.e("VolleyError", "StackTrace: ", error);
                         NetworkResponse networkResponse = error.networkResponse;
                         if (networkResponse != null) {
                             int statusCode = networkResponse.statusCode;
@@ -162,6 +166,7 @@ public class RegistroUsuario extends AppCompatActivity {
                                 Toast.makeText(RegistroUsuario.this, "Error en la conexión: " + statusCode, Toast.LENGTH_SHORT).show();
                             }
                         } else {
+
                             Toast.makeText(RegistroUsuario.this, "Error desconocido", Toast.LENGTH_SHORT).show();
                         }
                     }
