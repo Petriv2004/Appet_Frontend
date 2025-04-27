@@ -28,6 +28,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".MascotaActivaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EstadisticasMascotaActivity"
+            android:exported="false" />
+        <activity
             android:name=".EliminarCuentaActivity"
             android:exported="false" />
         <activity

@@ -34,4 +34,15 @@ public class EstadisticasActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onClickIrEstadisticas(View view){
+        Intent intent = new Intent(EstadisticasActivity.this, EstadisticasMascotaActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickIrMascota(View view){
+        Intent intent = new Intent(EstadisticasActivity.this, MascotaActivaActivity.class);
+        startActivity(intent);
+    }
+
+
 }

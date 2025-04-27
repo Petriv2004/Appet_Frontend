@@ -83,6 +83,8 @@ public class RegistrarAgenda extends AppCompatActivity {
     }
     private void mostrarDatePicker() {
         Calendar calendario = Calendar.getInstance();
+        calendario.add(Calendar.DAY_OF_MONTH, 1);
+
         int año = calendario.get(Calendar.YEAR);
         int mes = calendario.get(Calendar.MONTH);
         int dia = calendario.get(Calendar.DAY_OF_MONTH);

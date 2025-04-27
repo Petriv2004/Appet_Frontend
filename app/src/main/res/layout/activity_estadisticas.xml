@@ -18,12 +18,31 @@
         android:id="@+id/ritmo_cardiaco_grafica"
         style="@style/BorderButton"
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="70dp"
+        android:layout_marginHorizontal="60dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:onClick="onClickIrRitmoGrafica"
-        android:text="Ritmo cardiaco por fecha" />
+        android:text="Gráfica de ritmo cardiaco" />
 
+    <Button
+        android:id="@+id/estadisticas_por_mascota"
+        style="@style/BorderButton"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onClickIrEstadisticas"
+        android:text="Estadísticas por mascota" />
+
+    <Button
+        android:id="@+id/mascota"
+        style="@style/BorderButton"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onClickIrMascota"
+        android:text="Mascota mas Sedentaria y Activa" />
 
   </LinearLayout>
 
