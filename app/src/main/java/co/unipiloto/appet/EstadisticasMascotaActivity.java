@@ -20,6 +20,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -37,7 +38,7 @@ public class EstadisticasMascotaActivity extends AppCompatActivity {
 
     private EditText etFecha;
 
-    private TextView textVisitas, textRecorridos, textRitmoAlto, textRitmoBajo, textFechaRitmo, textRecorridosMes;
+    private TextView textVisitas, textRitmoAlto, textRitmoBajo, textFechaRitmo, textRecorridosMes, textKilometros;
 
     private RequestQueue requestQueue;
 
@@ -50,11 +51,11 @@ public class EstadisticasMascotaActivity extends AppCompatActivity {
         spinnerMascotas = findViewById(R.id.spinnerMascotas);
         etFecha = findViewById(R.id.etFecha);
         textVisitas = findViewById(R.id.textVisitas);
-        textRecorridos = findViewById(R.id.textRecorridos);
         textRitmoAlto = findViewById(R.id.textRitmoAlto);
         textRitmoBajo = findViewById(R.id.textRitmoBajo);
         textFechaRitmo = findViewById(R.id.textFechaRitmo);
         textRecorridosMes = findViewById(R.id.textRecorridosMes);
+        textKilometros = findViewById(R.id.textKilometros);
 
         ImageView leftIcon = findViewById(R.id.left_icon);
         leftIcon.setVisibility(View.VISIBLE);
@@ -130,6 +131,181 @@ public class EstadisticasMascotaActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
     public void onClickStats(View view){
+
+        reiniciarTexts();
+
+        SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);
+        String correo = prefs.getString("correo", null);
+
+        if (correo == null) {
+            Toast.makeText(this, "No se encontró el correo del propietario", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String mascota = spinnerMascotas.getSelectedItem().toString();
+        String[] partes = mascota.split("-");
+        int idMascota = Integer.parseInt(partes[0]);
+
+        String url = Url.URL + "/estadisticas/visitas-veterinario/" + idMascota;
+
+        JsonObjectRequest statsRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                null,
+                response -> {
+                    try {
+                        int visitasVet = response.optInt("Visitas", -1);
+                        textVisitas.setText("Visitas al veterinario: " + visitasVet);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Toast.makeText(this, "Error al procesar estadísticas", Toast.LENGTH_SHORT).show();
+                    }
+                },
+                error -> {
+                    error.printStackTrace();
+                    Toast.makeText(this, "Error al obtener estadísticas", Toast.LENGTH_SHORT).show();
+                }
+        );
+        requestQueue.add(statsRequest);
+
+        url = Url.URL + "/estadisticas/ritmoCardiacoMaximo/" + idMascota;
+
+        statsRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                null,
+                response -> {
+                    try {
+                        int visitasVet = response.optInt("RitmoCardiacoMaximo", -1);
+                        textRitmoAlto.setText("Ritmo cardiaco más alto alcanzado: " + visitasVet);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Toast.makeText(this, "Error al procesar estadísticas", Toast.LENGTH_SHORT).show();
+                    }
+                },
+                error -> {
+                    error.printStackTrace();
+                    Toast.makeText(this, "No hay mediciones de ritmo cardiaco", Toast.LENGTH_SHORT).show();
+                }
+        );
+        requestQueue.add(statsRequest);
+
+        url = Url.URL + "/estadisticas/ritmoCardiacoMinimo/" + idMascota;
+
+        statsRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                null,
+                response -> {
+                    try {
+                        int visitasVet = response.optInt("RitmoCardiacoMinimo", -1);
+                        textRitmoBajo.setText("Ritmo cardiaco más bajo alcanzado: " + visitasVet);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Toast.makeText(this, "Error al procesar estadísticas", Toast.LENGTH_SHORT).show();
+                    }
+                },
+                error -> {
+                    error.printStackTrace();
+                    Toast.makeText(this, "Error al obtener estadísticas", Toast.LENGTH_SHORT).show();
+                }
+        );
+        requestQueue.add(statsRequest);
+    }
+    public void onClickRitmo(View view){
+        reiniciarTexts();
+
+        String mascota = spinnerMascotas.getSelectedItem().toString();
+        String[] partes = mascota.split("-");
+        int idMascota = Integer.parseInt(partes[0]);
+
+        String fecha = etFecha.getText().toString();
+
+        String url = Url.URL + "/estadisticas/promedio-ritmoCardiaco/" + idMascota + "/" + fecha;
+
+        JsonObjectRequest statsRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                null,
+                response -> {
+                    try {
+                        double visitasVet = response.optDouble("Promedio", -1);
+                        textFechaRitmo.setText("Promedio del ritmo cardiaco por fecha: " + visitasVet);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Toast.makeText(this, "Error al procesar estadísticas", Toast.LENGTH_SHORT).show();
+                    }
+                },
+                error -> {
+                    error.printStackTrace();
+                    textFechaRitmo.setText("Promedio del ritmo cardiaco por fecha: 0");
+                    Toast.makeText(this, "Error al obtener promedio de ritmo cardiaco", Toast.LENGTH_SHORT).show();
+                }
+        );
+        requestQueue.add(statsRequest);
+
+        url = Url.URL + "/estadisticas/recorridoKm/" + idMascota + "/" + fecha;
+
+        statsRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                null,
+                response -> {
+                    try {
+                        double visitasVet = response.optDouble("kilometros", -1);
+                        textKilometros.setText("Kilometros por fecha: " + visitasVet);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Toast.makeText(this, "Error al procesar estadísticas", Toast.LENGTH_SHORT).show();
+                    }
+                },
+                error -> {
+                    error.printStackTrace();
+                    textKilometros.setText("Kilometros por fecha: 0");
+                    Toast.makeText(this, "Error al obtener kilometros por fecha", Toast.LENGTH_SHORT).show();
+                }
+        );
+        requestQueue.add(statsRequest);
+
+        String[] part = fecha.split("-");
+        if(part[1].charAt(0) == '0'){
+            fecha = part[1].charAt(1) + "/"+ part[0] ;
+        }else{
+            fecha = part[1] + "/"+ part[0] ;
+        }
+
+        url = Url.URL + "/estadisticas/total-recorridos/" + idMascota + "/" + fecha;
+
+        statsRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                null,
+                response -> {
+                    try {
+                        int visitasVet = response.optInt("Total", -1);
+                        textRecorridosMes.setText("Recorridos realizados en el mes: " + visitasVet);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Toast.makeText(this, "Error al procesar estadísticas", Toast.LENGTH_SHORT).show();
+                    }
+                },
+                error -> {
+                    error.printStackTrace();
+                    textRecorridosMes.setText("Recorridos realizados en el mes: 0");
+                    Toast.makeText(this, "Error al obtener recorridos por mes", Toast.LENGTH_SHORT).show();
+                }
+        );
+        requestQueue.add(statsRequest);
+
+    }
+
+    private void reiniciarTexts(){
+        textVisitas.setText("Visitas al Veterinario:");
+        textRitmoAlto.setText("Ritmo cardiaco más alto alcanzado:");
+        textRitmoBajo.setText("Ritmo cardiaco más bajo alcanzado:");
+        textFechaRitmo.setText("Promedio del ritmo cardiaco por fecha:");
+        textRecorridosMes.setText("Recorridos realizados en el mes:");
+        textKilometros.setText("Kilometros por fecha:");
     }
 
 }

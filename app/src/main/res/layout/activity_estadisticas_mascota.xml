@@ -42,20 +42,12 @@
             android:text="Visitas al Veterinario:" />
 
         <TextView
-            android:id="@+id/textRecorridos"
-            android:layout_width="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:text="Recorridos en total:" />
-
-        <TextView
             android:id="@+id/textRitmoAlto"
             android:layout_width="match_parent"
             android:layout_marginTop="5dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Ritmo cardiaco mas alto alcanzado:" />
+            android:text="Ritmo cardiaco más alto alcanzado:" />
 
         <TextView
             android:id="@+id/textRitmoBajo"
@@ -63,7 +55,7 @@
             android:layout_marginTop="5dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Ritmo cardiaco mas bajo alcanzado:" />
+            android:text="Ritmo cardiaco más bajo alcanzado:" />
 
         <EditText
             android:id="@+id/etFecha"
@@ -85,8 +77,8 @@
             android:layout_marginHorizontal="60dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:onClick="onClickStats"
-            android:text="Ver Promedio" />
+            android:onClick="onClickRitmo"
+            android:text="Ver Datos por Fecha" />
 
         <TextView
             android:id="@+id/textFechaRitmo"
@@ -94,8 +86,15 @@
             android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:gravity="center"
-            android:text="Eliga una fecha y mascota para conocer el promedio de ritmo cardiaco por fecha" />
+            android:text="Promedio del ritmo cardiaco por fecha:" />
+
+        <TextView
+            android:id="@+id/textKilometros"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Kilometros por fecha:" />
 
         <TextView
             android:id="@+id/textRecorridosMes"
@@ -103,9 +102,7 @@
             android:layout_marginTop="5dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:gravity="center"
-            android:text="Y para conocer los recorridos realizados en ese mes" />
-
+            android:text="Recorridos realizados en el mes:" />
 
     </LinearLayout>
 

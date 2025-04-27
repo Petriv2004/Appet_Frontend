@@ -1,25 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+
+<ScrollView
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <include layout="@layout/toolbar" />
+        <EditText
+            android:id="@+id/etMonthYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="MM-YYYY"
+            android:focusable="false"
+            android:clickable="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_white"/>
+
+        <Button
+            android:id="@+id/btnCargar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cargar Estadísticas"
+            android:layout_marginTop="12dp"
+            style="@style/BorderButton"/>
+
+        <TextView
+            android:id="@+id/textActivaLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mascota más activa:"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/textSedentariaLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mascota más sedentaria:"
+            android:textStyle="bold"
+            android:paddingBottom="16dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewEstadisticas"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"/>
 
     </LinearLayout>
-
 </ScrollView>
+</LinearLayout>
