@@ -44,6 +44,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import android.location.Address;
+import android.location.Geocoder;
 
 public class HacerRecorridoActivity extends AppCompatActivity {
 
@@ -142,6 +144,16 @@ public class HacerRecorridoActivity extends AppCompatActivity {
     }
 
     private void obtenerUbicacionYEnviar() {
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         fusedLocationClient.getLastLocation().addOnSuccessListener(this, location -> {
             if (location != null) {
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
@@ -149,6 +161,18 @@ public class HacerRecorridoActivity extends AppCompatActivity {
 
                 String latitud = String.format(Locale.getDefault(), "%.8f", location.getLatitude());
                 String longitud = String.format(Locale.getDefault(), "%.8f", location.getLongitude());
+
+                String direccion = "Dirección no disponible";
+                Geocoder geocoder = new Geocoder(HacerRecorridoActivity.this, Locale.getDefault());
+                try {
+                    List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                    if (addresses != null && !addresses.isEmpty()) {
+                        Address address = addresses.get(0);
+                        direccion = address.getAddressLine(0); // línea completa de la dirección
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
                 recorrido.add(new Recorrido(latitud, longitud, "Permitido", fechaActual));
 
@@ -160,7 +184,9 @@ public class HacerRecorridoActivity extends AppCompatActivity {
                     jsonObject.put("fecha", fechaActual);
                     hayDatos = true;
 
-                    textViewPosicion.setText("Midiendo ... Latitud:" + latitud + "\nLongitud:" + longitud);
+                    textViewPosicion.setText("Midiendo ...\nLatitud: " + latitud +
+                            "\nLongitud: " + longitud +
+                            "\nDirección: " + direccion);
 
                     enviarRecorrido();
                 } catch (JSONException e) {

@@ -41,8 +41,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Fecha"
-                android:inputType="textEmailAddress"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:focusable="false"
+                android:clickable="true"
+                android:cursorVisible="false"
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
