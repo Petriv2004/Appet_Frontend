@@ -61,6 +61,13 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
             holder.btnAsistida.setVisibility(View.GONE);
         }
 
+        boolean recordado = prefs.getBoolean("reminder_"+cita.get("id_agenda"), false);
+        holder.btnRecordatorio.setText(recordado ? "No recordarme" : "Recordarme");
+
+
+        holder.btnRecordatorio.setOnClickListener(v ->
+                updateListener.onToggleRecordatorio(cita.get("id_agenda"), position)
+        );
 
 
         holder.btnAsistida.setOnClickListener(v -> {
@@ -78,7 +85,7 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
 
     static class CitaViewHolder extends RecyclerView.ViewHolder {
         TextView textIdCita, textNombreMascota, textFecha, textHora, textRazon, textDescripcion, textAsistencia;
-        Button btnAsistida;
+        Button btnAsistida, btnRecordatorio;
 
         public CitaViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -90,6 +97,7 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
             textDescripcion = itemView.findViewById(R.id.textDescripcion);
             textAsistencia = itemView.findViewById(R.id.textAsistencia);
             btnAsistida = itemView.findViewById(R.id.btnAsistida);
+            btnRecordatorio = itemView.findViewById(R.id.btnRecordatorio);
         }
     }
 }

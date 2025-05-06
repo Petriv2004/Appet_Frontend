@@ -61,10 +61,20 @@
             android:textSize="16sp"/>
 
         <Button
+            android:id="@+id/btnRecordatorio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recordarme"
+            android:layout_gravity="center"
+            style="@style/BorderButton"/>
+
+
+        <Button
                 android:id="@+id/btnAsistida"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Marcar como asistida"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+            style="@style/BorderButton"/>/>
 
 </LinearLayout>

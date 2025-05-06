@@ -1,8 +1,13 @@
 package co.unipiloto.appet;
 
+import static android.content.ContentValues.TAG;
+
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,6 +28,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -155,4 +161,111 @@ public class PerfilAgenda extends AppCompatActivity implements OnCitaUpdateListe
         Intent intent = new Intent(PerfilAgenda.this, RegistrarAgenda.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onToggleRecordatorio(String idCita, int pos) {
+        Map<String,String> cita = listaCitas.get(pos);
+        String fecha       = cita.get("fecha");
+        String hora        = cita.get("hora");
+        String mascota     = cita.get("nombre_mascota");
+        String descripcion = cita.get("razon");
+
+        SharedPreferences prefs = getSharedPreferences("AppPreferences", MODE_PRIVATE);
+        String key = "reminder_" + idCita;
+        boolean ya = prefs.getBoolean(key, false);
+
+        // Guardar o eliminar datos
+        SharedPreferences.Editor ed = prefs.edit();
+        if (!ya) {
+            ed.putBoolean(key, true)
+                    .putString("fecha_"      + idCita, fecha)
+                    .putString("hora_"       + idCita, hora)
+                    .putString("mascota_"    + idCita, mascota)
+                    .putString("descripcion_"+ idCita, descripcion);
+        } else {
+            ed.remove(key)
+                    .remove("fecha_"      + idCita)
+                    .remove("hora_"       + idCita)
+                    .remove("mascota_"    + idCita)
+                    .remove("descripcion_"+ idCita);
+        }
+        ed.apply();
+
+        // Reprogramar o cancelar alarmas
+        AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
+        Intent i = new Intent(this, ReminderReceiver.class)
+                .putExtra("fecha", fecha)
+                .putExtra("hora", hora)
+                .putExtra("mascota", mascota)
+                .putExtra("descripcion", descripcion);
+
+        Calendar calCita = parsearAfecha(fecha, hora);
+        if (!ya) {
+            Log.d(TAG, "Programando recordatorio para id " + idCita);
+            // programar
+            Calendar calAntes = (Calendar) calCita.clone();
+            calAntes.add(Calendar.HOUR_OF_DAY, -1);
+            PendingIntent piAntes = PendingIntent.getBroadcast(
+                    this,
+                    idCita.hashCode()*10,
+                    i.putExtra("notifId", idCita.hashCode()*10),
+                    PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+            );
+            am.setExactAndAllowWhileIdle(
+                    AlarmManager.RTC_WAKEUP,
+                    calAntes.getTimeInMillis(),
+                    piAntes
+            );
+
+            PendingIntent piHora = PendingIntent.getBroadcast(
+                    this,
+                    idCita.hashCode()*10+1,
+                    i.putExtra("notifId", idCita.hashCode()*10+1),
+                    PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+            );
+            am.setExactAndAllowWhileIdle(
+                    AlarmManager.RTC_WAKEUP,
+                    calCita.getTimeInMillis(),
+                    piHora
+            );
+
+            Toast.makeText(this, "Recordatorio programado", Toast.LENGTH_SHORT).show();
+
+        } else {
+            Log.d(TAG, "Cancelando recordatorio para id " + idCita);
+            // cancelar
+            PendingIntent.getBroadcast(
+                    this,
+                    idCita.hashCode()*10,
+                    i,
+                    PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+            ).cancel();
+
+            PendingIntent.getBroadcast(
+                    this,
+                    idCita.hashCode()*10+1,
+                    i,
+                    PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+            ).cancel();
+
+            Toast.makeText(this, "Recordatorio cancelado", Toast.LENGTH_SHORT).show();
+        }
+
+        // Refrescar el adapter para actualizar el texto del botón
+        citaAdapter.notifyItemChanged(pos);
+    }
+
+
+    private Calendar parsearAfecha(String fecha, String hora) {
+        String[] f = fecha.split("-"), h = hora.split(":");
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR,   Integer.parseInt(f[0]));
+        c.set(Calendar.MONTH,  Integer.parseInt(f[1]) - 1);
+        c.set(Calendar.DAY_OF_MONTH, Integer.parseInt(f[2]));
+        c.set(Calendar.HOUR_OF_DAY,   Integer.parseInt(h[0]));
+        c.set(Calendar.MINUTE,        Integer.parseInt(h[1]));
+        c.set(Calendar.SECOND,        0);
+        return c;
+    }
+
 }

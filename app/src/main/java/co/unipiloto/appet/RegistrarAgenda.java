@@ -1,6 +1,8 @@
 package co.unipiloto.appet;
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -83,7 +85,7 @@ public class RegistrarAgenda extends AppCompatActivity {
     }
     private void mostrarDatePicker() {
         Calendar calendario = Calendar.getInstance();
-        calendario.add(Calendar.DAY_OF_MONTH, 1);
+        //calendario.add(Calendar.DAY_OF_MONTH, 1);
 
         int año = calendario.get(Calendar.YEAR);
         int mes = calendario.get(Calendar.MONTH);
@@ -244,29 +246,68 @@ public class RegistrarAgenda extends AppCompatActivity {
         String correo = prefs.getString("correo", null);
 
         if (correo == null) {
-            Toast.makeText(this, "No se encontró el correo del propietario", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No se encontró el correo del propietario", Toast.LENGTH_SHORT).show();
+            eliminarCita.setClickable(true);
             return;
         }
 
         String opcAgenda = String.valueOf(etAgenda.getSelectedItem());
-        String sel [] = opcAgenda.split("-");
-
+        String[] sel = opcAgenda.split("-");
         String idCita = sel[0];
-        String url = Url.URL+"/agenda/eliminar/" + correo + "/" + idCita;
 
         new AlertDialog.Builder(this)
                 .setTitle("Confirmación")
                 .setMessage("¿Está seguro de que desea eliminar esta cita?")
                 .setPositiveButton("Sí", (dialog, which) -> {
-                    StringRequest request = new StringRequest(Request.Method.DELETE, url,
+                    AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
+                    Intent cancelIntent = new Intent(this, ReminderReceiver.class);
+
+                    // Cancelar recordatorio 1h antes
+                    PendingIntent piAntes = PendingIntent.getBroadcast(
+                            this,
+                            idCita.hashCode() * 10,
+                            cancelIntent,
+                            PendingIntent.FLAG_NO_CREATE | PendingIntent.FLAG_IMMUTABLE
+                    );
+                    if (piAntes != null) {
+                        am.cancel(piAntes);
+                        piAntes.cancel();
+                    }
+
+                    // Cancelar recordatorio a la hora exacta
+                    PendingIntent piHora = PendingIntent.getBroadcast(
+                            this,
+                            idCita.hashCode() * 10 + 1,
+                            cancelIntent,
+                            PendingIntent.FLAG_NO_CREATE | PendingIntent.FLAG_IMMUTABLE
+                    );
+                    if (piHora != null) {
+                        am.cancel(piHora);
+                        piHora.cancel();
+                    }
+
+                    // Limpieza de SharedPreferences
+                    prefs.edit()
+                            .remove("reminder_"     + idCita)
+                            .remove("fecha_"        + idCita)
+                            .remove("hora_"         + idCita)
+                            .remove("mascota_"      + idCita)
+                            .remove("descripcion_"  + idCita)
+                            .apply();
+
+                    // Ahora sí eliminas la cita del servidor
+                    String url = Url.URL + "/agenda/eliminar/" + correo + "/" + idCita;
+                    StringRequest request = new StringRequest(
+                            Request.Method.DELETE, url,
                             response -> {
-                                Toast.makeText(RegistrarAgenda.this, "Cita eliminada correctamente", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(RegistrarAgenda.this, MainActivity.class);
-                                startActivity(intent);
+                                Toast.makeText(this,
+                                        "Cita eliminada correctamente", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(this, MainActivity.class));
                                 finish();
                             },
                             error -> {
-                                Toast.makeText(RegistrarAgenda.this, "Error al eliminar la cita", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(this,
+                                        "Error al eliminar la cita", Toast.LENGTH_SHORT).show();
                                 eliminarCita.setClickable(true);
                             }
                     );
@@ -277,9 +318,7 @@ public class RegistrarAgenda extends AppCompatActivity {
                     dialog.dismiss();
                 })
                 .show();
-
-
-
     }
+
 
 }
