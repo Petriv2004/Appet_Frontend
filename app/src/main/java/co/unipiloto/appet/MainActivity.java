@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtVerPerfil;
 
     private Button btnIrLogin,btnRegistrar, historial_mascota, citas_mascota, ejercicios_mascota,
-            perfil_mascota, ritmo_cardiaco, btnVincular, btnIrRecorridoFecha, btnHacerRecorrido, btnUbicacionActual, btnRitmoCardiacoFecha;
+            perfil_mascota, ritmo_cardiaco, btnVincular, btnIrRecorridoFecha, btnHacerRecorrido,
+            btnUbicacionActual, btnRitmoCardiacoFecha, btnCancion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         btnVincular = findViewById(R.id.vincular);
         btnUbicacionActual = findViewById(R.id.btnUbicacionActual);
         btnRitmoCardiacoFecha = findViewById(R.id.ritmo_cardiaco_grafica);
+        btnCancion = findViewById(R.id.btnCancion);
         mostrarBotones();
     }
     private void mostrarBotones(){
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             btnHacerRecorrido.setVisibility(View.VISIBLE);
             btnUbicacionActual.setVisibility(View.VISIBLE);
             btnRitmoCardiacoFecha.setVisibility(View.VISIBLE);
+            btnCancion.setVisibility(View.VISIBLE);
         }else if (correoVet != null && !correoVet.isEmpty()){
             btnIrPerfil.setVisibility(View.VISIBLE);
             txtVerPerfil.setVisibility(View.VISIBLE);
@@ -88,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             btnHacerRecorrido.setVisibility(View.GONE);
             btnUbicacionActual.setVisibility(View.GONE);
             btnRitmoCardiacoFecha.setVisibility(View.VISIBLE);
+            btnCancion.setVisibility(View.GONE);
         }else if(correoCui != null && !correoCui.isEmpty()){
             btnIrPerfil.setVisibility(View.VISIBLE);
             txtVerPerfil.setVisibility(View.VISIBLE);
@@ -103,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             btnHacerRecorrido.setVisibility(View.VISIBLE);
             btnUbicacionActual.setVisibility(View.VISIBLE);
             btnRitmoCardiacoFecha.setVisibility(View.GONE);
+            btnCancion.setVisibility(View.VISIBLE);
         }else{
             btnIrPerfil.setVisibility(View.GONE);
             txtVerPerfil.setVisibility(View.GONE);
@@ -120,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
             btnHacerRecorrido.setVisibility(View.GONE);
             btnUbicacionActual.setVisibility(View.GONE);
             btnRitmoCardiacoFecha.setVisibility(View.GONE);
+            btnCancion.setVisibility(View.GONE);
         }
     }
 
@@ -184,6 +190,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickIrRitmoGrafica(View view){
         Intent intent = new Intent(MainActivity.this, EstadisticasActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickCancion(View view){
+        Intent intent = new Intent(MainActivity.this, CancionActivity.class);
         startActivity(intent);
     }
 

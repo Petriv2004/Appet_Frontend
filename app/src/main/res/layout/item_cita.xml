@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:text="Recordarme"
             android:layout_gravity="center"
-            style="@style/BorderButton"/>
+            android:background="@drawable/border_white"/>
 
 
         <Button
@@ -75,6 +75,6 @@
                 android:layout_height="wrap_content"
                 android:text="Marcar como asistida"
                 android:layout_gravity="center"
-            style="@style/BorderButton"/>/>
+                android:background="@drawable/border_white"/>
 
 </LinearLayout>
