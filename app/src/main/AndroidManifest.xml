@@ -123,6 +123,7 @@
             </intent-filter>
         </receiver>
         <service android:name=".MusicRelaxService" />
+        <service android:name=".TokenTimerService" />
     </application>
 
 </manifest>
