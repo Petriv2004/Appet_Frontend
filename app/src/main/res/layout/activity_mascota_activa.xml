@@ -2,6 +2,8 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="16dp"
     android:layout_width="match_parent"
@@ -9,59 +11,163 @@
 
     <include layout="@layout/toolbar" />
 
-<ScrollView
+    <ScrollView
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <EditText
-            android:id="@+id/etMonthYear"
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="MM-YYYY"
-            android:focusable="false"
-            android:clickable="true"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/border_white"/>
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnCargar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cargar Estadísticas"
-            android:layout_marginTop="12dp"
-            style="@style/BorderButton"/>
+            <EditText
+                android:id="@+id/etMonthYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="MM-YYYY"
+                android:focusable="false"
+                android:clickable="true"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/border_white"/>
 
-        <TextView
-            android:id="@+id/textActivaLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mascota más activa:"
-            android:textStyle="bold"
-            android:paddingBottom="8dp"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textSedentariaLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mascota más sedentaria:"
-            android:textStyle="bold"
-            android:paddingBottom="16dp"/>
+                <RadioButton
+                    android:id="@+id/radioActiva"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Activa" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewEstadisticas"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginTop="16dp"/>
+                <RadioButton
+                    android:id="@+id/radioSedentaria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sedentaria" />
+            </RadioGroup>
 
-    </LinearLayout>
-</ScrollView>
+            <Button
+                android:id="@+id/btnCargar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cargar Estadísticas"
+                android:layout_marginTop="12dp"
+                style="@style/BorderButton"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded_border">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="160dp"
+                    android:maxHeight="160dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_launcher_foreground"
+                    android:background="@drawable/rounded_border"
+                    android:clipToOutline="true"
+                    android:padding="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ID:"
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/txNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre: "
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/txSexo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sexo:"
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/txTipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo:"
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/txRaza"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Raza:"
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/txFechaNacimiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha Nacimiento:"
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/txEnfermedades"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enfermedades:"
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/txMedicinas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Medicinas:"
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/txTiposangre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo de Sangre:"
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/txPeso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Peso:"
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/txVacunas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vacunas:"
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/txCirugias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cirugías:"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

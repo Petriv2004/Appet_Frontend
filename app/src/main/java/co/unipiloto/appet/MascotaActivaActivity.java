@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,12 +37,12 @@ public class MascotaActivaActivity extends AppCompatActivity {
 
     private EditText etMonthYear;
     private Button btnCargar;
-    private RecyclerView recyclerView;
     private MascotaAdapter mascotaAdapter;
     private List<Map<String,String>> listaMascotas;
     private com.android.volley.RequestQueue requestQueue;
-
-    private TextView textActivaLabel, textSedentariaLabel;
+    private TextView txId,txNombre, txSexo, txTipo, txRaza, txFechaNacimiento, txEnfermedades, txMedicinas, txTiposangre, txPeso, txVacunas, txCirugias;
+    private RadioButton radioActiva, radioSedentaria;
+    private ImageView imageView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,20 +58,29 @@ public class MascotaActivaActivity extends AppCompatActivity {
 
         etMonthYear   = findViewById(R.id.etMonthYear);
         btnCargar     = findViewById(R.id.btnCargar);
-        recyclerView  = findViewById(R.id.recyclerViewEstadisticas);
-        textActivaLabel     = findViewById(R.id.textActivaLabel);
-        textSedentariaLabel = findViewById(R.id.textSedentariaLabel);
-
         listaMascotas  = new ArrayList<>();
         mascotaAdapter = new MascotaAdapter(listaMascotas);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(mascotaAdapter);
-
         requestQueue = Volley.newRequestQueue(this);
-
         etMonthYear.setOnClickListener(v -> mostrarMonthYearPicker());
-
         btnCargar.setOnClickListener(v -> cargarEstadisticas());
+
+        imageView2 = findViewById(R.id.imageView2);
+        txId = findViewById(R.id.txId);
+        txNombre = findViewById(R.id.txNombre);
+        txSexo = findViewById(R.id.txSexo);
+        txTipo = findViewById(R.id.txTipo);
+        txRaza = findViewById(R.id.txRaza);
+        txFechaNacimiento = findViewById(R.id.txFechaNacimiento);
+        txEnfermedades = findViewById(R.id.txEnfermedades);
+        txMedicinas = findViewById(R.id.txMedicinas);
+        txTiposangre = findViewById(R.id.txTiposangre);
+        txPeso = findViewById(R.id.txPeso);
+        txVacunas = findViewById(R.id.txVacunas);
+        txCirugias = findViewById(R.id.txCirugias);
+
+        radioActiva = findViewById(R.id.radioActiva);
+        radioSedentaria = findViewById(R.id.radioSedentaria);
+
     }
 
     private void mostrarMonthYearPicker() {
@@ -148,9 +158,6 @@ public class MascotaActivaActivity extends AppCompatActivity {
             return;
         }
 
-        listaMascotas.clear();
-        mascotaAdapter.notifyDataSetChanged();
-
         String correo = getSharedPreferences("AppPreferences", MODE_PRIVATE)
                 .getString("correo", null);
         if (correo == null) {
@@ -158,61 +165,61 @@ public class MascotaActivaActivity extends AppCompatActivity {
             return;
         }
 
-        String urlActiva = Url.URL + "/estadisticas/mascota-activa/" + correo + "/" + mm_yyyy;
-        JsonObjectRequest reqAct = new JsonObjectRequest(
-                Request.Method.GET, urlActiva, null,
-                resp -> {
-                    try {
-                        listaMascotas.add(jsonToMap(resp));
-                        mascotaAdapter.notifyDataSetChanged();
+        //String urlActiva = Url.URL + "/estadisticas/mascota-activa/" + correo + "/" + mm_yyyy;
 
-                        String nombreActiva = resp.optString("nombre", "—");
-                        textActivaLabel.setText("Mascota más activa: " + nombreActiva);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Toast.makeText(this, "Error parseando activa", Toast.LENGTH_SHORT).show();
-                    }
-                },
-                err -> Toast.makeText(this, "Error al obtener mascota activa", Toast.LENGTH_SHORT).show()
-        );
-        requestQueue.add(reqAct);
-
-        String urlSed = Url.URL + "/estadisticas/mascota-sedentaria/" + correo + "/" + mm_yyyy;
-        JsonObjectRequest reqSed = new JsonObjectRequest(
-                Request.Method.GET, urlSed, null,
-                resp -> {
-                    try {
-                        listaMascotas.add(jsonToMap(resp));
-                        mascotaAdapter.notifyDataSetChanged();
-
-                        String nombreSed = resp.optString("nombre", "—");
-                        textSedentariaLabel.setText("Mascota más sedentaria: " + nombreSed);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Toast.makeText(this, "Error parseando sedentaria", Toast.LENGTH_SHORT).show();
-                    }
-                },
-                err -> Toast.makeText(this, "Error al obtener mascota sedentaria", Toast.LENGTH_SHORT).show()
-        );
-        requestQueue.add(reqSed);
-    }
-
-    private Map<String,String> jsonToMap(JSONObject j) throws JSONException {
-        Map<String,String> m = new HashMap<>();
-        m.put("id_mascota",       String.valueOf(j.getInt("id_mascota")));
-        m.put("nombre",           j.optString("nombre", "—"));
-        m.put("tipo",             j.optString("tipo", "—"));
-        m.put("raza",             j.optString("raza", "—"));
-        m.put("fecha_nacimiento", j.optString("fecha_nacimiento", "—"));
-        m.put("sexo",             j.optString("sexo", "Desconocido"));
-        if (!j.isNull("historial")) {
-            JSONObject h = j.getJSONObject("historial");
-            m.put("peso",        String.valueOf(h.optInt("peso", 0)));
-            m.put("vacunas",     h.optString("vacunas", "N/A"));
-            m.put("enfermedades",h.optString("enfermedades", "N/A"));
-            m.put("medicinas",   h.optString("medicinas", "N/A"));
-            m.put("foto",        h.optString("foto", ""));
+        String endpoint;
+        if (radioActiva.isChecked()) {
+            endpoint = "/estadisticas/mascota-activa/";
+        } else if (radioSedentaria.isChecked()) {
+            endpoint = "/estadisticas/mascota-sedentaria/";
+        } else {
+            Toast.makeText(this, "Seleccione un tipo de estadística", Toast.LENGTH_SHORT).show();
+            return;
         }
-        return m;
+
+        String url = Url.URL + endpoint + correo + "/" + mm_yyyy;
+
+        JsonObjectRequest req = new JsonObjectRequest(
+                Request.Method.GET, url, null,
+                response -> {
+                    try {
+                        // Actualizar vistas
+                        txId.setText("ID: " + response.optString("id_mascota", "—"));
+                        txNombre.setText("Nombre: " + response.optString("nombre", "—"));
+                        txSexo.setText("Sexo: " + response.optString("sexo", "—"));
+                        txTipo.setText("Tipo: " + response.optString("tipo", "—"));
+                        txRaza.setText("Raza: " + response.optString("raza", "—"));
+                        txFechaNacimiento.setText("Fecha Nacimiento: " + response.optString("fecha_nacimiento", "—"));
+
+                        if (!response.isNull("historial")) {
+                            JSONObject h = response.getJSONObject("historial");
+                            txEnfermedades.setText("Enfermedades: " + h.optString("enfermedades", "N/A"));
+                            txMedicinas.setText("Medicinas: " + h.optString("medicinas", "N/A"));
+                            txTiposangre.setText("Tipo de Sangre: " + h.optString("sangre", "N/A"));
+                            txPeso.setText("Peso: " + h.optInt("peso", 0) + " kg");
+                            txVacunas.setText("Vacunas: " + h.optString("vacunas", "N/A"));
+                            txCirugias.setText("Cirugías: " + h.optString("cirugias", "N/A"));
+
+                            // Imagen base64
+                            String fotoBase64 = h.optString("foto", "");
+                            if (!fotoBase64.isEmpty()) {
+                                byte[] decodedString = android.util.Base64.decode(fotoBase64, android.util.Base64.DEFAULT);
+                                android.graphics.Bitmap decodedByte = android.graphics.BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                                imageView2.setImageBitmap(decodedByte);
+                            } else {
+                                imageView2.setImageResource(R.drawable.border_white);
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Toast.makeText(this, "Error procesando los datos", Toast.LENGTH_SHORT).show();
+                    }
+                },
+                error -> {
+                    error.printStackTrace();
+                    Toast.makeText(this, "Error en la solicitud", Toast.LENGTH_SHORT).show();
+                }
+        );
+        requestQueue.add(req);
     }
 }

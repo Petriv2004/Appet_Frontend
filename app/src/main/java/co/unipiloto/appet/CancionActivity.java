@@ -21,8 +21,11 @@ public class CancionActivity extends AppCompatActivity {
 
         ImageView leftIcon = findViewById(R.id.left_icon);
         leftIcon.setVisibility(View.VISIBLE);
+        leftIcon.setOnClickListener(v -> finish());
         TextView title = findViewById(R.id.title);
         title.setText("Relaja a tu mascota");
+
+
     }
 
     public void onClickCancion(View view){
