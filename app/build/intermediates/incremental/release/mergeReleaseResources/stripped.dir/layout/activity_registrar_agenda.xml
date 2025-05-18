@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/idmascota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Id Mascota:" />
+
+        <Spinner
+            android:id="@+id/Idspinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" />
+
+
+        <EditText
+            android:id="@+id/fechaHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="Fecha de la cita"
+            android:focusable="false"
+            android:inputType="none" />
+
+
+        <EditText
+            android:id="@+id/horaHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="Hora de la cita"
+            android:focusable="false"
+            android:inputType="none" />
+
+        <EditText
+            android:id="@+id/descripcionHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="Añada una descripción"
+            android:inputType="textMultiLine" />
+
+        <TextView
+            android:id="@+id/razon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Razón:" />
+
+        <Spinner
+            android:id="@+id/razonHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" />
+
+        <Button
+            android:id="@+id/guardarAgenda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Guardar"
+            android:onClick="onClickGuardarAgenda"
+            android:background="@drawable/border_white" />
+
+        <TextView
+            android:id="@+id/titleEliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Eliminar una cita"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/Eliminarspinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" />
+
+        <Button
+            android:id="@+id/eliminarCita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Eliminar Cita"
+            android:onClick="onClickEliminarCita"
+            android:background="@drawable/border_white" />
+
+    </LinearLayout>
+</ScrollView>

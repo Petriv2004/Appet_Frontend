@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.8.1" type="incidents">
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.application than 8.8.1 is available: 8.9.2. (There is also a newer version of 8.8.𝑥 available, if upgrading to 8.9.2 is difficult: 8.8.2)">
+        <fix-alternatives>
+            <fix-replace
+                description="Change to 8.9.2"
+                family="Update versions"
+                oldString="8.8.1"
+                replacement="8.9.2"
+                priority="0"/>
+            <fix-replace
+                description="Change to 8.8.2"
+                family="Update versions"
+                robot="true"
+                independent="true"
+                oldString="8.8.1"
+                replacement="8.8.2"
+                priority="0"/>
+        </fix-alternatives>
+        <location
+            file="$HOME/AndroidStudioProjects/Appet_Frontend/gradle/libs.versions.toml"
+            line="2"
+            column="7"
+            startOffset="17"
+            endLine="2"
+            endColumn="14"
+            endOffset="24"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity than 1.10.0 is available: 1.10.1">
+        <fix-replace
+            description="Change to 1.10.1"
+            family="Update versions"
+            oldString="1.10.0"
+            replacement="1.10.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/Appet_Frontend/gradle/libs.versions.toml"
+            line="8"
+            column="12"
+            startOffset="139"
+            endLine="8"
+            endColumn="20"
+            endOffset="147"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.2.0 is available: 2.2.1">
+        <fix-replace
+            description="Change to 2.2.1"
+            family="Update versions"
+            oldString="2.2.0"
+            replacement="2.2.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/Appet_Frontend/gradle/libs.versions.toml"
+            line="9"
+            column="20"
+            startOffset="167"
+            endLine="9"
+            endColumn="27"
+            endOffset="174"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.gms:play-services-maps than 18.1.0 is available: 19.2.0. Upgrading to at least 18.2.0 is highly recommended to take advantage of the new renderer, which supports customization options like map styling, 3D tiles, and is more reliable, with better support going forward.">
+        <fix-replace
+            description="Change to 19.2.0"
+            family="Update versions"
+            oldString="18.1.0"
+            replacement="19.2.0"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/Appet_Frontend/gradle/libs.versions.toml"
+            line="11"
+            column="20"
+            startOffset="258"
+            endLine="11"
+            endColumn="28"
+            endOffset="266"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.compose:compose-bom than 2024.04.01 is available: 2025.04.00">
+        <fix-replace
+            description="Change to 2025.04.00"
+            family="Update versions"
+            oldString="2024.04.01"
+            replacement="2025.04.00"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/Appet_Frontend/gradle/libs.versions.toml"
+            line="15"
+            column="14"
+            startOffset="354"
+            endLine="15"
+            endColumn="26"
+            endOffset="366"/>
+    </incident>
+
+</incidents>

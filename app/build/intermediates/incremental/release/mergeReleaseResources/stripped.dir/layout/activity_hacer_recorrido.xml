@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp">
+
+    <include layout="@layout/toolbar"/>
+
+        <Spinner
+            android:id="@+id/spinnerMascotas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+
+            <ImageView
+                android:id="@+id/gifImageView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Presione empezar recorrido para empezar a contar"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonEmpezarMedicion"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Empezar recorrido"
+            android:onClick="onClickEmpezarMedicion"
+            style = "@style/BorderButton"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Parar recorrido"
+            android:onClick="onClickPararMedicion"
+            style = "@style/BorderButton"/>
+
+        <Button
+            android:id="@+id/buttonReporte"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Enviar Reporte"
+            android:onClick="onClickReporte"
+            style = "@style/BorderButton"/>
+
+</LinearLayout>
+</ScrollView>

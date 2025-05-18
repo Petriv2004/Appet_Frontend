@@ -1,0 +1,326 @@
+[
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\drawable_ic_notification.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\drawable\\ic_notification.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\drawable_home.png.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\drawable\\home.png"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\drawable_icono.png.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\drawable\\icono.png"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_perfil.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_perfil.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_historial_medico.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_historial_medico.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_item_ejercicio.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\item_ejercicio.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_cancion.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_cancion.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-anydpi-v26_appet.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-anydpi-v26\\appet.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xhdpi_appet_round.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xhdpi\\appet_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_item_cita.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\item_cita.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_ritmo_cardiaco_fecha.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_ritmo_cardiaco_fecha.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xxxhdpi_home_foreground.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xxxhdpi\\home_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_vincular.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_vincular.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-mdpi_appet_round.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-mdpi\\appet_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\drawable_rounded_border.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\drawable\\rounded_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_actualizar_ejercicio.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_actualizar_ejercicio.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_cambiar_contrasena.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_cambiar_contrasena.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\drawable_appet.png.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\drawable\\appet.png"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xxxhdpi_appet_round.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xxxhdpi\\appet_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_agregar_ejercicio.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_agregar_ejercicio.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-mdpi_home_foreground.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-mdpi\\home_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_medicamento.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_medicamento.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xxhdpi_home_foreground.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xxhdpi\\home_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-mdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_eliminar_ejercicio.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_eliminar_ejercicio.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-mdpi_appet.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-mdpi\\appet.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_log_in.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_log_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_registro_usuario.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_registro_usuario.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-hdpi_appet.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-hdpi\\appet.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xhdpi_appet.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xhdpi\\appet.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\drawable_home_background.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\drawable\\home_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_mascota_activa.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_mascota_activa.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_estadisticas.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_estadisticas.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\raw_musica_relajante.mp3.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\raw\\musica_relajante.mp3"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\drawable_border_white.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\drawable\\border_white.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_recorrido_fecha.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_recorrido_fecha.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_ritmo.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_ritmo.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_ubicacion_actual.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_ubicacion_actual.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_perfil_mascota.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_perfil_mascota.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\xml\\network_security_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_toolbar.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\toolbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_eliminar_mascota.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_eliminar_mascota.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_estadisticas_mascota.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_estadisticas_mascota.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-hdpi_home_foreground.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-hdpi\\home_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xxxhdpi_appet.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xxxhdpi\\appet.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_ejercicios.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_ejercicios.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_registro_mascota.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_registro_mascota.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-hdpi_appet_round.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-hdpi\\appet_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_item_mascota.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\item_mascota.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xhdpi_home_foreground.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xhdpi\\home_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_hacer_recorrido.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_hacer_recorrido.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_registrar_agenda.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_registrar_agenda.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xxhdpi_appet.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xxhdpi\\appet.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_perfil_agenda.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_perfil_agenda.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_eliminar_cuenta.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_eliminar_cuenta.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-anydpi-v26_appet_round.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-anydpi-v26\\appet_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_dialog_month_year.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\dialog_month_year.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\layout_activity_actualizar_perfil.xml.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_actualizar_perfil.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-debug-63:\\mipmap-xxhdpi_appet_round.webp.flat",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\mipmap-xxhdpi\\appet_round.webp"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-debug-63:/layout_activity_mascota_activa.xml.flat",
+        "source": "co.unipiloto.appet.app-main-65:/layout/activity_mascota_activa.xml"
+    }
+]

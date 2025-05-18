@@ -1,0 +1,1669 @@
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\HacerRecorridoActivity.java:146: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+        fusedLocationClient.getLastLocation().addOnSuccessListener(this, location -> {
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "MissingPermission":
+   This check scans through your code and libraries and looks at the APIs
+   being used, and checks this against the set of permissions required to
+   access those APIs. If the code using those APIs is called at runtime, then
+   the program will crash.
+
+   Furthermore, for permissions that are revocable (with targetSdkVersion 23),
+   client code must also be prepared to handle the calls throwing an exception
+   if the user rejects the request for permission at runtime.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\AndroidManifest.xml:43: Error: Class referenced in the manifest, co.unipiloto.appet.EliminarUsuario, was not found in the project or the libraries [MissingClass]
+            android:name=".EliminarUsuario"
+                          ~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "MissingClass":
+   If a class is referenced in the manifest or in a layout file, it must also
+   exist in the project (or in one of the libraries included by the project.
+   This check helps uncover typos in registration names, or attempts to rename
+   or move classes without updating the XML references properly.
+
+   https://developer.android.com/guide/topics/manifest/manifest-intro.html
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\AndroidManifest.xml:11: Warning: WRITE_EXTERNAL_STORAGE is deprecated (and is not granted) when targeting Android 13+. If you need to write to shared storage, use the MediaStore.createWriteRequest intent. [ScopedStorage]
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ScopedStorage":
+   Scoped storage is enforced on Android 10+ (or Android 11+ if using
+   requestLegacyExternalStorage). In particular, WRITE_EXTERNAL_STORAGE will
+   no longer provide write access to all files; it will provide the equivalent
+   of READ_EXTERNAL_STORAGE instead.
+
+   As of Android 13, if you need to query or interact with MediaStore or media
+   files on the shared storage, you should be using instead one or more new
+   storage permissions:
+   * android.permission.READ_MEDIA_IMAGES
+   * android.permission.READ_MEDIA_VIDEO
+   * android.permission.READ_MEDIA_AUDIO
+
+   and then add maxSdkVersion="33" to the older permission. See the developer
+   guide for how to do this:
+   https://developer.android.com/about/versions/13/behavior-changes-13#granula
+   r-media-permissions
+
+   The MANAGE_EXTERNAL_STORAGE permission can be used to manage all files, but
+   it is rarely necessary and most apps on Google Play are not allowed to use
+   it. Most apps should instead migrate to use scoped storage. To modify or
+   delete files, apps should request write access from the user as described
+   at https://goo.gle/android-mediastore-createwriterequest.
+
+   To learn more, read these resources: Play policy:
+   https://goo.gle/policy-storage-help Allowable use cases:
+   https://goo.gle/policy-storage-usecases
+
+   https://goo.gle/android-storage-usecases
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:10: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+        android:layout_height="match_parent"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_perfil.xml:13: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+        android:layout_height="match_parent"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:10: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+        android:layout_height="match_parent"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_cambiar_contrasena.xml:10: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+        android:layout_height="match_parent"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_estadisticas.xml:11: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+      android:layout_height="match_parent"
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_hacer_recorrido.xml:9: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+    android:layout_height="match_parent"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_log_in.xml:13: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+        android:layout_height="match_parent"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:9: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+    android:layout_height="match_parent"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil_agenda.xml:9: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+    android:layout_height="match_parent"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_recorrido_fecha.xml:13: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+        android:layout_height="match_parent"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:12: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+        android:layout_height="match_parent"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:13: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+        android:layout_height="match_parent"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ritmo.xml:12: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+        android:layout_height="match_parent"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ubicacion_actual.xml:13: Warning: This LinearLayout should use android:layout_height="wrap_content" [ScrollViewSize]
+        android:layout_height="match_parent"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ScrollViewSize":
+   ScrollView children must set their layout_width or layout_height attributes
+   to wrap_content rather than fill_parent or match_parent in the scrolling
+   dimension.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RecorridoFechaActivity.java:163: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            String fechaSeleccionada = String.format("%04d-%02d-%02d", year, month + 1, dayOfMonth);
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RegistrarAgenda.java:91: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            String fechaSeleccionada = String.format("%04d-%02d-%02d", year, month + 1, dayOfMonth);
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RegistrarAgenda.java:105: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            String horaSeleccionada = String.format("%02d:%02d:%02d", hourOfDay, minute, 0);
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RegistroMascota.java:60: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            String fechaSeleccionada = year1 + "-" + String.format("%02d", (month1 + 1)) + "-" + String.format("%02d", dayOfMonth);
+                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RegistroMascota.java:60: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            String fechaSeleccionada = year1 + "-" + String.format("%02d", (month1 + 1)) + "-" + String.format("%02d", dayOfMonth);
+                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RegistroUsuario.java:77: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String correo = etCorreo.getText().toString().trim().toLowerCase();
+                                                             ~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiacoFecha.java:96: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            String fechaSeleccionada = year1 + "-" + String.format("%02d", (month1 + 1)) + "-" + String.format("%02d", dayOfMonth);
+                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiacoFecha.java:96: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            String fechaSeleccionada = year1 + "-" + String.format("%02d", (month1 + 1)) + "-" + String.format("%02d", dayOfMonth);
+                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\Vincular.java:63: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String correoVet = etCorreo.getText().toString().trim().toLowerCase();
+                                                                ~~~~~~~~~~~
+
+   Explanation for issues of type "DefaultLocale":
+   Calling String#toLowerCase() or #toUpperCase() without specifying an
+   explicit locale is a common source of bugs. The reason for that is that
+   those methods will use the current locale on the user's device, and even
+   though the code appears to work correctly when you are developing the app,
+   it will fail in some locales. For example, in the Turkish locale, the
+   uppercase replacement for i is not I.
+
+   If you want the methods to just perform ASCII replacement, for example to
+   convert an enum name, call String#toUpperCase(Locale.ROOT) instead. If you
+   really want to use the current locale, call
+   String#toUpperCase(Locale.getDefault()) instead.
+
+   https://developer.android.com/reference/java/util/Locale.html#default_locale
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\ActualizarEjercicio.java:121: Warning: Calling setType after setting URI in Intent constructor will clear the data: Call setDataAndType instead? [IntentReset]
+        pickPhotoIntent.setType("image/*");
+                        ~~~~~~~~~~~~~~~~~~
+    C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\ActualizarEjercicio.java:120: Originally set here
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\AgregarEjercicio.java:98: Warning: Calling setType after setting URI in Intent constructor will clear the data: Call setDataAndType instead? [IntentReset]
+        pickPhotoIntent.setType("image/*");
+                        ~~~~~~~~~~~~~~~~~~
+    C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\AgregarEjercicio.java:97: Originally set here
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\HistorialMedico.java:262: Warning: Calling setType after setting URI in Intent constructor will clear the data: Call setDataAndType instead? [IntentReset]
+        pickPhotoIntent.setType("image/*");
+                        ~~~~~~~~~~~~~~~~~~
+    C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\HistorialMedico.java:261: Originally set here
+
+   Explanation for issues of type "IntentReset":
+   Intent provides the following APIs: setData(Uri) and setType(String).
+   Unfortunately, setting one clears the other. If you want to set both, you
+   should call setDataAndType(Uri, String) instead.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_ejercicio.xml:21: Warning: Attribute clipToOutline is only used in API level 31 and higher (current min is 24) [UnusedAttribute]
+        android:clipToOutline="true"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:21: Warning: Attribute clipToOutline is only used in API level 31 and higher (current min is 24) [UnusedAttribute]
+        android:clipToOutline="true"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedAttribute":
+   This check finds attributes set in XML files that were introduced in a
+   version newer than the oldest version targeted by your application (with
+   the minSdkVersion attribute).
+
+   This is not an error; the application will simply ignore the attribute.
+   However, if the attribute is important to the appearance or functionality
+   of your application, you should consider finding an alternative way to
+   achieve the same result with only available attributes, and then you can
+   optionally create a copy of the layout in a layout-vNN folder which will be
+   used on API NN or higher where you can take advantage of the newer
+   attribute.
+
+   Note: This check does not only apply to attributes. For example, some tags
+   can be unused too, such as the new <tag> element in layouts introduced in
+   API 21.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_recorrido_fecha.xml:25: Warning: Replace the <fragment> tag with FragmentContainerView. [FragmentTagUsage from androidx.fragment]
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ubicacion_actual.xml:25: Warning: Replace the <fragment> tag with FragmentContainerView. [FragmentTagUsage from androidx.fragment]
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+         ~~~~~~~~
+
+   Explanation for issues of type "FragmentTagUsage":
+   FragmentContainerView replaces the <fragment> tag as the preferred         
+          way of adding fragments via XML. Unlike the <fragment> tag,
+   FragmentContainerView                 uses a normal FragmentTransaction
+   under the hood to add the initial fragment,                 allowing
+   further FragmentTransaction operations on the FragmentContainerView        
+           and providing a consistent timing for lifecycle events.
+
+   https://developer.android.com/reference/androidx/fragment/app/FragmentContainerView.html
+
+   Vendor: Android Open Source Project
+   Identifier: androidx.fragment
+   Feedback: https://issuetracker.google.com/issues/new?component=460964
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\AndroidManifest.xml:12: Warning: Your app is currently not handling Selected Photos Access introduced in Android 14+ [SelectedPhotoAccess]
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SelectedPhotoAccess":
+   Selected Photo Access is a new ability for users to share partial access to
+   their photo library when apps request access to their device storage on
+   Android 14+.
+
+   Instead of letting the system manage the selection lifecycle, we recommend
+   you adapt your app to handle partial access to the photo library.
+
+   https://developer.android.com/about/versions/14/changes/partial-photo-video-access
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:2: Warning: A newer version of com.android.application than 8.8.1 is available: 8.9.2. (There is also a newer version of 8.8.𝑥 available, if upgrading to 8.9.2 is difficult: 8.8.2) [AndroidGradlePluginVersion]
+agp = "8.8.1"
+      ~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:2: Warning: A newer version of com.android.application than 8.8.1 is available: 8.9.2. (There is also a newer version of 8.8.𝑥 available, if upgrading to 8.9.2 is difficult: 8.8.2) [AndroidGradlePluginVersion]
+agp = "8.8.1"
+      ~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:2: Warning: A newer version of com.android.application than 8.8.1 is available: 8.9.2. (There is also a newer version of 8.8.𝑥 available, if upgrading to 8.9.2 is difficult: 8.8.2) [AndroidGradlePluginVersion]
+agp = "8.8.1"
+      ~~~~~~~
+
+   Explanation for issues of type "AndroidGradlePluginVersion":
+   This detector looks for usage of the Android Gradle Plugin where the
+   version you are using is not the current stable release. Using older
+   versions is fine, and there are cases where you deliberately want to stick
+   with an older version. However, you may simply not be aware that a more
+   recent version is available, and that is what this lint check helps find.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\build.gradle.kts:61: Warning: A newer version of com.google.android.material:material than 1.9.0 is available: 1.12.0 [GradleDependency]
+    implementation("com.google.android.material:material:1.9.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\build.gradle.kts:64: Warning: A newer version of com.google.android.gms:play-services-location than 18.0.0 is available: 21.3.0 [GradleDependency]
+    implementation ("com.google.android.gms:play-services-location:18.0.0")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\build.gradle.kts:65: Warning: A newer version of androidx.appcompat:appcompat than 1.3.1 is available: 1.7.0 [GradleDependency]
+    implementation ("androidx.appcompat:appcompat:1.3.1")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:8: Warning: A newer version of androidx.activity:activity than 1.10.0 is available: 1.10.1 [GradleDependency]
+activity = "1.10.0"
+           ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:8: Warning: A newer version of androidx.activity:activity than 1.10.0 is available: 1.10.1 [GradleDependency]
+activity = "1.10.0"
+           ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:8: Warning: A newer version of androidx.activity:activity than 1.10.0 is available: 1.10.1 [GradleDependency]
+activity = "1.10.0"
+           ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:9: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.2.0 is available: 2.2.1 [GradleDependency]
+constraintlayout = "2.2.0"
+                   ~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:9: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.2.0 is available: 2.2.1 [GradleDependency]
+constraintlayout = "2.2.0"
+                   ~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:9: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.2.0 is available: 2.2.1 [GradleDependency]
+constraintlayout = "2.2.0"
+                   ~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:11: Warning: A newer version of com.google.android.gms:play-services-maps than 18.1.0 is available: 19.2.0. Upgrading to at least 18.2.0 is highly recommended to take advantage of the new renderer, which supports customization options like map styling, 3D tiles, and is more reliable, with better support going forward. [GradleDependency]
+playServicesMaps = "18.1.0"
+                   ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:11: Warning: A newer version of com.google.android.gms:play-services-maps than 18.1.0 is available: 19.2.0. Upgrading to at least 18.2.0 is highly recommended to take advantage of the new renderer, which supports customization options like map styling, 3D tiles, and is more reliable, with better support going forward. [GradleDependency]
+playServicesMaps = "18.1.0"
+                   ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:11: Warning: A newer version of com.google.android.gms:play-services-maps than 18.1.0 is available: 19.2.0. Upgrading to at least 18.2.0 is highly recommended to take advantage of the new renderer, which supports customization options like map styling, 3D tiles, and is more reliable, with better support going forward. [GradleDependency]
+playServicesMaps = "18.1.0"
+                   ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:15: Warning: A newer version of androidx.compose:compose-bom than 2024.04.01 is available: 2025.04.00 [GradleDependency]
+composeBom = "2024.04.01"
+             ~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:15: Warning: A newer version of androidx.compose:compose-bom than 2024.04.01 is available: 2025.04.00 [GradleDependency]
+composeBom = "2024.04.01"
+             ~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\gradle\libs.versions.toml:15: Warning: A newer version of androidx.compose:compose-bom than 2024.04.01 is available: 2025.04.00 [GradleDependency]
+composeBom = "2024.04.01"
+             ~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_vincular.xml:56: Warning: Unexpected text found in layout file: "/>" [ExtraText]
+        style="@style/BorderButton"/>/>
+                                     ~~
+
+   Explanation for issues of type "ExtraText":
+   Non-value resource files should only contain elements and attributes. Any
+   XML text content found in the file is likely accidental (and potentially
+   dangerous if the text resembles XML and the developer believes the text to
+   be functional).
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:33: Warning: Should use "sp" instead of "dp" for text sizes [SpUsage]
+            android:textSize="80dp"
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\values\styles.xml:10: Warning: Should use "sp" instead of "dp" for text sizes [SpUsage]
+        <item name="android:textSize">17dp</item>
+                                      ~~~~
+
+   Explanation for issues of type "SpUsage":
+   When setting text sizes, you should normally use sp, or "scale-independent
+   pixels". This is like the dp unit, but it is also scaled by the user's font
+   size preference. It is recommend you use this unit when specifying font
+   sizes, so they will be adjusted for both the screen density and the user's
+   preference.
+
+   There are cases where you might need to use dp; typically this happens when
+   the text is in a container with a specific dp-size. This will prevent the
+   text from spilling outside the container. Note however that this means that
+   the user's font size settings are not respected, so consider adjusting the
+   layout itself to be more flexible.
+
+   https://developer.android.com/training/multiscreen/screendensities.html
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\Ejercicios.java:153: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+                        ejercicioAdapter.notifyDataSetChanged();
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\Ejercicios.java:202: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+                        ejercicioAdapter.notifyDataSetChanged();
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilAgenda.java:127: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+                        citaAdapter.notifyDataSetChanged();
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilMascota.java:181: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        mascotaAdapter.notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "NotifyDataSetChanged":
+   The RecyclerView adapter's onNotifyDataSetChanged method does not specify
+   what about the data set has changed, forcing any observers to assume that
+   all existing items and structure may no longer be valid. `LayoutManager`s
+   will be forced to fully rebind and relayout all visible views.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil_mascota.xml:12: Warning: Use a layout_height of 0dp instead of 553dp for better performance [InefficientWeight]
+        android:layout_height="553dp"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "InefficientWeight":
+   When only a single widget in a LinearLayout defines a weight, it is more
+   efficient to assign a width/height of 0dp to it since it will absorb all
+   the remaining space anyway. With a declared width/height of 0dp it does not
+   have to measure its own size first.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\toolbar.xml:4: Warning: Possible overdraw: Root element paints background @color/white with a theme that also paints a background (inferred theme is @style/Theme.APPET) [Overdraw]
+    android:background="@color/white">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\drawable\appet.png: Warning: The resource R.drawable.appet appears to be unused [UnusedResources]
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\mipmap-hdpi\appet.webp: Warning: The resource R.mipmap.appet appears to be unused [UnusedResources]
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\mipmap-hdpi\appet_round.webp: Warning: The resource R.mipmap.appet_round appears to be unused [UnusedResources]
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\drawable\home_background.xml:2: Warning: The resource R.drawable.home_background appears to be unused [UnusedResources]
+<vector
+^
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\mipmap-hdpi\home_foreground.webp: Warning: The resource R.mipmap.home_foreground appears to be unused [UnusedResources]
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\values\strings.xml:54: Warning: The resource R.string.google_maps_key appears to be unused [UnusedResources]
+    <string name="google_maps_key">${MAPS_API_KEY}</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\values\styles.xml:23: Warning: The resource R.style.Border appears to be unused [UnusedResources]
+    <style name="Border" parent="Widget.Material3.Button">
+           ~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_cambiar_contrasena.xml:8: Warning: This namespace declaration is redundant [RedundantNamespace]
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_estadisticas.xml:9: Warning: This namespace declaration is redundant [RedundantNamespace]
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_hacer_recorrido.xml:7: Warning: This namespace declaration is redundant [RedundantNamespace]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:7: Warning: This namespace declaration is redundant [RedundantNamespace]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil_agenda.xml:7: Warning: This namespace declaration is redundant [RedundantNamespace]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_recorrido_fecha.xml:8: Warning: This namespace declaration is redundant [RedundantNamespace]
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_recorrido_fecha.xml:25: Warning: This namespace declaration is redundant [RedundantNamespace]
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ubicacion_actual.xml:8: Warning: This namespace declaration is redundant [RedundantNamespace]
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ubicacion_actual.xml:25: Warning: This namespace declaration is redundant [RedundantNamespace]
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "RedundantNamespace":
+   In Android XML documents, only specify the namespace on the root/document
+   element. Namespace declarations elsewhere in the document are typically
+   accidental leftovers from copy/pasting XML from other files or
+   documentation.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_cambiar_contrasena.xml:8: Warning: Unused namespace declaration xmlns:android; already declared on the root element [UnusedNamespace]
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_estadisticas.xml:9: Warning: Unused namespace declaration xmlns:android; already declared on the root element [UnusedNamespace]
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_hacer_recorrido.xml:7: Warning: Unused namespace declaration xmlns:android; already declared on the root element [UnusedNamespace]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:7: Warning: Unused namespace declaration xmlns:android; already declared on the root element [UnusedNamespace]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil_agenda.xml:7: Warning: Unused namespace declaration xmlns:android; already declared on the root element [UnusedNamespace]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_recorrido_fecha.xml:8: Warning: Unused namespace declaration xmlns:android; already declared on the root element [UnusedNamespace]
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ubicacion_actual.xml:8: Warning: Unused namespace declaration xmlns:android; already declared on the root element [UnusedNamespace]
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedNamespace":
+   Unused namespace declarations take up space and require processing that is
+   not necessary
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml:2: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\mipmap-anydpi-v26\ic_launcher_round.xml:2: Warning: The application adaptive roundIcon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "MonochromeLauncherIcon":
+   If android:roundIcon and android:icon are both in your manifest, you must
+   either remove the reference to android:roundIcon if it is not needed; or,
+   supply the monochrome icon in the drawable defined by the android:roundIcon
+   and android:icon attribute.
+
+   For example, if android:roundIcon and android:icon are both in the
+   manifest, a launcher might choose to use android:roundIcon over
+   android:icon to display the adaptive app icon. Therefore, your themed
+   application iconwill not show if your monochrome attribute is not also
+   specified in android:roundIcon.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\drawable\appet.png: Warning: Found bitmap drawable res/drawable/appet.png in densityless folder [IconLocation]
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\drawable\home.png: Warning: Found bitmap drawable res/drawable/home.png in densityless folder [IconLocation]
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\drawable\icono.png: Warning: Found bitmap drawable res/drawable/icono.png in densityless folder [IconLocation]
+
+   Explanation for issues of type "IconLocation":
+   The res/drawable folder is intended for density-independent graphics such
+   as shapes defined in XML. For bitmaps, move it to drawable-mdpi and
+   consider providing higher and lower resolution versions in drawable-ldpi,
+   drawable-hdpi and drawable-xhdpi. If the icon really is density independent
+   (for example a solid color) you can place it in drawable-nodpi.
+
+   https://developer.android.com/guide/practices/screens_support.html
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:37: Warning: This text field does not specify an inputType [TextFields]
+        <EditText
+         ~~~~~~~~
+
+   Explanation for issues of type "TextFields":
+   Providing an inputType attribute on a text field improves usability because
+   depending on the data to be input, optimized keyboards can be shown to the
+   user (such as just digits and parentheses for a phone number). 
+
+   The lint detector also looks at the id of the view, and if the id offers a
+   hint of the purpose of the field (for example, the id contains the phrase
+   phone or email), then lint will also ensure that the inputType contains the
+   corresponding type attributes.
+
+   If you really want to keep the text field generic, you can suppress this
+   warning by setting inputType="text".
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:61: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:68: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:117: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:53: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:60: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:109: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:64: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:106: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:117: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:127: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_recorrido_fecha.xml:35: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registrar_agenda.xml:32: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registrar_agenda.xml:42: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registrar_agenda.xml:51: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:30: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:37: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:116: Warning: Missing autofillHints attribute [Autofill]
+        <EditText
+         ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_vincular.xml:19: Warning: Missing autofillHints attribute [Autofill]
+    <EditText
+     ~~~~~~~~
+
+   Explanation for issues of type "Autofill":
+   Specify an autofillHints attribute when targeting SDK version 26 or higher
+   or explicitly specify that the view is not important for autofill. Your app
+   can help an autofill service classify the data correctly by providing the
+   meaning of each view that could be autofillable, such as views representing
+   usernames, passwords, credit card fields, email addresses, etc.
+
+   The hints can have any value, but it is recommended to use predefined
+   values like 'username' for a username or 'creditCardNumber' for a credit
+   card number. For a list of all predefined autofill hint constants, see the
+   AUTOFILL_HINT_ constants in the View reference at
+   https://developer.android.com/reference/android/view/View.html.
+
+   You can mark a view unimportant for autofill by specifying an
+   importantForAutofill attribute on that view or a parent view. See
+   https://developer.android.com/reference/android/view/View.html#setImportant
+   ForAutofill(int).
+
+   https://developer.android.com/guide/topics/text/autofill.html
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\build.gradle.kts:60: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("com.android.volley:volley:1.2.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\build.gradle.kts:61: Warning: Use version catalog instead (com.google.android.material:material is already available as material, but using version 1.12.0 instead) [UseTomlInstead]
+    implementation("com.google.android.material:material:1.9.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\build.gradle.kts:62: Warning: Use version catalog instead [UseTomlInstead]
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\build.gradle.kts:63: Warning: Use version catalog instead [UseTomlInstead]
+    implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\build.gradle.kts:64: Warning: Use version catalog instead [UseTomlInstead]
+    implementation ("com.google.android.gms:play-services-location:18.0.0")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\build.gradle.kts:65: Warning: Use version catalog instead (androidx.appcompat:appcompat is already available as appcompat, but using version 1.7.0 instead) [UseTomlInstead]
+    implementation ("androidx.appcompat:appcompat:1.3.1")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseTomlInstead":
+   If your project is using a libs.versions.toml file, you should place all
+   Gradle dependencies in the TOML file. This lint check looks for version
+   declarations outside of the TOML file and suggests moving them (and in the
+   IDE, provides a quickfix to performing the operation automatically).
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:30: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:22: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_hacer_recorrido.xml:29: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:30: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_log_in.xml:19: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageButton
+         ~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:45: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageButton
+             ~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ritmo.xml:51: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_ejercicio.xml:11: Warning: Missing contentDescription attribute on image [ContentDescription]
+    <ImageView
+     ~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:11: Warning: Missing contentDescription attribute on image [ContentDescription]
+    <ImageView
+     ~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\toolbar.xml:11: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+
+   Explanation for issues of type "ContentDescription":
+   Non-textual widgets like ImageViews and ImageButtons should use the
+   contentDescription attribute to specify a textual description of the widget
+   such that screen readers and other accessibility tools can adequately
+   describe the user interface.
+
+   Note that elements in application screens that are purely decorative and do
+   not provide any content or enable a user action should not have
+   accessibility content descriptions. In this case, set their descriptions to
+   @null. If your app's minSdkVersion is 16 or higher, you can instead set
+   these graphical elements' android:importantForAccessibility attributes to
+   no.
+
+   Note that for text fields, you should not set both the hint and the
+   contentDescription attributes since the hint will never be shown. Just set
+   the hint.
+
+   https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:42: Warning: 'clickable' attribute found, please also add 'focusable' [KeyboardInaccessibleWidget]
+            android:clickable="true"
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "KeyboardInaccessibleWidget":
+   A widget that is declared to be clickable but not declared to be focusable
+   is not accessible via the keyboard. Please add the focusable attribute as
+   well.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\ActualizarEjercicio.java:98: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Actualiza un Ejercicio");
+                      ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\ActualizarPerfil.java:56: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Actualiza tu perfil");
+                      ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\AgregarEjercicio.java:75: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Agrega un Ejercicio");
+                      ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CambiarContrasenaActivity.java:76: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Cambia Tu Contraseña");
+                      ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:37: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textIdCita.setText("ID Cita: " + cita.get("id_agenda"));
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:37: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textIdCita.setText("ID Cita: " + cita.get("id_agenda"));
+                                  ~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:38: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textNombreMascota.setText("Mascota: " + cita.get("nombre_mascota"));
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:38: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textNombreMascota.setText("Mascota: " + cita.get("nombre_mascota"));
+                                         ~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:39: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textFecha.setText("Fecha: " + cita.get("fecha"));
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:39: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textFecha.setText("Fecha: " + cita.get("fecha"));
+                                 ~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:40: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textHora.setText("Hora: " + cita.get("hora"));
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:40: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textHora.setText("Hora: " + cita.get("hora"));
+                                ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:41: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textRazon.setText("Razón: " + cita.get("razon"));
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:41: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textRazon.setText("Razón: " + cita.get("razon"));
+                                 ~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:42: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textDescripcion.setText("Descripción: " + cita.get("descripcion"));
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:42: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textDescripcion.setText("Descripción: " + cita.get("descripcion"));
+                                       ~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:54: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            holder.textAsistencia.setText("Estado: Asistido");
+                                          ~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:57: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            holder.textAsistencia.setText("Estado: No asistido");
+                                          ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\CitaAdapter.java:60: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            holder.textAsistencia.setText("Estado: No asistido");
+                                          ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\Ejercicios.java:61: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Ejercicios");
+                      ~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:36: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textIdEjercicio.setText("Id del ejercicio: " + ejercicio.get("id_ejercicio"));
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:36: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textIdEjercicio.setText("Id del ejercicio: " + ejercicio.get("id_ejercicio"));
+                                       ~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:37: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textNombreEjercicio.setText("Ejercicio: " + ejercicio.get("nombre"));
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:37: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textNombreEjercicio.setText("Ejercicio: " + ejercicio.get("nombre"));
+                                           ~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:38: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textDuracionEjercicio.setText("Duración: " + ejercicio.get("duracion") + " min");
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:38: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textDuracionEjercicio.setText("Duración: " + ejercicio.get("duracion") + " min");
+                                             ~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:38: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textDuracionEjercicio.setText("Duración: " + ejercicio.get("duracion") + " min");
+                                                                                        ~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:39: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textIntensidadEjercicio.setText("Intensidad: " + ejercicio.get("intensidad"));
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:39: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textIntensidadEjercicio.setText("Intensidad: " + ejercicio.get("intensidad"));
+                                               ~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:40: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textEspecieEjercicio.setText("Especie: " + ejercicio.get("especie"));
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:40: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textEspecieEjercicio.setText("Especie: " + ejercicio.get("especie"));
+                                            ~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:41: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textDescansoEjercicio.setText("Descanso: " + ejercicio.get("tiempo_descanso") + " min");
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:41: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textDescansoEjercicio.setText("Descanso: " + ejercicio.get("tiempo_descanso") + " min");
+                                             ~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EjerciciosAdapter.java:41: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textDescansoEjercicio.setText("Descanso: " + ejercicio.get("tiempo_descanso") + " min");
+                                                                                               ~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EliminarCuentaActivity.java:58: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Eliminar cuenta");
+                      ~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EliminarEjercicio.java:48: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Elimina un Ejercicio");
+                      ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EliminarMascota.java:52: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Eliminar Mascota");
+                      ~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\EstadisticasActivity.java:24: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Estadísticas");
+                      ~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\HacerRecorridoActivity.java:86: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Registro de recorrido");
+                      ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\HacerRecorridoActivity.java:100: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                textViewPosicion.setText("Presione empezar recorrido para empezar a contar");
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\HacerRecorridoActivity.java:128: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        textViewPosicion.setText("Midiendo...");
+                                 ~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\HacerRecorridoActivity.java:164: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                    textViewPosicion.setText("Midiendo ... Latitud:" + latitud + "\nLongitud:" + longitud);
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\HacerRecorridoActivity.java:164: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                    textViewPosicion.setText("Midiendo ... Latitud:" + latitud + "\nLongitud:" + longitud);
+                                             ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\HistorialMedico.java:102: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Agrega el Historial Médico");
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\LogIn.java:58: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Inicia Sesión");
+                      ~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:36: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textIdMascota.setText("ID: " + mascota.get("id_mascota"));
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:36: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textIdMascota.setText("ID: " + mascota.get("id_mascota"));
+                                     ~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:37: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textNombreMascota.setText("Nombre: " + mascota.get("nombre"));
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:37: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textNombreMascota.setText("Nombre: " + mascota.get("nombre"));
+                                         ~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:38: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textTipoMascota.setText("Tipo: " + mascota.get("tipo"));
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:38: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textTipoMascota.setText("Tipo: " + mascota.get("tipo"));
+                                       ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:39: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textRazaMascota.setText("Raza: " + mascota.get("raza"));
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:39: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textRazaMascota.setText("Raza: " + mascota.get("raza"));
+                                       ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:40: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textFechaNacimientoMascota.setText("Fecha Nacimiento: " + mascota.get("fecha_nacimiento"));
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:40: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textFechaNacimientoMascota.setText("Fecha Nacimiento: " + mascota.get("fecha_nacimiento"));
+                                                  ~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:43: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textCirugiasMascota.setText("Cirugías: " + (mascota.containsKey("cirugias") ? mascota.get("cirugias") : "N/A"));
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:43: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textCirugiasMascota.setText("Cirugías: " + (mascota.containsKey("cirugias") ? mascota.get("cirugias") : "N/A"));
+                                           ~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:44: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textSexoMascota.setText("Sexo: " + (mascota.containsKey("sexo") ? mascota.get("sexo") : "N/A"));
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:44: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textSexoMascota.setText("Sexo: " + (mascota.containsKey("sexo") ? mascota.get("sexo") : "N/A"));
+                                       ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:45: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textEnfermedadesMascota.setText("Enfermedades: " + (mascota.containsKey("enfermedades") ? mascota.get("enfermedades") : "N/A"));
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:45: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textEnfermedadesMascota.setText("Enfermedades: " + (mascota.containsKey("enfermedades") ? mascota.get("enfermedades") : "N/A"));
+                                               ~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:46: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textMedicinasMascota.setText("Medicinas: " + (mascota.containsKey("medicinas") ? mascota.get("medicinas") : "N/A"));
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:46: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textMedicinasMascota.setText("Medicinas: " + (mascota.containsKey("medicinas") ? mascota.get("medicinas") : "N/A"));
+                                            ~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:47: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textSangreMascota.setText("Tipo de Sangre: " + (mascota.containsKey("sangre") ? mascota.get("sangre") : "N/A"));
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:47: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textSangreMascota.setText("Tipo de Sangre: " + (mascota.containsKey("sangre") ? mascota.get("sangre") : "N/A"));
+                                         ~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:48: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textPesoMascota.setText("Peso: " + (mascota.containsKey("peso") ? mascota.get("peso") + " kg" : "N/A"));
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:48: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textPesoMascota.setText("Peso: " + (mascota.containsKey("peso") ? mascota.get("peso") + " kg" : "N/A"));
+                                       ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:49: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        holder.textVacunasMascota.setText("Vacunas: " + (mascota.containsKey("vacunas") ? mascota.get("vacunas") : "N/A"));
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\MascotaAdapter.java:49: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        holder.textVacunasMascota.setText("Vacunas: " + (mascota.containsKey("vacunas") ? mascota.get("vacunas") : "N/A"));
+                                          ~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilAgenda.java:59: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Agenda");
+                      ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilMascota.java:58: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Perfil de Mascotas");
+                      ~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:50: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Perfil");
+                      ~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:67: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            textCorreo.setText("Correo: " + correo);
+                               ~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:67: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            textCorreo.setText("Correo: " + correo);
+                               ~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:69: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            textCorreo.setText("Correo: " + correoVet);
+                               ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:69: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            textCorreo.setText("Correo: " + correoVet);
+                               ~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:72: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            textCorreo.setText("Correo: " + correoCui);
+                               ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:72: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            textCorreo.setText("Correo: " + correoCui);
+                               ~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:88: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                        textNombre.setText("Nombre: " + nombre);
+                                           ~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:88: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                        textNombre.setText("Nombre: " + nombre);
+                                           ~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:89: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                        textNumero.setText("Número de celular: " + celular);
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:89: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                        textNumero.setText("Número de celular: " + celular);
+                                           ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:90: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                        textDireccion.setText("Dirección: " + direccion);
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:90: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                        textDireccion.setText("Dirección: " + direccion);
+                                              ~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:91: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                        textGenero.setText("Género: " + genero);
+                                           ~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\PerfilUsuario.java:91: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                        textGenero.setText("Género: " + genero);
+                                           ~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RecorridoFechaActivity.java:78: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Recorrido por Fecha");
+                      ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RegistrarAgenda.java:77: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Agenda tus citas");
+                      ~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RegistroUsuario.java:59: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Registrate");
+                      ~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:74: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Ritmo Cardiaco");
+                      ~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:87: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                textViewRitmo.setText("Presione empezar medición para conocer el ritmo cardiaco de su mascota");
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:90: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                textViewEstado.setText("No hay datos");
+                                       ~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:135: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                            textViewRitmo.setText("El Ritmo Cardiaco de su mascota es: " + verificarRitmo(tipo, ritmoCardiaco));
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:135: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                            textViewRitmo.setText("El Ritmo Cardiaco de su mascota es: " + verificarRitmo(tipo, ritmoCardiaco));
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:138: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                            textViewRitmo.setText("El Ritmo Cardiaco de su mascota es: " + verificarRitmo(tamanio, ritmoCardiaco));
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:138: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                            textViewRitmo.setText("El Ritmo Cardiaco de su mascota es: " + verificarRitmo(tamanio, ritmoCardiaco));
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:140: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                            textViewRitmo.setText("El Ritmo Cardiaco de su mascota es: " + verificarRitmo(tamanio, ritmoCardiaco));
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:140: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                            textViewRitmo.setText("El Ritmo Cardiaco de su mascota es: " + verificarRitmo(tamanio, ritmoCardiaco));
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:142: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                            textViewRitmo.setText("El Ritmo Cardiaco de su mascota es: " + verificarRitmo(tamanio, ritmoCardiaco));
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:142: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                            textViewRitmo.setText("El Ritmo Cardiaco de su mascota es: " + verificarRitmo(tamanio, ritmoCardiaco));
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:158: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                textViewEstado.setText("Se mascota se encuentra BIEN");
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:162: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                textViewEstado.setText("Se mascota se encuentra MAL");
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:168: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                textViewEstado.setText("Se mascota se encuentra BIEN");
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:172: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                textViewEstado.setText("Se mascota se encuentra MAL");
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:178: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                textViewEstado.setText("Se mascota se encuentra BIEN");
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:182: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                textViewEstado.setText("Se mascota se encuentra MAL");
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:188: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                textViewEstado.setText("Se mascota se encuentra BIEN");
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:192: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                textViewEstado.setText("Se mascota se encuentra MAL");
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiaco.java:201: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        textViewEstado.setText("Se ha parado la medición");
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\RitmoCardiacoFecha.java:80: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Ritmo Cardiaco por Fecha");
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\java\co\unipiloto\appet\UbicacionActualActivity.java:82: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        title.setText("Ubicación Actual");
+                      ~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:48: Warning: Hardcoded string "Tomar Foto", should use @string resource [HardcodedText]
+                    android:text="Tomar Foto"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:55: Warning: Hardcoded string "Elegir de Galería", should use @string resource [HardcodedText]
+                    android:text="Elegir de Galería"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:66: Warning: Hardcoded string "Nombre del ejercicio", should use @string resource [HardcodedText]
+            android:hint="Nombre del ejercicio"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:73: Warning: Hardcoded string "Duración total del ejercicio en minutos", should use @string resource [HardcodedText]
+            android:hint="Duración total del ejercicio en minutos"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:79: Warning: Hardcoded string "Intensidad", should use @string resource [HardcodedText]
+            android:text="Intensidad"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:88: Warning: Hardcoded string "Intensidad", should use @string resource [HardcodedText]
+            android:hint="Intensidad"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:94: Warning: Hardcoded string "Especie", should use @string resource [HardcodedText]
+            android:text="Especie"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:108: Warning: Hardcoded string "Felino", should use @string resource [HardcodedText]
+                android:text="Felino"/>
+                ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:114: Warning: Hardcoded string "Canino", should use @string resource [HardcodedText]
+                android:text="Canino"/>
+                ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:122: Warning: Hardcoded string "Tiempo de descanso en minutos", should use @string resource [HardcodedText]
+            android:hint="Tiempo de descanso en minutos"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:131: Warning: Hardcoded string "Actualizar Ejercicio", should use @string resource [HardcodedText]
+            android:text="Actualizar Ejercicio"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_perfil.xml:34: Warning: Hardcoded string "Correo electrónico", should use @string resource [HardcodedText]
+                android:hint="Correo electrónico"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_perfil.xml:55: Warning: Hardcoded string "Nombre completo", should use @string resource [HardcodedText]
+                android:hint="Nombre completo"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_perfil.xml:77: Warning: Hardcoded string "Número de celular", should use @string resource [HardcodedText]
+                android:hint="Número de celular"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_perfil.xml:99: Warning: Hardcoded string "Dirección", should use @string resource [HardcodedText]
+                android:hint="Dirección"
+                ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_perfil.xml:112: Warning: Hardcoded string "Género:", should use @string resource [HardcodedText]
+            android:text="Género:"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_perfil.xml:127: Warning: Hardcoded string "Masculino", should use @string resource [HardcodedText]
+                android:text="Masculino"/>
+                ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_perfil.xml:133: Warning: Hardcoded string "Femenino", should use @string resource [HardcodedText]
+                android:text="Femenino"/>
+                ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_perfil.xml:139: Warning: Hardcoded string "No Binario", should use @string resource [HardcodedText]
+                android:text="No Binario"/>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_perfil.xml:145: Warning: Hardcoded string "Otro", should use @string resource [HardcodedText]
+                android:text="Otro"/>
+                ~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_perfil.xml:152: Warning: Hardcoded string "Actualizar", should use @string resource [HardcodedText]
+            android:text="Actualizar"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:40: Warning: Hardcoded string "Tomar Foto", should use @string resource [HardcodedText]
+                    android:text="Tomar Foto"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:47: Warning: Hardcoded string "Elegir de Galería", should use @string resource [HardcodedText]
+                    android:text="Elegir de Galería"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:58: Warning: Hardcoded string "Nombre del ejercicio", should use @string resource [HardcodedText]
+            android:hint="Nombre del ejercicio"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:65: Warning: Hardcoded string "Duración total del ejercicio en minutos", should use @string resource [HardcodedText]
+            android:hint="Duración total del ejercicio en minutos"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:71: Warning: Hardcoded string "Intensidad", should use @string resource [HardcodedText]
+            android:text="Intensidad"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:80: Warning: Hardcoded string "Intensidad", should use @string resource [HardcodedText]
+            android:hint="Intensidad"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:86: Warning: Hardcoded string "Especie", should use @string resource [HardcodedText]
+            android:text="Especie"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:100: Warning: Hardcoded string "Felino", should use @string resource [HardcodedText]
+                android:text="Felino"/>
+                ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:106: Warning: Hardcoded string "Canino", should use @string resource [HardcodedText]
+                android:text="Canino"/>
+                ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:114: Warning: Hardcoded string "Tiempo de descanso en minutos", should use @string resource [HardcodedText]
+            android:hint="Tiempo de descanso en minutos"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:123: Warning: Hardcoded string "Registrar", should use @string resource [HardcodedText]
+            android:text="Registrar"
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_cambiar_contrasena.xml:31: Warning: Hardcoded string "Correo", should use @string resource [HardcodedText]
+                android:hint="Correo"
+                ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_cambiar_contrasena.xml:43: Warning: Hardcoded string "Enviar correo", should use @string resource [HardcodedText]
+            android:text = "Enviar correo"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_cambiar_contrasena.xml:62: Warning: Hardcoded string "Codigo de Verificación", should use @string resource [HardcodedText]
+                android:hint="Codigo de Verificación"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_cambiar_contrasena.xml:74: Warning: Hardcoded string "Enviar Código", should use @string resource [HardcodedText]
+            android:text = "Enviar Código"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_cambiar_contrasena.xml:94: Warning: Hardcoded string "Contraseña", should use @string resource [HardcodedText]
+                android:hint="Contraseña"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_cambiar_contrasena.xml:115: Warning: Hardcoded string "Confirmar contraseña", should use @string resource [HardcodedText]
+                android:hint="Confirmar contraseña"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_cambiar_contrasena.xml:127: Warning: Hardcoded string "Cambiar Contraseña", should use @string resource [HardcodedText]
+            android:text = "Cambiar Contraseña"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ejercicios.xml:20: Warning: Hardcoded string "Felino Y Canino", should use @string resource [HardcodedText]
+                android:text="Felino Y Canino"/>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ejercicios.xml:26: Warning: Hardcoded string "Felino", should use @string resource [HardcodedText]
+                android:text="Felino"/>
+                ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ejercicios.xml:32: Warning: Hardcoded string "Canino", should use @string resource [HardcodedText]
+                android:text="Canino"/>
+                ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ejercicios.xml:47: Warning: Hardcoded string "Agregar Ejercicio", should use @string resource [HardcodedText]
+            android:text="Agregar Ejercicio"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ejercicios.xml:57: Warning: Hardcoded string "Actualizar Ejercicio", should use @string resource [HardcodedText]
+            android:text="Actualizar Ejercicio"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ejercicios.xml:67: Warning: Hardcoded string "Eliminar Ejercicio", should use @string resource [HardcodedText]
+            android:text="Eliminar Ejercicio"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_eliminar_cuenta.xml:25: Warning: Hardcoded string "Enviar correo", should use @string resource [HardcodedText]
+            android:text="Enviar correo"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_eliminar_cuenta.xml:44: Warning: Hardcoded string "Código de Verificación", should use @string resource [HardcodedText]
+                android:hint="Código de Verificación"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_eliminar_cuenta.xml:57: Warning: Hardcoded string "Enviar Código", should use @string resource [HardcodedText]
+            android:text="Enviar Código"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_eliminar_cuenta.xml:69: Warning: Hardcoded string "Eliminar Cuenta", should use @string resource [HardcodedText]
+            android:text="Eliminar Cuenta"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_eliminar_ejercicio.xml:12: Warning: Hardcoded string "Intensidad", should use @string resource [HardcodedText]
+        android:hint="Intensidad"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_eliminar_ejercicio.xml:21: Warning: Hardcoded string "Eliminar Ejercicio", should use @string resource [HardcodedText]
+        android:text="Eliminar Ejercicio"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_eliminar_mascota.xml:30: Warning: Hardcoded string "Eliminar Mascota", should use @string resource [HardcodedText]
+            android:text="Eliminar Mascota"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_estadisticas.xml:25: Warning: Hardcoded string "Ritmo cardiaco por fecha", should use @string resource [HardcodedText]
+        android:text="Ritmo cardiaco por fecha" />
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_hacer_recorrido.xml:41: Warning: Hardcoded string "Presione empezar recorrido para empezar a contar", should use @string resource [HardcodedText]
+                android:text="Presione empezar recorrido para empezar a contar"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_hacer_recorrido.xml:53: Warning: Hardcoded string "Empezar recorrido", should use @string resource [HardcodedText]
+            android:text="Empezar recorrido"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_hacer_recorrido.xml:62: Warning: Hardcoded string "Parar recorrido", should use @string resource [HardcodedText]
+            android:text="Parar recorrido"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_hacer_recorrido.xml:72: Warning: Hardcoded string "Enviar Reporte", should use @string resource [HardcodedText]
+            android:text="Enviar Reporte"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:20: Warning: Hardcoded string "Mascota", should use @string resource [HardcodedText]
+            android:hint="Mascota"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:50: Warning: Hardcoded string "Tomar Foto", should use @string resource [HardcodedText]
+                    android:text="Tomar Foto"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:58: Warning: Hardcoded string "Elegir de Galería", should use @string resource [HardcodedText]
+                    android:text="Elegir de Galería"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:68: Warning: Hardcoded string "Peso en kg", should use @string resource [HardcodedText]
+            android:hint="Peso en kg"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:76: Warning: Hardcoded string "Elige el tipo de sangre", should use @string resource [HardcodedText]
+            android:text="Elige el tipo de sangre"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:86: Warning: Hardcoded string "Tipo de Sangre", should use @string resource [HardcodedText]
+            android:hint="Tipo de Sangre"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:93: Warning: Hardcoded string "Selecciona las vacunas de tu mascota", should use @string resource [HardcodedText]
+            android:text="Selecciona las vacunas de tu mascota"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:110: Warning: Hardcoded string "Enfermedades", should use @string resource [HardcodedText]
+            android:hint="Enfermedades"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:121: Warning: Hardcoded string "Medicinas", should use @string resource [HardcodedText]
+            android:hint="Medicinas"
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:131: Warning: Hardcoded string "Cirugías", should use @string resource [HardcodedText]
+            android:hint="Cirugías"
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_historial_medico.xml:144: Warning: Hardcoded string "Guardar Cambios", should use @string resource [HardcodedText]
+            android:text="Guardar Cambios"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_log_in.xml:42: Warning: Hardcoded string "Correo electrónico", should use @string resource [HardcodedText]
+                android:hint="Correo electrónico"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_log_in.xml:61: Warning: Hardcoded string "Contraseña", should use @string resource [HardcodedText]
+                android:hint="Contraseña"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_log_in.xml:72: Warning: Hardcoded string "Iniciar Sesión", should use @string resource [HardcodedText]
+            android:text="Iniciar Sesión"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_log_in.xml:80: Warning: Hardcoded string "¿Olvidaste tu contraseña?", should use @string resource [HardcodedText]
+            android:text="¿Olvidaste tu contraseña?"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:32: Warning: Hardcoded string "APPET", should use @string resource [HardcodedText]
+            android:text="APPET"
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:59: Warning: Hardcoded string "Tu Perfil", should use @string resource [HardcodedText]
+                android:text="Tu Perfil"
+                ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:73: Warning: Hardcoded string "Registrarse", should use @string resource [HardcodedText]
+        android:text="Registrarse"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:83: Warning: Hardcoded string "Iniciar Sesión", should use @string resource [HardcodedText]
+        android:text="Iniciar Sesión"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:94: Warning: Hardcoded string "Gestionar Citas", should use @string resource [HardcodedText]
+        android:text="Gestionar Citas"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:105: Warning: Hardcoded string "Gestionar Ejercicios", should use @string resource [HardcodedText]
+        android:text="Gestionar Ejercicios"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:116: Warning: Hardcoded string "Perfil de Mascotas", should use @string resource [HardcodedText]
+        android:text="Perfil de Mascotas"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:129: Warning: Hardcoded string "Estadísticas", should use @string resource [HardcodedText]
+            android:text="Estadísticas" />
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:137: Warning: Hardcoded string "Medir Ritmo Cardiaco", should use @string resource [HardcodedText]
+        android:text="Medir Ritmo Cardiaco"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:148: Warning: Hardcoded string "Agregar Historial", should use @string resource [HardcodedText]
+        android:text="Agregar Historial"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:160: Warning: Hardcoded string "Vincular un Cuidador o Veterinario", should use @string resource [HardcodedText]
+        android:text="Vincular un Cuidador o Veterinario"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:171: Warning: Hardcoded string "Ver Recorrido por Fecha", should use @string resource [HardcodedText]
+        android:text="Ver Recorrido por Fecha"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:182: Warning: Hardcoded string "Hacer Recorrido", should use @string resource [HardcodedText]
+        android:text="Hacer Recorrido"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:193: Warning: Hardcoded string "Ver Ubicacion Actual", should use @string resource [HardcodedText]
+        android:text="Ver Ubicacion Actual"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:24: Warning: Hardcoded string "Nombre:", should use @string resource [HardcodedText]
+        android:text="Nombre:"
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:36: Warning: Hardcoded string "Correo:", should use @string resource [HardcodedText]
+        android:text="Correo:"
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:47: Warning: Hardcoded string "Número de celular:", should use @string resource [HardcodedText]
+        android:text="Número de celular:"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:59: Warning: Hardcoded string "Dirección:", should use @string resource [HardcodedText]
+        android:text="Dirección:"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:71: Warning: Hardcoded string "Género:", should use @string resource [HardcodedText]
+        android:text="Género:"
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:82: Warning: Hardcoded string "Elige una opción", should use @string resource [HardcodedText]
+        android:text="Elige una opción"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:92: Warning: Hardcoded string "Perfil de Mascotas", should use @string resource [HardcodedText]
+        android:text="Perfil de Mascotas"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:101: Warning: Hardcoded string "Actualizar Perfil", should use @string resource [HardcodedText]
+        android:text="Actualizar Perfil"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:110: Warning: Hardcoded string "Actualizar Contrasena", should use @string resource [HardcodedText]
+        android:text="Actualizar Contrasena"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:119: Warning: Hardcoded string "Cerrar Sesión", should use @string resource [HardcodedText]
+        android:text="Cerrar Sesión"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil.xml:128: Warning: Hardcoded string "Eliminar Cuenta", should use @string resource [HardcodedText]
+        android:text="Eliminar Cuenta"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil_agenda.xml:19: Warning: Hardcoded string "Agregar o Eliminar Cita", should use @string resource [HardcodedText]
+        android:text="Agregar o Eliminar Cita"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil_mascota.xml:21: Warning: Hardcoded string "Registrar Mascota", should use @string resource [HardcodedText]
+        android:text="Registrar Mascota"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil_mascota.xml:31: Warning: Hardcoded string "Agregar Historial", should use @string resource [HardcodedText]
+        android:text="Agregar Historial"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil_mascota.xml:41: Warning: Hardcoded string "Gestionar Citas", should use @string resource [HardcodedText]
+        android:text="Gestionar Citas"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_perfil_mascota.xml:51: Warning: Hardcoded string "Eliminar Mascota", should use @string resource [HardcodedText]
+        android:text="Eliminar Mascota"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_recorrido_fecha.xml:40: Warning: Hardcoded string "Fecha del recorrido", should use @string resource [HardcodedText]
+            android:hint="Fecha del recorrido"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_recorrido_fecha.xml:48: Warning: Hardcoded string "Ver recorrido", should use @string resource [HardcodedText]
+            android:text="Ver recorrido"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registrar_agenda.xml:23: Warning: Hardcoded string "Id Mascota:", should use @string resource [HardcodedText]
+            android:text="Id Mascota:" />
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registrar_agenda.xml:37: Warning: Hardcoded string "Fecha de la cita", should use @string resource [HardcodedText]
+            android:hint="Fecha de la cita"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registrar_agenda.xml:47: Warning: Hardcoded string "Hora de la cita", should use @string resource [HardcodedText]
+            android:hint="Hora de la cita"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registrar_agenda.xml:56: Warning: Hardcoded string "Añada una descripción", should use @string resource [HardcodedText]
+            android:hint="Añada una descripción"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registrar_agenda.xml:64: Warning: Hardcoded string "Razón:", should use @string resource [HardcodedText]
+            android:text="Razón:" />
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registrar_agenda.xml:77: Warning: Hardcoded string "Guardar", should use @string resource [HardcodedText]
+            android:text="Guardar"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registrar_agenda.xml:86: Warning: Hardcoded string "Eliminar una cita", should use @string resource [HardcodedText]
+            android:text="Eliminar una cita"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registrar_agenda.xml:101: Warning: Hardcoded string "Eliminar Cita", should use @string resource [HardcodedText]
+            android:text="Eliminar Cita"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:22: Warning: Hardcoded string "Registra tu mascota", should use @string resource [HardcodedText]
+            android:text="Registra tu mascota"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:35: Warning: Hardcoded string "Nombre completo Ej: Buñuelo Ramírez", should use @string resource [HardcodedText]
+            android:hint="Nombre completo Ej: Buñuelo Ramírez"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:43: Warning: Hardcoded string "Fecha de nacimiento", should use @string resource [HardcodedText]
+            android:hint="Fecha de nacimiento"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:48: Warning: Hardcoded string "Sexo", should use @string resource [HardcodedText]
+            android:text="Sexo"
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:65: Warning: Hardcoded string "Macho", should use @string resource [HardcodedText]
+                android:text="Macho"/>
+                ~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:71: Warning: Hardcoded string "Hembra", should use @string resource [HardcodedText]
+                android:text="Hembra"/>
+                ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:77: Warning: Hardcoded string "Especie", should use @string resource [HardcodedText]
+            android:text="Especie"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:94: Warning: Hardcoded string "Felino", should use @string resource [HardcodedText]
+                android:text="Felino"/>
+                ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:100: Warning: Hardcoded string "Canino", should use @string resource [HardcodedText]
+                android:text="Canino"/>
+                ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:106: Warning: Hardcoded string "Raza", should use @string resource [HardcodedText]
+            android:text="Raza"
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:120: Warning: Hardcoded string "Escribe la raza", should use @string resource [HardcodedText]
+            android:hint="Escribe la raza"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:128: Warning: Hardcoded string "Tamaño", should use @string resource [HardcodedText]
+            android:text="Tamaño"
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:145: Warning: Hardcoded string "Grande", should use @string resource [HardcodedText]
+                android:text="Grande"/>
+                ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:151: Warning: Hardcoded string "Mediano", should use @string resource [HardcodedText]
+                android:text="Mediano"/>
+                ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:156: Warning: Hardcoded string "Pequeño", should use @string resource [HardcodedText]
+                android:text="Pequeño"/>
+                ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:166: Warning: Hardcoded string "Registrar", should use @string resource [HardcodedText]
+            android:text="Registrar"
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:34: Warning: Hardcoded string "Correo electrónico", should use @string resource [HardcodedText]
+                android:hint="Correo electrónico"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:56: Warning: Hardcoded string "Contraseña", should use @string resource [HardcodedText]
+                android:hint="Contraseña"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:77: Warning: Hardcoded string "Confirmar contraseña", should use @string resource [HardcodedText]
+                android:hint="Confirmar contraseña"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:98: Warning: Hardcoded string "Nombre completo", should use @string resource [HardcodedText]
+                android:hint="Nombre completo"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:120: Warning: Hardcoded string "Número de celular", should use @string resource [HardcodedText]
+                android:hint="Número de celular"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:142: Warning: Hardcoded string "Dirección", should use @string resource [HardcodedText]
+                android:hint="Dirección"
+                ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:155: Warning: Hardcoded string "Género:", should use @string resource [HardcodedText]
+            android:text="Género:"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:170: Warning: Hardcoded string "Masculino", should use @string resource [HardcodedText]
+                android:text="Masculino"/>
+                ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:176: Warning: Hardcoded string "Femenino", should use @string resource [HardcodedText]
+                android:text="Femenino"/>
+                ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:182: Warning: Hardcoded string "No Binario", should use @string resource [HardcodedText]
+                android:text="No Binario"/>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:188: Warning: Hardcoded string "Otro", should use @string resource [HardcodedText]
+                android:text="Otro"/>
+                ~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:195: Warning: Hardcoded string "Rol:", should use @string resource [HardcodedText]
+            android:text="Rol:"
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:208: Warning: Hardcoded string "Propietario", should use @string resource [HardcodedText]
+                android:text="Propietario"/>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:214: Warning: Hardcoded string "Veterinario", should use @string resource [HardcodedText]
+                android:text="Veterinario"/>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:220: Warning: Hardcoded string "Cuidador", should use @string resource [HardcodedText]
+                android:text="Cuidador"/>
+                ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:227: Warning: Hardcoded string "Registrar", should use @string resource [HardcodedText]
+            android:text="Registrar"
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ritmo.xml:31: Warning: Hardcoded string "Monitoreo de Ritmo Cardiaco", should use @string resource [HardcodedText]
+            android:text="Monitoreo de Ritmo Cardiaco"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ritmo.xml:63: Warning: Hardcoded string "Presione empezar medición para conocer el ritmo cardiaco de su mascota", should use @string resource [HardcodedText]
+                android:text="Presione empezar medición para conocer el ritmo cardiaco de su mascota"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ritmo.xml:73: Warning: Hardcoded string "No hay datos", should use @string resource [HardcodedText]
+            android:text="No hay datos"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ritmo.xml:84: Warning: Hardcoded string "Empezar medición", should use @string resource [HardcodedText]
+            android:text="Empezar medición"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ritmo.xml:93: Warning: Hardcoded string "Parar medición", should use @string resource [HardcodedText]
+            android:text="Parar medición"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ritmo.xml:102: Warning: Hardcoded string "Enviar Reporte", should use @string resource [HardcodedText]
+            android:text="Enviar Reporte"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ritmo_cardiaco_fecha.xml:25: Warning: Hardcoded string "Mascota", should use @string resource [HardcodedText]
+            android:hint="Mascota"
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ritmo_cardiaco_fecha.xml:43: Warning: Hardcoded string "Fecha", should use @string resource [HardcodedText]
+                android:hint="Fecha"
+                ~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ritmo_cardiaco_fecha.xml:53: Warning: Hardcoded string "Ver ritmo", should use @string resource [HardcodedText]
+            android:text="Ver ritmo"
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_ubicacion_actual.xml:39: Warning: Hardcoded string "Ver recorrido", should use @string resource [HardcodedText]
+            android:text="Ver recorrido"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_vincular.xml:13: Warning: Hardcoded string "Vinculate con un cuidador o veterinario", should use @string resource [HardcodedText]
+        android:text="Vinculate con un cuidador o veterinario"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_vincular.xml:24: Warning: Hardcoded string "Correo electronico", should use @string resource [HardcodedText]
+        android:hint="Correo electronico"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_vincular.xml:40: Warning: Hardcoded string "Veterinario", should use @string resource [HardcodedText]
+            android:text="Veterinario"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_vincular.xml:46: Warning: Hardcoded string "Cuidador", should use @string resource [HardcodedText]
+            android:text="Cuidador"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_vincular.xml:55: Warning: Hardcoded string "Vincular", should use @string resource [HardcodedText]
+        android:text="Vincular"
+        ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_cita.xml:16: Warning: Hardcoded string "ID Cita: ", should use @string resource [HardcodedText]
+            android:text="ID Cita: "
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_cita.xml:24: Warning: Hardcoded string "Mascota: ", should use @string resource [HardcodedText]
+            android:text="Mascota: "
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_cita.xml:32: Warning: Hardcoded string "Fecha: ", should use @string resource [HardcodedText]
+            android:text="Fecha: "
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_cita.xml:39: Warning: Hardcoded string "Hora: ", should use @string resource [HardcodedText]
+            android:text="Hora: "
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_cita.xml:46: Warning: Hardcoded string "Razón: ", should use @string resource [HardcodedText]
+            android:text="Razón: "
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_cita.xml:53: Warning: Hardcoded string "Descripción: ", should use @string resource [HardcodedText]
+            android:text="Descripción: "
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_cita.xml:60: Warning: Hardcoded string "Estado: ", should use @string resource [HardcodedText]
+            android:text="Estado: "
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_cita.xml:67: Warning: Hardcoded string "Marcar como asistida", should use @string resource [HardcodedText]
+                android:text="Marcar como asistida"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_ejercicio.xml:28: Warning: Hardcoded string "Id: ", should use @string resource [HardcodedText]
+        android:text="Id: "
+        ~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_ejercicio.xml:38: Warning: Hardcoded string "Nombre del ejercicio: ", should use @string resource [HardcodedText]
+        android:text="Nombre del ejercicio: "
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_ejercicio.xml:48: Warning: Hardcoded string "Duración: ", should use @string resource [HardcodedText]
+        android:text="Duración: "
+        ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_ejercicio.xml:57: Warning: Hardcoded string "Intensidad: ", should use @string resource [HardcodedText]
+        android:text="Intensidad: "
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_ejercicio.xml:66: Warning: Hardcoded string "Especie: ", should use @string resource [HardcodedText]
+        android:text="Especie: "
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_ejercicio.xml:75: Warning: Hardcoded string "Tiempo de descanso: ", should use @string resource [HardcodedText]
+        android:text="Tiempo de descanso: "
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:28: Warning: Hardcoded string "ID: ", should use @string resource [HardcodedText]
+        android:text="ID: "
+        ~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:37: Warning: Hardcoded string "Nombre: ", should use @string resource [HardcodedText]
+        android:text="Nombre: "
+        ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:46: Warning: Hardcoded string "Sexo: ", should use @string resource [HardcodedText]
+        android:text="Sexo: "
+        ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:54: Warning: Hardcoded string "Tipo: ", should use @string resource [HardcodedText]
+        android:text="Tipo: "
+        ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:62: Warning: Hardcoded string "Raza: ", should use @string resource [HardcodedText]
+        android:text="Raza: "
+        ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:70: Warning: Hardcoded string "Fecha Nacimiento: ", should use @string resource [HardcodedText]
+        android:text="Fecha Nacimiento: "
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:78: Warning: Hardcoded string "Enfermedades: ", should use @string resource [HardcodedText]
+        android:text="Enfermedades: "
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:86: Warning: Hardcoded string "Medicinas: ", should use @string resource [HardcodedText]
+        android:text="Medicinas: "
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:94: Warning: Hardcoded string "Tipo de Sangre: ", should use @string resource [HardcodedText]
+        android:text="Tipo de Sangre: "
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:102: Warning: Hardcoded string "Peso: ", should use @string resource [HardcodedText]
+        android:text="Peso: "
+        ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:110: Warning: Hardcoded string "Vacunas: ", should use @string resource [HardcodedText]
+        android:text="Vacunas: "
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\item_mascota.xml:118: Warning: Hardcoded string "Cirugías: ", should use @string resource [HardcodedText]
+        android:text="Cirugías: "
+        ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\toolbar.xml:31: Warning: Hardcoded string "Toolbar", should use @string resource [HardcodedText]
+                android:text="Toolbar"
+                ~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:35: Warning: When you define paddingRight you should probably also define paddingLeft for right-to-left symmetry [RtlSymmetry]
+            android:paddingRight="20dp"
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\toolbar.xml:23: Warning: When you define paddingLeft you should probably also define paddingRight for right-to-left symmetry [RtlSymmetry]
+            android:paddingLeft="16dp">
+            ~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "RtlSymmetry":
+   If you specify padding or margin on the left side of a layout, you should
+   probably also specify padding on the right side (and vice versa) for
+   right-to-left layout symmetry.
+
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:81: Warning: Use "start" instead of "left" to ensure correct behavior in right-to-left locales [RtlHardcoded]
+            android:gravity="left"/>
+                             ~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_ejercicio.xml:96: Warning: Use "start" instead of "left" to ensure correct behavior in right-to-left locales [RtlHardcoded]
+            android:gravity="left"/>
+                             ~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_actualizar_perfil.xml:120: Warning: Consider replacing android:layout_marginLeft with android:layout_marginStart="10dp" to better support right-to-left layouts [RtlHardcoded]
+            android:layout_marginLeft="10dp"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:73: Warning: Use "start" instead of "left" to ensure correct behavior in right-to-left locales [RtlHardcoded]
+            android:gravity="left"/>
+                             ~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_agregar_ejercicio.xml:88: Warning: Use "start" instead of "left" to ensure correct behavior in right-to-left locales [RtlHardcoded]
+            android:gravity="left"/>
+                             ~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_main.xml:35: Warning: Consider replacing android:paddingRight with android:paddingEnd="20dp" to better support right-to-left layouts [RtlHardcoded]
+            android:paddingRight="20dp"
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:50: Warning: Use "start" instead of "left" to ensure correct behavior in right-to-left locales [RtlHardcoded]
+            android:gravity="left"/>
+                             ~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:79: Warning: Use "start" instead of "left" to ensure correct behavior in right-to-left locales [RtlHardcoded]
+            android:gravity="left"/>
+                             ~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:108: Warning: Use "start" instead of "left" to ensure correct behavior in right-to-left locales [RtlHardcoded]
+            android:gravity="left"/>
+                             ~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_mascota.xml:130: Warning: Use "start" instead of "left" to ensure correct behavior in right-to-left locales [RtlHardcoded]
+            android:gravity="left" />
+                             ~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\activity_registro_usuario.xml:157: Warning: Consider replacing android:layout_marginLeft with android:layout_marginStart="10dp" to better support right-to-left layouts [RtlHardcoded]
+            android:layout_marginLeft="10dp"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\tomas\AndroidStudioProjects\Appet_Frontend\app\src\main\res\layout\toolbar.xml:23: Warning: Consider replacing android:paddingLeft with android:paddingStart="16dp" to better support right-to-left layouts [RtlHardcoded]
+            android:paddingLeft="16dp">
+            ~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "RtlHardcoded":
+   Using Gravity#LEFT and Gravity#RIGHT can lead to problems when a layout is
+   rendered in locales where text flows from right to left. Use Gravity#START
+   and Gravity#END instead. Similarly, in XML gravity and layout_gravity
+   attributes, use start rather than left.
+
+   For XML attributes such as paddingLeft and layout_marginLeft, use
+   paddingStart and layout_marginStart. NOTE: If your minSdkVersion is less
+   than 17, you should add both the older left/right attributes as well as the
+   new start/end attributes. On older platforms, where RTL is not supported
+   and the start/end attributes are unknown and therefore ignored, you need
+   the older left/right attributes. There is a separate lint check which
+   catches that type of error.
+
+   (Note: For Gravity#LEFT and Gravity#START, you can use these constants even
+   when targeting older platforms, because the start bitmask is a superset of
+   the left bitmask. Therefore, you can use gravity="start" rather than
+   gravity="left|start".)
+
+2 errors, 434 warnings

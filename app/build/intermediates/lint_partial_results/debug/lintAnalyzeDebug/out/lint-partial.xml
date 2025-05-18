@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.8.1" type="partial_results">
+    <map id="UnsafeIntentLaunch">
+            <map id="unprotected">
+                <entry
+                    name="co.unipiloto.appet.MainActivity"
+                    boolean="true"/>
+            </map>
+    </map>
+    <map id="UnusedResources">
+        <location id="R.drawable.appet"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/appet.png"/>
+        <location id="R.drawable.home_background"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/home_background.xml"
+            line="2"
+            column="1"
+            startOffset="40"
+            endLine="74"
+            endColumn="10"
+            endOffset="4939"/>
+        <location id="R.mipmap.appet"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-hdpi/appet.webp"/>
+        <location id="R.mipmap.appet_round"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-hdpi/appet_round.webp"/>
+        <location id="R.mipmap.home_foreground"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-hdpi/home_foreground.webp"/>
+        <location id="R.string.google_maps_key"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="54"
+            column="13"
+            startOffset="1589"
+            endLine="54"
+            endColumn="35"
+            endOffset="1611"/>
+        <location id="R.style.Border"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/styles.xml"
+            line="23"
+            column="12"
+            startOffset="1061"
+            endLine="23"
+            endColumn="25"
+            endOffset="1074"/>
+        <entry
+            name="model"
+            string="array[tipo_ejercicio(U),razas_perro(U),razas_gato(U),vacunas_mascotas(U),tipo_sangre(U),perfil_mascota(U)],attr[selectableItemBackground(R)],color[lightPurple(U),purple(U),black(U),white(U)],drawable[appet(D),border_white(U),home(U),home_background(D),ic_launcher_background(U),ic_launcher_foreground(U),ic_launcher_foreground_1(R),icono(U),rounded_border(U)],id[spinnerEjercicio(U),imageView(U),btnCamera(U),btnGallery(U),editTextNombre(U),editDuracion(U),textView3(D),spinnerIntensidad(U),rgEspecie(U),rbFelino(U),rbCanino(U),editTextDescanso(U),btnRegistrarMascota(D),main(U),etCorreo(U),etNombreCompleto(U),etNumeroCelular(U),etDireccion(U),titleGenero(U),rgGenero(U),rbMasculino(U),rbFemenino(U),rbNoBinario(U),rbOtro(U),btnActualizar(D),btnEnviarCorreo(U),etCodigo(U),btnEnviarCodigo(U),tilContrasena(U),etContrasena(U),tilConfirmarContrasena(U),etConfirmarContrasena(U),btnCambiarContrasena(U),rbFelinoYCanino(U),recyclerViewEjercicios(U),agregarEjercicio(U),actualizarEjercicio(U),eliminarEjercicio(U),tilCodigo(U),Eliminarspinner(U),eliminarMascota(D),ritmo_cardiaco_grafica(U),spinnerMascotas(U),gifImageView(U),textView(U),buttonEmpezarMedicion(U),buttonReporte(U),editTextPeso(U),spinnerSangre(U),layoutVacunas(U),editTextEnfermedades(U),editTextMedicinas(U),editTextCirugias(U),btnGuardar(U),btnIrPerfil(U),btnLogIn(U),container(D),txtAppet(D),txtVerPerfil(U),btnRegistrar(U),btnIrLogin(U),citas_mascota(U),ejercicios_mascota(U),perfil_mascota(U),ritmo_cardiaco(U),historial_mascota(U),vincular(U),btnIrRecorridoFecha(U),btnHacerRecorrido(U),btnUbicacionActual(U),textNombre(U),textCorreo(U),textNumero(U),textDireccion(U),textGenero(U),btnAgregarCita(U),recyclerViewCitas(U),recyclerViewMascotas(U),registrarMascotas(U),eliminar_mascota(D),spinner(U),map(U),fechaHint(U),btn(U),toolbar(D),idmascota(D),Idspinner(U),horaHint(U),descripcionHint(U),razon(D),razonHint(U),guardarAgenda(U),titleEliminar(D),eliminarCita(U),title(U),editTextNacimiento(U),rgSexo(U),rbMacho(U),rbHembra(D),rbGato(D),rbPerro(U),spinnerRaza(U),editTextOtraRaza(D),textTamanio(D),rgTamanio(U),rbGrande(U),rbMediano(U),rbPequeno(D),titleRol(D),rgRol(U),rbPropietario(D),rbVeterinario(U),rbCuidador(D),textViewEstado(U),etFecha(U),chart(U),textIdCita(U),textNombreMascota(U),textFecha(U),textHora(U),textRazon(U),textDescripcion(U),textAsistencia(U),btnAsistida(U),imageViewEjercicio(U),textIdEjercicio(U),textNombreEjercicio(U),textDuracion(U),textIntensidad(U),textEspecie(U),textDescanso(U),imageViewMascota(U),textIdMascota(U),textSexoMascota(U),textTipoMascota(U),textRazaMascota(U),textFechaNacimientoMascota(U),textEnfermedadesMascota(U),textMedicinasMascota(U),textSangreMascota(U),textPesoMascota(U),textVacunasMascota(U),textCirugiasMascota(U),left_icon(U)],layout[activity_actualizar_ejercicio(U),toolbar(U),activity_actualizar_perfil(U),activity_agregar_ejercicio(U),activity_cambiar_contrasena(U),activity_ejercicios(U),activity_eliminar_cuenta(U),activity_eliminar_ejercicio(U),activity_eliminar_mascota(U),activity_estadisticas(U),activity_hacer_recorrido(U),activity_historial_medico(U),activity_log_in(U),activity_main(U),activity_perfil(U),activity_perfil_agenda(U),activity_perfil_mascota(U),activity_recorrido_fecha(U),activity_registrar_agenda(U),activity_registro_mascota(U),activity_registro_usuario(U),activity_ritmo(U),activity_ritmo_cardiaco_fecha(U),activity_ubicacion_actual(U),activity_vincular(U),item_cita(U),item_ejercicio(U),item_mascota(U)],mipmap[ic_launcher(U),ic_launcher_round(U),appet(D),ic_launcher_foreground(U),appet_round(D),home_foreground(D)],string[app_name(U),title_activity_ubicacion_actual(U),title_activity_recorrido_fecha(U),google_maps_key(D)],style[Theme_APPET(U),BorderButton(U),Base_Theme_APPET(U),Theme_Material3_DayNight_NoActionBar(R),Widget_Material3_Button(R),Border(D)],xml[data_extraction_rules(U),backup_rules(U),network_security_config(U)];c^7,10^11,13^8^9,a4^a5^c0^cb^0,a5^a^d^a3^9,a6^a5^8^c,a7^a5^c0^cb^0,a8^a5^8^cb,a9^a5^cb,aa^a5^cb^8,ab^a5^cb,ac^a5^cb,ad^a5^cb,ae^a5^cb,af^a5^c^c0^cb,b0^a5^12^8^cb,b1^c0^cb^50,b2^a5^c^cb,b3^a5^cb,b4^a5^cb,b5^a5,b6^a5^c,b7^26^cb,b8^a5^8^cb,b9^a5^c^cb,ba^a5^c^8^cb,bb^a5,bc^c^cb,bd^13,be^13^10,bf^13^10,c0^f^c3,c1^f^c3,c2^f^c3,c4^f^c3,ca^cc,cb^ce^c^9^6,cc^cd^a^8^7^9,cf^ce^c^9^6;;;"/>
+    </map>
+
+</incidents>

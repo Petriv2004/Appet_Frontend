@@ -1,0 +1,114 @@
+[
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_perfil.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_perfil.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_eliminar_ejercicio.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_eliminar_ejercicio.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_registrar_agenda.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_registrar_agenda.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_actualizar_perfil.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_actualizar_perfil.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_ritmo.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_ritmo.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_eliminar_mascota.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_eliminar_mascota.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/item_cita.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/item_cita.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_main.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_main.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_hacer_recorrido.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_hacer_recorrido.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_vincular.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_vincular.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_estadisticas.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_estadisticas.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_ritmo_cardiaco_fecha.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_ritmo_cardiaco_fecha.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_perfil_agenda.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_perfil_agenda.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_ejercicios.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_ejercicios.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/item_ejercicio.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/item_ejercicio.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_registro_mascota.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_registro_mascota.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_registro_usuario.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_registro_usuario.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_cambiar_contrasena.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_cambiar_contrasena.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_eliminar_cuenta.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_eliminar_cuenta.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_recorrido_fecha.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_recorrido_fecha.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/item_mascota.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/item_mascota.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_actualizar_ejercicio.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_actualizar_ejercicio.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_log_in.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_log_in.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_perfil_mascota.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_perfil_mascota.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_ubicacion_actual.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_ubicacion_actual.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/toolbar.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/toolbar.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_agregar_ejercicio.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_agregar_ejercicio.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeReleaseResources-3:/layout/activity_historial_medico.xml",
+        "source": "co.unipiloto.appet.app-main-5:/layout/activity_historial_medico.xml"
+    }
+]

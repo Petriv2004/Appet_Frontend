@@ -1,0 +1,138 @@
+[
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\toolbar.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\toolbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_registrar_agenda.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_registrar_agenda.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_cambiar_contrasena.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_cambiar_contrasena.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_vincular.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_vincular.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_medicamento.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_medicamento.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_mascota_activa.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_mascota_activa.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_historial_medico.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_historial_medico.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_hacer_recorrido.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_hacer_recorrido.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_estadisticas_mascota.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_estadisticas_mascota.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_ubicacion_actual.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_ubicacion_actual.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_agregar_ejercicio.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_agregar_ejercicio.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\dialog_month_year.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\dialog_month_year.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_estadisticas.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_estadisticas.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_eliminar_mascota.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_eliminar_mascota.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_ritmo_cardiaco_fecha.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_ritmo_cardiaco_fecha.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_ritmo.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_ritmo.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\item_cita.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\item_cita.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_actualizar_ejercicio.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_actualizar_ejercicio.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_registro_usuario.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_registro_usuario.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_perfil.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_perfil.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_perfil_mascota.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_perfil_mascota.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_eliminar_ejercicio.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_eliminar_ejercicio.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_registro_mascota.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_registro_mascota.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_actualizar_perfil.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_actualizar_perfil.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\item_mascota.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\item_mascota.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_eliminar_cuenta.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_eliminar_cuenta.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_recorrido_fecha.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_recorrido_fecha.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\item_ejercicio.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\item_ejercicio.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_cancion.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_cancion.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_ejercicios.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_ejercicios.xml"
+    },
+    {
+        "merged": "co.unipiloto.appet.app-mergeDebugResources-62:/layout/activity_mascota_activa.xml",
+        "source": "co.unipiloto.appet.app-main-65:/layout/activity_mascota_activa.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_perfil_agenda.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_perfil_agenda.xml"
+    },
+    {
+        "merged": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-mergeDebugResources-62:\\layout\\activity_log_in.xml",
+        "source": "C:\\Users\\tomas\\.gradle\\daemon\\8.10.2\\co.unipiloto.appet.app-main-65:\\layout\\activity_log_in.xml"
+    }
+]

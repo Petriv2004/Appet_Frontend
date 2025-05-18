@@ -1,0 +1,1398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.8.1" type="conditional_incidents">
+
+    <incident
+        id="MissingPermission"
+        severity="error"
+        message="Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with `checkPermission`) or explicitly handle a potential `SecurityException`">
+        <fix-data missing="android.permission.ACCESS_FINE_LOCATION, android.permission.ACCESS_COARSE_LOCATION" requirement="|android.permission.ACCESS_COARSE_LOCATION,android.permission.ACCESS_FINE_LOCATION"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/co/unipiloto/appet/HacerRecorridoActivity.java"
+            line="146"
+            column="9"
+            startOffset="5222"
+            endLine="146"
+            endColumn="46"
+            endOffset="5259"/>
+    </incident>
+
+    <incident
+        id="ScopedStorage"
+        severity="warning"
+        message="">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="11"
+            column="36"
+            startOffset="373"
+            endLine="11"
+            endColumn="77"
+            endOffset="414"/>
+        <map>
+            <entry
+                name="maxSdkVersion"
+                int="2147483647"/>
+            <entry
+                name="read"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UnusedAttribute"
+        severity="warning"
+        message="">
+        <fix-data minSdk="ffffffffff800000" requiresApi="ffffffffc0000000"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_ejercicio.xml"
+            line="21"
+            column="9"
+            startOffset="798"
+            endLine="21"
+            endColumn="37"
+            endOffset="826"/>
+        <map>
+            <entry
+                name="message"
+                string="Attribute `clipToOutline` is only used in API level 31 and higher (current min is %1$s)"/>
+            <api-levels id="minSdk"
+                value="ffffffffff800000"/>
+            <api-levels id="requiresApi"
+                value="ffffffffc0000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UnusedAttribute"
+        severity="warning"
+        message="">
+        <fix-data minSdk="ffffffffff800000" requiresApi="ffffffffc0000000"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_mascota.xml"
+            line="21"
+            column="9"
+            startOffset="796"
+            endLine="21"
+            endColumn="37"
+            endOffset="824"/>
+        <map>
+            <entry
+                name="message"
+                string="Attribute `clipToOutline` is only used in API level 31 and higher (current min is %1$s)"/>
+            <api-levels id="minSdk"
+                value="ffffffffff800000"/>
+            <api-levels id="requiresApi"
+                value="ffffffffc0000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="QueryPermissionsNeeded"
+        severity="warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this method; see https://g.co/dev/packagevisibility for details">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/co/unipiloto/appet/ActualizarEjercicio.java"
+            line="113"
+            column="35"
+            startOffset="4117"
+            endLine="113"
+            endColumn="50"
+            endOffset="4132"/>
+        <map>
+            <entry
+                name="queryAll"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="QueryPermissionsNeeded"
+        severity="warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this method; see https://g.co/dev/packagevisibility for details">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/co/unipiloto/appet/AgregarEjercicio.java"
+            line="90"
+            column="35"
+            startOffset="3225"
+            endLine="90"
+            endColumn="50"
+            endOffset="3240"/>
+        <map>
+            <entry
+                name="queryAll"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="QueryPermissionsNeeded"
+        severity="warning"
+        message="Consider adding a `&lt;queries>` declaration to your manifest when calling this method; see https://g.co/dev/packagevisibility for details">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/co/unipiloto/appet/HistorialMedico.java"
+            line="134"
+            column="35"
+            startOffset="5045"
+            endLine="134"
+            endColumn="50"
+            endOffset="5060"/>
+        <map>
+            <entry
+                name="queryAll"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_actualizar_ejercicio.xml"
+            line="130"
+            column="13"
+            startOffset="4733"
+            endLine="130"
+            endColumn="56"
+            endOffset="4776"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_actualizar_perfil.xml"
+            line="153"
+            column="13"
+            startOffset="6094"
+            endLine="153"
+            endColumn="48"
+            endOffset="6129"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_agregar_ejercicio.xml"
+            line="122"
+            column="13"
+            startOffset="4455"
+            endLine="122"
+            endColumn="56"
+            endOffset="4498"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_cambiar_contrasena.xml"
+            line="44"
+            column="13"
+            startOffset="1814"
+            endLine="44"
+            endColumn="52"
+            endOffset="1853"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_cambiar_contrasena.xml"
+            line="75"
+            column="13"
+            startOffset="3138"
+            endLine="75"
+            endColumn="52"
+            endOffset="3177"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_cambiar_contrasena.xml"
+            line="128"
+            column="13"
+            startOffset="5450"
+            endLine="128"
+            endColumn="57"
+            endOffset="5494"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_ejercicios.xml"
+            line="46"
+            column="13"
+            startOffset="1694"
+            endLine="46"
+            endColumn="54"
+            endOffset="1735"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_ejercicios.xml"
+            line="56"
+            column="13"
+            startOffset="2105"
+            endLine="56"
+            endColumn="57"
+            endOffset="2149"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_ejercicios.xml"
+            line="66"
+            column="13"
+            startOffset="2520"
+            endLine="66"
+            endColumn="55"
+            endOffset="2562"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_eliminar_cuenta.xml"
+            line="26"
+            column="13"
+            startOffset="858"
+            endLine="26"
+            endColumn="52"
+            endOffset="897"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_eliminar_cuenta.xml"
+            line="58"
+            column="13"
+            startOffset="2174"
+            endLine="58"
+            endColumn="52"
+            endOffset="2213"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_eliminar_cuenta.xml"
+            line="70"
+            column="13"
+            startOffset="2610"
+            endLine="70"
+            endColumn="57"
+            endOffset="2654"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_eliminar_ejercicio.xml"
+            line="20"
+            column="9"
+            startOffset="687"
+            endLine="20"
+            endColumn="51"
+            endOffset="729"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_eliminar_mascota.xml"
+            line="29"
+            column="13"
+            startOffset="939"
+            endLine="29"
+            endColumn="53"
+            endOffset="979"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_estadisticas.xml"
+            line="24"
+            column="9"
+            startOffset="786"
+            endLine="24"
+            endColumn="48"
+            endOffset="825"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_hacer_recorrido.xml"
+            line="54"
+            column="13"
+            startOffset="1969"
+            endLine="54"
+            endColumn="53"
+            endOffset="2009"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_hacer_recorrido.xml"
+            line="63"
+            column="13"
+            startOffset="2318"
+            endLine="63"
+            endColumn="51"
+            endOffset="2356"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_hacer_recorrido.xml"
+            line="73"
+            column="13"
+            startOffset="2708"
+            endLine="73"
+            endColumn="45"
+            endOffset="2740"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_historial_medico.xml"
+            line="143"
+            column="13"
+            startOffset="5457"
+            endLine="143"
+            endColumn="45"
+            endOffset="5489"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_log_in.xml"
+            line="26"
+            column="13"
+            startOffset="918"
+            endLine="26"
+            endColumn="46"
+            endOffset="951"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_log_in.xml"
+            line="73"
+            column="13"
+            startOffset="3008"
+            endLine="73"
+            endColumn="43"
+            endOffset="3038"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_log_in.xml"
+            line="79"
+            column="13"
+            startOffset="3259"
+            endLine="79"
+            endColumn="57"
+            endOffset="3303"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="52"
+            column="17"
+            startOffset="1774"
+            endLine="52"
+            endColumn="50"
+            endOffset="1807"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="72"
+            column="9"
+            startOffset="2398"
+            endLine="72"
+            endColumn="45"
+            endOffset="2434"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="82"
+            column="9"
+            startOffset="2742"
+            endLine="82"
+            endColumn="41"
+            endOffset="2774"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="93"
+            column="9"
+            startOffset="3128"
+            endLine="93"
+            endColumn="42"
+            endOffset="3161"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="104"
+            column="9"
+            startOffset="3503"
+            endLine="104"
+            endColumn="46"
+            endOffset="3540"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="115"
+            column="9"
+            startOffset="3862"
+            endLine="115"
+            endColumn="49"
+            endOffset="3902"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="128"
+            column="13"
+            startOffset="4338"
+            endLine="128"
+            endColumn="52"
+            endOffset="4377"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="136"
+            column="9"
+            startOffset="4631"
+            endLine="136"
+            endColumn="41"
+            endOffset="4663"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="147"
+            column="9"
+            startOffset="5000"
+            endLine="147"
+            endColumn="45"
+            endOffset="5036"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="159"
+            column="9"
+            startOffset="5350"
+            endLine="159"
+            endColumn="44"
+            endOffset="5385"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="170"
+            column="9"
+            startOffset="5726"
+            endLine="170"
+            endColumn="50"
+            endOffset="5767"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="181"
+            column="9"
+            startOffset="6095"
+            endLine="181"
+            endColumn="48"
+            endOffset="6134"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="192"
+            column="9"
+            startOffset="6455"
+            endLine="192"
+            endColumn="49"
+            endOffset="6495"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_perfil.xml"
+            line="93"
+            column="9"
+            startOffset="3334"
+            endLine="93"
+            endColumn="49"
+            endOffset="3374"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_perfil.xml"
+            line="102"
+            column="9"
+            startOffset="3661"
+            endLine="102"
+            endColumn="44"
+            endOffset="3696"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_perfil.xml"
+            line="111"
+            column="9"
+            startOffset="3987"
+            endLine="111"
+            endColumn="54"
+            endOffset="4032"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_perfil.xml"
+            line="120"
+            column="9"
+            startOffset="4315"
+            endLine="120"
+            endColumn="40"
+            endOffset="4346"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_perfil.xml"
+            line="129"
+            column="9"
+            startOffset="4631"
+            endLine="129"
+            endColumn="42"
+            endOffset="4664"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_perfil_agenda.xml"
+            line="20"
+            column="9"
+            startOffset="647"
+            endLine="20"
+            endColumn="49"
+            endOffset="687"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_perfil_mascota.xml"
+            line="20"
+            column="9"
+            startOffset="705"
+            endLine="20"
+            endColumn="48"
+            endOffset="744"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_perfil_mascota.xml"
+            line="30"
+            column="9"
+            startOffset="1075"
+            endLine="30"
+            endColumn="45"
+            endOffset="1111"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_perfil_mascota.xml"
+            line="40"
+            column="9"
+            startOffset="1438"
+            endLine="40"
+            endColumn="42"
+            endOffset="1471"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_perfil_mascota.xml"
+            line="50"
+            column="9"
+            startOffset="1799"
+            endLine="50"
+            endColumn="51"
+            endOffset="1841"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_registrar_agenda.xml"
+            line="78"
+            column="13"
+            startOffset="2623"
+            endLine="78"
+            endColumn="51"
+            endOffset="2661"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_registrar_agenda.xml"
+            line="102"
+            column="13"
+            startOffset="3505"
+            endLine="102"
+            endColumn="50"
+            endOffset="3542"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_registro_mascota.xml"
+            line="165"
+            column="13"
+            startOffset="6211"
+            endLine="165"
+            endColumn="54"
+            endOffset="6252"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_registro_usuario.xml"
+            line="228"
+            column="13"
+            startOffset="9341"
+            endLine="228"
+            endColumn="47"
+            endOffset="9375"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_ritmo.xml"
+            line="85"
+            column="13"
+            startOffset="2945"
+            endLine="85"
+            endColumn="53"
+            endOffset="2985"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_ritmo.xml"
+            line="94"
+            column="13"
+            startOffset="3300"
+            endLine="94"
+            endColumn="51"
+            endOffset="3338"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_ritmo.xml"
+            line="103"
+            column="13"
+            startOffset="3653"
+            endLine="103"
+            endColumn="45"
+            endOffset="3685"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_ritmo_cardiaco_fecha.xml"
+            line="54"
+            column="13"
+            startOffset="2064"
+            endLine="54"
+            endColumn="43"
+            endOffset="2094"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UsingOnClickInXml"
+        severity="warning"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_vincular.xml"
+            line="54"
+            column="9"
+            startOffset="1881"
+            endLine="54"
+            endColumn="42"
+            endOffset="1914"/>
+        <map>
+            <condition minLT="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; `SDK_INT` is always >= 31">
+        <fix-replace
+            description="Delete tools:targetApi"
+            replacement=""
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*manifest*0}"
+                startOffset="1328"
+                endOffset="1348"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="29"
+            column="9"
+            startOffset="1328"
+            endLine="29"
+            endColumn="29"
+            endOffset="1348"/>
+        <map>
+            <condition minGE="ffffffffc0000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="KeyboardInaccessibleWidget"
+        severity="warning"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;">
+        <fix-attribute
+            description="Set focusable=&quot;true&quot;"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="focusable"
+            value="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_registro_mascota.xml"
+            line="42"
+            column="13"
+            startOffset="1642"
+            endLine="42"
+            endColumn="37"
+            endOffset="1666"/>
+        <map>
+            <condition minLT="fffffffffe000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlSymmetry"
+        severity="warning"
+        message="When you define `paddingRight` you should probably also define `paddingLeft` for right-to-left symmetry">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="35"
+            column="13"
+            startOffset="1130"
+            endLine="35"
+            endColumn="33"
+            endOffset="1150"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlSymmetry"
+        severity="warning"
+        message="When you define `paddingLeft` you should probably also define `paddingRight` for right-to-left symmetry">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/toolbar.xml"
+            line="23"
+            column="13"
+            startOffset="828"
+            endLine="23"
+            endColumn="32"
+            endOffset="847"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_actualizar_ejercicio.xml"
+            line="81"
+            column="30"
+            startOffset="2988"
+            endLine="81"
+            endColumn="34"
+            endOffset="2992"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_actualizar_ejercicio.xml"
+            line="96"
+            column="30"
+            startOffset="3519"
+            endLine="96"
+            endColumn="34"
+            endOffset="3523"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts">
+        <fix-replace
+            description="Replace with android:layout_marginStart=&quot;10dp&quot;"
+            oldString="layout_marginLeft"
+            replacement="layout_marginStart"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_actualizar_perfil.xml"
+            line="120"
+            column="13"
+            startOffset="4916"
+            endLine="120"
+            endColumn="38"
+            endOffset="4941"/>
+        <map>
+            <entry
+                name="applies"
+                int="10"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_agregar_ejercicio.xml"
+            line="73"
+            column="30"
+            startOffset="2710"
+            endLine="73"
+            endColumn="34"
+            endOffset="2714"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_agregar_ejercicio.xml"
+            line="88"
+            column="30"
+            startOffset="3241"
+            endLine="88"
+            endColumn="34"
+            endOffset="3245"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Consider replacing `android:paddingRight` with `android:paddingEnd=&quot;20dp&quot;` to better support right-to-left layouts">
+        <fix-replace
+            description="Replace with android:paddingEnd=&quot;20dp&quot;"
+            oldString="paddingRight"
+            replacement="paddingEnd"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="35"
+            column="13"
+            startOffset="1130"
+            endLine="35"
+            endColumn="33"
+            endOffset="1150"/>
+        <map>
+            <entry
+                name="applies"
+                int="10"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_registro_mascota.xml"
+            line="50"
+            column="30"
+            startOffset="1937"
+            endLine="50"
+            endColumn="34"
+            endOffset="1941"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_registro_mascota.xml"
+            line="79"
+            column="30"
+            startOffset="3017"
+            endLine="79"
+            endColumn="34"
+            endOffset="3021"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_registro_mascota.xml"
+            line="108"
+            column="30"
+            startOffset="4096"
+            endLine="108"
+            endColumn="34"
+            endOffset="4100"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_registro_mascota.xml"
+            line="130"
+            column="30"
+            startOffset="4861"
+            endLine="130"
+            endColumn="34"
+            endOffset="4865"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts">
+        <fix-replace
+            description="Replace with android:layout_marginStart=&quot;10dp&quot;"
+            oldString="layout_marginLeft"
+            replacement="layout_marginStart"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_registro_usuario.xml"
+            line="157"
+            column="13"
+            startOffset="6763"
+            endLine="157"
+            endColumn="38"
+            endOffset="6788"/>
+        <map>
+            <entry
+                name="applies"
+                int="10"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Consider replacing `android:paddingLeft` with `android:paddingStart=&quot;16dp&quot;` to better support right-to-left layouts">
+        <fix-replace
+            description="Replace with android:paddingStart=&quot;16dp&quot;"
+            oldString="paddingLeft"
+            replacement="paddingStart"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/toolbar.xml"
+            line="23"
+            column="13"
+            startOffset="828"
+            endLine="23"
+            endColumn="32"
+            endOffset="847"/>
+        <map>
+            <entry
+                name="applies"
+                int="10"/>
+        </map>
+    </incident>
+
+</incidents>

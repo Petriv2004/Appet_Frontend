@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMascotas"
+        android:layout_width="match_parent"
+        android:layout_height="553dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/registrarMascotas"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickAgregarMascota"
+        android:text="Registrar Mascota"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:id="@+id/historial_mascota"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onClickIrHistorial"
+        android:text="Agregar Historial"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:id="@+id/citas_mascota"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onClickIrAgenda"
+        android:text="Gestionar Citas"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:id="@+id/eliminar_mascota"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onClickIrEliminarMascota"
+        android:text="Eliminar Mascota"
+        style="@style/BorderButton"
+        android:layout_marginBottom="20dp"/>
+
+</LinearLayout>

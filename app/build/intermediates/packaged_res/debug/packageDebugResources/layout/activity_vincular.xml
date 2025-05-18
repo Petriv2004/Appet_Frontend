@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="16dp"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vinculate con un cuidador o veterinario"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/etCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Correo electronico"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/border_white"/>
+
+    <RadioGroup
+        android:id="@+id/rgRol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border_white">
+
+        <RadioButton
+            android:id="@+id/rbVeterinario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Veterinario"/>
+
+        <RadioButton
+            android:id="@+id/rbCuidador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cuidador"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/vincular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onClickVincular"
+        android:text="Vincular"
+        style="@style/BorderButton"/>/>
+
+
+
+</LinearLayout>

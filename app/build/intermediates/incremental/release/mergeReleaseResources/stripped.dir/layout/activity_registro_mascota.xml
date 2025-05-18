@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".RegistroMascota">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Registra tu mascota"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Nombre completo Ej: Buñuelo Ramírez"/>
+
+        <EditText
+            android:id="@+id/editTextNacimiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:clickable="true"
+            android:hint="Fecha de nacimiento"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sexo"
+            android:textSize="20sp"
+            android:gravity="left"/>
+
+        <RadioGroup
+            android:id="@+id/rgSexo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/titleGenero"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RadioButton
+                android:id="@+id/rbMacho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Macho"/>
+
+            <RadioButton
+                android:id="@+id/rbHembra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hembra"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Especie"
+            android:textSize="20sp"
+            android:gravity="left"/>
+
+        <RadioGroup
+            android:id="@+id/rgEspecie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/titleGenero"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RadioButton
+                android:id="@+id/rbGato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Felino"/>
+
+            <RadioButton
+                android:id="@+id/rbPerro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Canino"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Raza"
+            android:textSize="20sp"
+            android:gravity="left"/>
+
+        <Spinner
+            android:id="@+id/spinnerRaza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"/>
+
+        <EditText
+            android:id="@+id/editTextOtraRaza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Escribe la raza"
+            android:visibility="gone"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/textTamanio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tamaño"
+            android:textSize="20sp"
+            android:gravity="left" />
+
+        <RadioGroup
+            android:id="@+id/rgTamanio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/titleGenero"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RadioButton
+                android:id="@+id/rbGrande"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grande"/>
+
+            <RadioButton
+                android:id="@+id/rbMediano"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mediano"/>
+            <RadioButton
+                android:id="@+id/rbPequeno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pequeño"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnRegistrarMascota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:onClick="onClickRegistrarMascota"
+            android:text="Registrar"
+            style="@style/BorderButton"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.unipiloto.appet.ExampleUnitTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-04-21T20:46:41" hostname="TOMASVERA" time="0.011">
+  <properties/>
+  <testcase name="addition_isCorrect" classname="co.unipiloto.appet.ExampleUnitTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
