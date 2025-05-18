@@ -1,0 +1,148 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+        <include layout="@layout/toolbar" />
+
+        <Spinner
+            android:id="@+id/spinnerMascotas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mascota"
+            android:textSize="16sp"
+            android:background="@drawable/border_white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:background="@mipmap/ic_launcher"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnCamera"
+                    android:layout_width="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tomar Foto"
+                    style="@style/BorderButton"/>
+
+                <Button
+                    android:id="@+id/btnGallery"
+                    android:layout_width="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_height="wrap_content"
+                    android:text="Elegir de Galería"
+                    android:layout_marginTop="8dp"
+                    style="@style/BorderButton"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextPeso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Peso en kg"
+            android:inputType="number"
+            android:textSize="16sp"
+            android:background="@drawable/border_white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Elige el tipo de sangre"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerSangre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tipo de Sangre"
+            android:textSize="16sp"
+            android:background="@drawable/border_white"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selecciona las vacunas de tu mascota"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"/>
+
+        <LinearLayout
+            android:id="@+id/layoutVacunas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+        <EditText
+            android:id="@+id/editTextEnfermedades"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enfermedades"
+            android:inputType="textMultiLine"
+            android:textSize="16sp"
+            android:background="@drawable/border_white"
+            android:layout_marginBottom="10dp"/>
+
+
+        <EditText
+            android:id="@+id/editTextMedicinas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Medicinas"
+            android:inputType="textMultiLine"
+            android:textSize="16sp"
+            android:background="@drawable/border_white"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/editTextCirugias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cirugías"
+            android:inputType="textMultiLine"
+            android:textSize="16sp"
+            android:background="@drawable/border_white"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="onClickGuardar"
+            android:text="Guardar Cambios"
+            style="@style/BorderButton"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,80 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_margin="8dp"
+    android:background="@drawable/rounded_border"
+    android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/textIdCita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID Cita: "
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textNombreMascota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mascota: "
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha: "
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/textHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hora: "
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/textRazon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Razón: "
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/textDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descripción: "
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/textAsistencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estado: "
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnRecordatorio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recordarme"
+            android:layout_gravity="center"
+            android:background="@drawable/border_white"/>
+
+
+        <Button
+                android:id="@+id/btnAsistida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marcar como asistida"
+                android:layout_gravity="center"
+                android:background="@drawable/border_white"/>
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <include layout="@layout/toolbar" />
+
+    <Button
+        android:id="@+id/btnAgregarCita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar o Eliminar Cita"
+        android:onClick="onClickIrGestionAgenda"
+        android:layout_gravity="center"
+        style="@style/BorderButton"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCitas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
+
+</ScrollView>

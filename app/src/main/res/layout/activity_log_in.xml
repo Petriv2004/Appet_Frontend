@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".LogIn">
+
+        <include layout="@layout/toolbar" />
+
+        <ImageButton
+            android:id="@+id/btnIrPerfil"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/icono"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            android:onClick="onClickIrPerfil" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/purple"
+            app:boxStrokeWidth="2dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Correo electrónico"
+                android:inputType="textEmailAddress"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:endIconMode="password_toggle"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/purple"
+            app:boxStrokeWidth="2dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textSize="20sp"
+                android:minHeight="48dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnLogIn"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="80dp"
+            android:layout_height="wrap_content"
+            android:text="Iniciar Sesión"
+            android:onClick="onClickLogIn"
+            android:layout_marginTop="10dp"
+            style="@style/BorderButton" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickIrCambiarContrasena"
+            android:text="¿Olvidaste tu contraseña?"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+</ScrollView>

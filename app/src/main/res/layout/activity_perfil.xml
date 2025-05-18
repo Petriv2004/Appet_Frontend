@@ -1,0 +1,135 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".PerfilUsuario">
+
+    <include layout="@layout/toolbar" />
+
+
+    <TextView
+        android:id="@+id/textNombre"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Nombre:"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/border_white"/>
+
+    <TextView
+        android:id="@+id/textCorreo"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Correo:"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/border_white"/>
+    <TextView
+        android:id="@+id/textNumero"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Número de celular:"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/border_white"/>
+
+    <TextView
+        android:id="@+id/textDireccion"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Dirección:"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/border_white"/>
+
+    <TextView
+        android:id="@+id/textGenero"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Género:"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/border_white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Elige una opción"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Perfil de Mascotas"
+        android:onClick="onClickIrPerfilMascota"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Actualizar Perfil"
+        android:onClick="onClickActualizar"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Actualizar Contrasena"
+        android:onClick="onClickActualizarContrasena"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Cerrar Sesión"
+        android:onClick="onClickCerrar"
+        style="@style/BorderButton"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Eliminar Cuenta"
+        android:onClick="onClickEliminar"
+        style="@style/BorderButton"/>
+
+
+</LinearLayout>
+
+</ScrollView>

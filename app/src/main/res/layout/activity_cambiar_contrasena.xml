@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <include layout="@layout/toolbar" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/purple"
+            app:boxStrokeWidth="2dp"
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Correo"
+                android:inputType="textEmailAddress"
+                android:textSize="20sp"
+                android:minHeight="48dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnEnviarCorreo"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="80dp"
+            android:layout_height="wrap_content"
+            android:text = "Enviar correo"
+            android:onClick="onClickIrEnviarCorreo"
+            style="@style/BorderButton"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/purple"
+            app:boxStrokeWidth="2dp"
+            android:layout_marginTop="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCodigo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Codigo de Verificación"
+                android:inputType="number"
+                android:textSize="20sp"
+                android:minHeight="48dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnEnviarCodigo"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="80dp"
+            android:layout_height="wrap_content"
+            android:text = "Enviar Código"
+            android:onClick="onClickIrEnviarCodigo"
+            style="@style/BorderButton"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilContrasena"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:endIconMode="password_toggle"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/purple"
+            app:boxStrokeWidth="2dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textSize="20sp"
+                android:minHeight="48dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilConfirmarContrasena"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:endIconMode="password_toggle"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/purple"
+            app:boxStrokeWidth="2dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etConfirmarContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirmar contraseña"
+                android:inputType="textPassword"
+                android:textSize="20sp"
+                android:minHeight="48dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnCambiarContrasena"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="80dp"
+            android:layout_height="wrap_content"
+            android:text = "Cambiar Contraseña"
+            android:onClick="onClickIrCambiarContrasena"
+            style="@style/BorderButton"/>
+
+    </LinearLayout>
+</ScrollView>

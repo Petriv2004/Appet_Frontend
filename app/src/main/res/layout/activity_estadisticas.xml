@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+  <LinearLayout
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:padding="16dp">
+
+    <include layout="@layout/toolbar" />
+
+    <Button
+        android:id="@+id/ritmo_cardiaco_grafica"
+        style="@style/BorderButton"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onClickIrRitmoGrafica"
+        android:text="Gráfica de ritmo cardiaco" />
+
+    <Button
+        android:id="@+id/estadisticas_por_mascota"
+        style="@style/BorderButton"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onClickIrEstadisticas"
+        android:text="Estadísticas por mascota" />
+
+    <Button
+        android:id="@+id/mascota"
+        style="@style/BorderButton"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onClickIrMascota"
+        android:text="Mascota más Sedentaria y Activa" />
+
+  </LinearLayout>
+
+</ScrollView>

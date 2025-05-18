@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        tools:context=".MainActivity">
+
+    <include layout="@layout/toolbar" />
+
+
+        <Button
+            android:id="@+id/btnCancion"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="70dp"
+            android:layout_height="wrap_content"
+            android:onClick="onClickCancion"
+            android:text="Reproducir Música Relajante"
+            android:layout_marginTop="20dp"
+            style="@style/BorderButton"
+            />
+
+        <Button
+            android:id="@+id/btnCancionParar"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="70dp"
+            android:layout_height="wrap_content"
+            android:onClick="onClickPararCancion"
+            android:text="Parar Música Relajante"
+            android:layout_marginTop="20dp"
+            style="@style/BorderButton"
+            />
+
+    </LinearLayout>
+
+</ScrollView>
